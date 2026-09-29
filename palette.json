@@ -1,0 +1,1678 @@
+{
+  "name": "Ma no Iro",
+  "short": "Ma",
+  "slug": "ma-no-iro",
+  "jp": "間の色",
+  "version": "0.3.0",
+  "description": "Eight colours in four complementary pairs, all crossing at one grey, and a guide to how colour works.",
+  "derivation": {
+    "white_point": "D65",
+    "space": "OKLCH",
+    "pairs": {
+      "leaf": {
+        "anchor": "green",
+        "spectrum": "555 nm",
+        "xy": [
+          0.3374,
+          0.6588
+        ],
+        "complement": "purple"
+      },
+      "water": {
+        "anchor": "red",
+        "spectrum": "700 nm",
+        "xy": [
+          0.7347,
+          0.2653
+        ],
+        "complement": "cyan"
+      },
+      "sky": {
+        "anchor": "blue",
+        "spectrum": "lambda^-4",
+        "xy": [
+          0.2399,
+          0.2342
+        ],
+        "complement": "yellow"
+      },
+      "ink": {
+        "anchor": "black and white",
+        "spectrum": "none and all"
+      }
+    },
+    "method": "each accent lies on the ray from D65 toward its anchor chromaticity, solved at its lightness and chroma",
+    "script": "tools/derive.py"
+  },
+  "flavors": {
+    "kuromurasaki": {
+      "name": "Kuromurasaki",
+      "jp": "黒紫",
+      "reading": "くろむらさき",
+      "appearance": "dark",
+      "ground": "black",
+      "home": "purple",
+      "seed_hue": "green",
+      "aliases": {
+        "home": "keyword",
+        "on_accent": "base",
+        "cursor_text": "base"
+      },
+      "colors": {
+        "mantle": {
+          "hex": "#0e0e0e",
+          "rgb": [
+            14,
+            14,
+            14
+          ],
+          "oklch": [
+            0.165,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.04,
+          "group": "ink",
+          "role": "Recessed frames: sidebar, title bar, tab strip, status bar"
+        },
+        "base": {
+          "hex": "#141414",
+          "rgb": [
+            20,
+            20,
+            20
+          ],
+          "oklch": [
+            0.19,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.0,
+          "group": "ink",
+          "role": "Editor and terminal background"
+        },
+        "surface": {
+          "hex": "#1c1c1c",
+          "rgb": [
+            28,
+            28,
+            28
+          ],
+          "oklch": [
+            0.225,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.08,
+          "group": "ink",
+          "role": "Raised elements: popups, hovers, suggestions, inputs"
+        },
+        "overlay": {
+          "hex": "#262626",
+          "rgb": [
+            38,
+            38,
+            38
+          ],
+          "oklch": [
+            0.27,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.23,
+          "group": "ink",
+          "role": "Borders, dividers, indent guides"
+        },
+        "dim": {
+          "hex": "#555555",
+          "rgb": [
+            85,
+            85,
+            85
+          ],
+          "oklch": [
+            0.45,
+            0.0,
+            0.0
+          ],
+          "contrast": 2.48,
+          "group": "ink",
+          "role": "Disabled text, whitespace marks, scrollbar thumb"
+        },
+        "muted": {
+          "hex": "#898989",
+          "rgb": [
+            137,
+            137,
+            137
+          ],
+          "oklch": [
+            0.63,
+            0.0,
+            0.0
+          ],
+          "contrast": 5.28,
+          "group": "ink",
+          "role": "Comments, line numbers, placeholders"
+        },
+        "subtle": {
+          "hex": "#b1b1b1",
+          "rgb": [
+            177,
+            177,
+            177
+          ],
+          "oklch": [
+            0.76,
+            0.0,
+            0.0
+          ],
+          "contrast": 8.6,
+          "group": "ink",
+          "role": "Punctuation, operators, secondary text"
+        },
+        "text": {
+          "hex": "#e4e4e4",
+          "rgb": [
+            228,
+            228,
+            228
+          ],
+          "oklch": [
+            0.92,
+            0.0,
+            0.0
+          ],
+          "contrast": 14.57,
+          "group": "ink",
+          "role": "Identifiers, body text"
+        },
+        "hl_low": {
+          "hex": "#191919",
+          "rgb": [
+            25,
+            25,
+            25
+          ],
+          "oklch": [
+            0.215,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.05,
+          "group": "ink",
+          "role": "Current line",
+          "alpha": {
+            "hex8": "#35353526",
+            "over": "base",
+            "composite": "#191919",
+            "error": 0.0
+          }
+        },
+        "hl_med": {
+          "hex": "#232323",
+          "rgb": [
+            35,
+            35,
+            35
+          ],
+          "oklch": [
+            0.255,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.17,
+          "group": "ink",
+          "role": "Other occurrences of the word or selection, inactive selection",
+          "alpha": {
+            "hex8": "#78787826",
+            "over": "base",
+            "composite": "#232323",
+            "error": 0.0
+          }
+        },
+        "hl_high": {
+          "hex": "#383838",
+          "rgb": [
+            56,
+            56,
+            56
+          ],
+          "oklch": [
+            0.34,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.57,
+          "group": "ink",
+          "role": "Selection",
+          "alpha": {
+            "hex8": "#f5f5f529",
+            "over": "base",
+            "composite": "#383838",
+            "error": 0.0
+          }
+        },
+        "keyword": {
+          "hex": "#cc79d9",
+          "rgb": [
+            204,
+            121,
+            217
+          ],
+          "oklch": [
+            0.7,
+            0.16,
+            321.8
+          ],
+          "contrast": 6.43,
+          "group": "leaf",
+          "role": "Keywords, storage, control flow, markup tags; home colour of the dark flavor"
+        },
+        "special": {
+          "hex": "#e8c2f0",
+          "rgb": [
+            232,
+            194,
+            240
+          ],
+          "oklch": [
+            0.86,
+            0.075,
+            320.7
+          ],
+          "contrast": 11.74,
+          "group": "leaf",
+          "role": "Numbers, constants, escapes, regex, decorators"
+        },
+        "function": {
+          "hex": "#9cdc88",
+          "rgb": [
+            156,
+            220,
+            136
+          ],
+          "oklch": [
+            0.83,
+            0.13,
+            138.4
+          ],
+          "contrast": 11.39,
+          "group": "leaf",
+          "role": "Function and method names, added lines; home colour of the light flavor"
+        },
+        "seed": {
+          "hex": "#98fc70",
+          "rgb": [
+            152,
+            252,
+            112
+          ],
+          "oklch": [
+            0.9,
+            0.2,
+            137.7
+          ],
+          "contrast": 14.5,
+          "group": "leaf",
+          "role": "Cursor, current search match, focus ring"
+        },
+        "string": {
+          "hex": "#a3b8f8",
+          "rgb": [
+            163,
+            184,
+            248
+          ],
+          "oklch": [
+            0.79,
+            0.095,
+            269.9
+          ],
+          "contrast": 9.46,
+          "group": "sky",
+          "role": "Strings, inline code"
+        },
+        "blue": {
+          "hex": "#80a1f6",
+          "rgb": [
+            128,
+            161,
+            246
+          ],
+          "oklch": [
+            0.72,
+            0.13,
+            266.9
+          ],
+          "contrast": 7.34,
+          "group": "sky",
+          "role": "Links, information, modified lines, directories"
+        },
+        "yellow": {
+          "hex": "#f4e05e",
+          "rgb": [
+            244,
+            224,
+            94
+          ],
+          "oklch": [
+            0.9,
+            0.15,
+            100.7
+          ],
+          "contrast": 13.82,
+          "group": "sky",
+          "role": "Warnings as a signal; the search highlighter"
+        },
+        "yellow_text": {
+          "hex": "#f4e05e",
+          "rgb": [
+            244,
+            224,
+            94
+          ],
+          "oklch": [
+            0.9,
+            0.15,
+            100.7
+          ],
+          "contrast": 13.82,
+          "group": "sky",
+          "role": "Warnings as text; ANSI yellow"
+        },
+        "type": {
+          "hex": "#3caca5",
+          "rgb": [
+            60,
+            172,
+            165
+          ],
+          "oklch": [
+            0.68,
+            0.1,
+            189.6
+          ],
+          "contrast": 6.71,
+          "group": "water",
+          "role": "Types, classes, interfaces, enums"
+        },
+        "cyan": {
+          "hex": "#67e2da",
+          "rgb": [
+            103,
+            226,
+            218
+          ],
+          "oklch": [
+            0.84,
+            0.11,
+            189.7
+          ],
+          "contrast": 11.81,
+          "group": "water",
+          "role": "Hints, symlinks, ANSI cyan"
+        },
+        "red": {
+          "hex": "#fa5573",
+          "rgb": [
+            250,
+            85,
+            115
+          ],
+          "oklch": [
+            0.68,
+            0.2,
+            13.7
+          ],
+          "contrast": 5.82,
+          "group": "water",
+          "role": "Errors, deletions, breakpoints"
+        }
+      },
+      "derived": {
+        "search": {
+          "hex": "#393624",
+          "rgb": [
+            57,
+            54,
+            36
+          ],
+          "oklch": [
+            0.332,
+            0.03,
+            100.7
+          ],
+          "contrast": 1.53,
+          "role": "Search matches, like a highlighter",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.2
+          },
+          "alpha": {
+            "hex8": "#fbe87829",
+            "over": "base",
+            "composite": "#393624",
+            "error": 0.0
+          }
+        },
+        "search_current": {
+          "hex": "#454229",
+          "rgb": [
+            69,
+            66,
+            41
+          ],
+          "oklch": [
+            0.375,
+            0.039,
+            100.7
+          ],
+          "contrast": 1.81,
+          "role": "Current search match, under a seed outline",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.26
+          },
+          "alpha": {
+            "hex8": "#fdef7836",
+            "over": "base",
+            "composite": "#454229",
+            "error": 0.0
+          }
+        },
+        "diff_add": {
+          "hex": "#262d23",
+          "rgb": [
+            38,
+            45,
+            35
+          ],
+          "oklch": [
+            0.286,
+            0.019,
+            138.4
+          ],
+          "contrast": 1.3,
+          "role": "Added line background; merge conflict, current",
+          "mix": {
+            "from": "base",
+            "to": "function",
+            "amount": 0.15
+          },
+          "alpha": {
+            "hex8": "#8cbb7826",
+            "over": "base",
+            "composite": "#262d23",
+            "error": 0.0
+          }
+        },
+        "diff_add_strong": {
+          "hex": "#364432",
+          "rgb": [
+            54,
+            68,
+            50
+          ],
+          "oklch": [
+            0.369,
+            0.036,
+            138.4
+          ],
+          "contrast": 1.79,
+          "role": "Added characters inside a changed line",
+          "mix": {
+            "from": "base",
+            "to": "function",
+            "amount": 0.28
+          },
+          "alpha": {
+            "hex8": "#b6f9a336",
+            "over": "base",
+            "composite": "#364432",
+            "error": 0.0
+          }
+        },
+        "diff_delete": {
+          "hex": "#321f20",
+          "rgb": [
+            50,
+            31,
+            32
+          ],
+          "oklch": [
+            0.264,
+            0.03,
+            13.7
+          ],
+          "contrast": 1.19,
+          "role": "Deleted line background",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.15
+          },
+          "alpha": {
+            "hex8": "#dc5d6426",
+            "over": "base",
+            "composite": "#321f20",
+            "error": 0.0
+          }
+        },
+        "diff_delete_strong": {
+          "hex": "#4d282c",
+          "rgb": [
+            77,
+            40,
+            44
+          ],
+          "oklch": [
+            0.327,
+            0.056,
+            13.7
+          ],
+          "contrast": 1.46,
+          "role": "Deleted characters inside a changed line",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.28
+          },
+          "alpha": {
+            "hex8": "#f8647440",
+            "over": "base",
+            "composite": "#4d282c",
+            "error": 0.0
+          }
+        },
+        "diff_change": {
+          "hex": "#20242c",
+          "rgb": [
+            32,
+            36,
+            44
+          ],
+          "oklch": [
+            0.259,
+            0.017,
+            266.9
+          ],
+          "contrast": 1.18,
+          "role": "Changed line background; merge conflict, incoming",
+          "mix": {
+            "from": "base",
+            "to": "blue",
+            "amount": 0.13
+          },
+          "alpha": {
+            "hex8": "#647fb426",
+            "over": "base",
+            "composite": "#20242c",
+            "error": 0.0
+          }
+        },
+        "diff_change_strong": {
+          "hex": "#2d3447",
+          "rgb": [
+            45,
+            52,
+            71
+          ],
+          "oklch": [
+            0.328,
+            0.034,
+            266.9
+          ],
+          "contrast": 1.5,
+          "role": "Changed characters",
+          "mix": {
+            "from": "base",
+            "to": "blue",
+            "amount": 0.26
+          },
+          "alpha": {
+            "hex8": "#86a5fc38",
+            "over": "base",
+            "composite": "#2d3447",
+            "error": 0.0
+          }
+        },
+        "error_bg": {
+          "hex": "#2c1d1e",
+          "rgb": [
+            44,
+            29,
+            30
+          ],
+          "oklch": [
+            0.249,
+            0.024,
+            13.7
+          ],
+          "contrast": 1.14,
+          "role": "Background behind inline error text",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#b4505726",
+            "over": "base",
+            "composite": "#2c1d1e",
+            "error": 0.0
+          }
+        },
+        "warning_bg": {
+          "hex": "#2a281e",
+          "rgb": [
+            42,
+            40,
+            30
+          ],
+          "oklch": [
+            0.275,
+            0.018,
+            100.7
+          ],
+          "contrast": 1.25,
+          "role": "Background behind inline warning text",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#a7995726",
+            "over": "base",
+            "composite": "#2a281e",
+            "error": 0.0
+          }
+        },
+        "info_bg": {
+          "hex": "#1f2827",
+          "rgb": [
+            31,
+            40,
+            39
+          ],
+          "oklch": [
+            0.268,
+            0.013,
+            189.7
+          ],
+          "contrast": 1.22,
+          "role": "Background behind inline information text",
+          "mix": {
+            "from": "base",
+            "to": "cyan",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#5d999326",
+            "over": "base",
+            "composite": "#1f2827",
+            "error": 0.0
+          }
+        },
+        "debug_line": {
+          "hex": "#2d2c20",
+          "rgb": [
+            45,
+            44,
+            32
+          ],
+          "oklch": [
+            0.289,
+            0.021,
+            100.7
+          ],
+          "contrast": 1.31,
+          "role": "Line where the debugger is paused",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.14
+          },
+          "alpha": {
+            "hex8": "#bbb46426",
+            "over": "base",
+            "composite": "#2d2c20",
+            "error": 0.0
+          }
+        }
+      },
+      "ansi": {
+        "normal": {
+          "black": {
+            "index": 0,
+            "token": "overlay",
+            "hex": "#262626"
+          },
+          "red": {
+            "index": 1,
+            "token": "red",
+            "hex": "#fa5573"
+          },
+          "green": {
+            "index": 2,
+            "token": "function",
+            "hex": "#9cdc88"
+          },
+          "yellow": {
+            "index": 3,
+            "token": "yellow_text",
+            "hex": "#f4e05e"
+          },
+          "blue": {
+            "index": 4,
+            "token": "blue",
+            "hex": "#80a1f6"
+          },
+          "magenta": {
+            "index": 5,
+            "token": "keyword",
+            "hex": "#cc79d9"
+          },
+          "cyan": {
+            "index": 6,
+            "token": "cyan",
+            "hex": "#67e2da"
+          },
+          "white": {
+            "index": 7,
+            "token": "subtle",
+            "hex": "#b1b1b1"
+          }
+        },
+        "bright": {
+          "black": {
+            "index": 8,
+            "token": "muted",
+            "hex": "#898989"
+          },
+          "red": {
+            "index": 9,
+            "from": "red",
+            "hex": "#ff7b8c",
+            "oklch": [
+              0.74,
+              0.16,
+              13.7
+            ]
+          },
+          "green": {
+            "index": 10,
+            "from": "function",
+            "hex": "#b6eda6",
+            "oklch": [
+              0.89,
+              0.11,
+              138.4
+            ]
+          },
+          "yellow": {
+            "index": 11,
+            "from": "yellow_text",
+            "hex": "#fff4ad",
+            "oklch": [
+              0.96,
+              0.09,
+              100.7
+            ]
+          },
+          "blue": {
+            "index": 12,
+            "from": "blue",
+            "hex": "#98b5fe",
+            "oklch": [
+              0.78,
+              0.11,
+              266.9
+            ]
+          },
+          "magenta": {
+            "index": 13,
+            "from": "keyword",
+            "hex": "#df8ced",
+            "oklch": [
+              0.76,
+              0.16,
+              321.8
+            ]
+          },
+          "cyan": {
+            "index": 14,
+            "from": "cyan",
+            "hex": "#7df6ee",
+            "oklch": [
+              0.9,
+              0.11,
+              189.7
+            ]
+          },
+          "white": {
+            "index": 15,
+            "token": "text",
+            "hex": "#e4e4e4"
+          }
+        },
+        "rule": "Bright colours step one rung toward the text colour: lightness +0.06 on the dark flavor, -0.06 on the light, chroma reduced only if out of gamut. Bright green on the dark flavor is also capped at chroma 0.11 so it stays apart from the seed. The seed is never an ANSI colour. Exception: on the light flavor bright yellow is the gold signal."
+      }
+    },
+    "byakuroku": {
+      "name": "Byakuroku",
+      "jp": "白緑",
+      "reading": "びゃくろく",
+      "appearance": "light",
+      "ground": "white",
+      "home": "green",
+      "seed_hue": "purple",
+      "aliases": {
+        "home": "function",
+        "on_accent": "base",
+        "cursor_text": "base"
+      },
+      "colors": {
+        "mantle": {
+          "hex": "#ededed",
+          "rgb": [
+            237,
+            237,
+            237
+          ],
+          "oklch": [
+            0.945,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.09,
+          "group": "ink",
+          "role": "Recessed frames: sidebar, title bar, tab strip, status bar"
+        },
+        "base": {
+          "hex": "#f7f7f7",
+          "rgb": [
+            247,
+            247,
+            247
+          ],
+          "oklch": [
+            0.975,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.0,
+          "group": "ink",
+          "role": "Editor and terminal background"
+        },
+        "surface": {
+          "hex": "#fdfdfd",
+          "rgb": [
+            253,
+            253,
+            253
+          ],
+          "oklch": [
+            0.995,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.06,
+          "group": "ink",
+          "role": "Raised elements: popups, hovers, suggestions, inputs"
+        },
+        "overlay": {
+          "hex": "#dfdfdf",
+          "rgb": [
+            223,
+            223,
+            223
+          ],
+          "oklch": [
+            0.905,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.23,
+          "group": "ink",
+          "role": "Borders, dividers, indent guides"
+        },
+        "dim": {
+          "hex": "#a4a4a4",
+          "rgb": [
+            164,
+            164,
+            164
+          ],
+          "oklch": [
+            0.72,
+            0.0,
+            0.0
+          ],
+          "contrast": 2.31,
+          "group": "ink",
+          "role": "Disabled text, whitespace marks, scrollbar thumb"
+        },
+        "muted": {
+          "hex": "#676767",
+          "rgb": [
+            103,
+            103,
+            103
+          ],
+          "oklch": [
+            0.515,
+            0.0,
+            0.0
+          ],
+          "contrast": 5.24,
+          "group": "ink",
+          "role": "Comments, line numbers, placeholders"
+        },
+        "subtle": {
+          "hex": "#525252",
+          "rgb": [
+            82,
+            82,
+            82
+          ],
+          "oklch": [
+            0.44,
+            0.0,
+            0.0
+          ],
+          "contrast": 7.23,
+          "group": "ink",
+          "role": "Punctuation, operators, secondary text"
+        },
+        "text": {
+          "hex": "#222222",
+          "rgb": [
+            34,
+            34,
+            34
+          ],
+          "oklch": [
+            0.25,
+            0.0,
+            0.0
+          ],
+          "contrast": 14.89,
+          "group": "ink",
+          "role": "Identifiers, body text"
+        },
+        "hl_low": {
+          "hex": "#f0f0f0",
+          "rgb": [
+            240,
+            240,
+            240
+          ],
+          "oklch": [
+            0.955,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.06,
+          "group": "ink",
+          "role": "Current line",
+          "alpha": {
+            "hex8": "#c8c8c826",
+            "over": "base",
+            "composite": "#f0f0f0",
+            "error": 0.0
+          }
+        },
+        "hl_med": {
+          "hex": "#e8e8e8",
+          "rgb": [
+            232,
+            232,
+            232
+          ],
+          "oklch": [
+            0.93,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.14,
+          "group": "ink",
+          "role": "Other occurrences of the word or selection, inactive selection",
+          "alpha": {
+            "hex8": "#93939326",
+            "over": "base",
+            "composite": "#e8e8e8",
+            "error": 0.0
+          }
+        },
+        "hl_high": {
+          "hex": "#d1d1d1",
+          "rgb": [
+            209,
+            209,
+            209
+          ],
+          "oklch": [
+            0.86,
+            0.0,
+            0.0
+          ],
+          "contrast": 1.42,
+          "group": "ink",
+          "role": "Selection",
+          "alpha": {
+            "hex8": "#0a0a0a29",
+            "over": "base",
+            "composite": "#d1d1d1",
+            "error": 0.0
+          }
+        },
+        "keyword": {
+          "hex": "#761d81",
+          "rgb": [
+            118,
+            29,
+            129
+          ],
+          "oklch": [
+            0.42,
+            0.17,
+            323.0
+          ],
+          "contrast": 8.66,
+          "group": "leaf",
+          "role": "Keywords, storage, control flow, markup tags; home colour of the dark flavor"
+        },
+        "special": {
+          "hex": "#895a91",
+          "rgb": [
+            137,
+            90,
+            145
+          ],
+          "oklch": [
+            0.54,
+            0.1,
+            321.5
+          ],
+          "contrast": 4.95,
+          "group": "leaf",
+          "role": "Numbers, constants, escapes, regex, decorators"
+        },
+        "function": {
+          "hex": "#27540f",
+          "rgb": [
+            39,
+            84,
+            15
+          ],
+          "oklch": [
+            0.4,
+            0.11,
+            137.2
+          ],
+          "contrast": 8.23,
+          "group": "leaf",
+          "role": "Function and method names, added lines; home colour of the light flavor"
+        },
+        "seed": {
+          "hex": "#90039f",
+          "rgb": [
+            144,
+            3,
+            159
+          ],
+          "oklch": [
+            0.47,
+            0.22,
+            323.4
+          ],
+          "contrast": 7.22,
+          "group": "leaf",
+          "role": "Cursor, current search match, focus ring"
+        },
+        "string": {
+          "hex": "#305daf",
+          "rgb": [
+            48,
+            93,
+            175
+          ],
+          "oklch": [
+            0.49,
+            0.14,
+            261.2
+          ],
+          "contrast": 5.93,
+          "group": "sky",
+          "role": "Strings, inline code"
+        },
+        "blue": {
+          "hex": "#225fbc",
+          "rgb": [
+            34,
+            95,
+            188
+          ],
+          "oklch": [
+            0.5,
+            0.16,
+            259.2
+          ],
+          "contrast": 5.7,
+          "group": "sky",
+          "role": "Links, information, modified lines, directories"
+        },
+        "yellow": {
+          "hex": "#9f8f00",
+          "rgb": [
+            159,
+            143,
+            0
+          ],
+          "oklch": [
+            0.645,
+            0.135,
+            101.8
+          ],
+          "contrast": 3.04,
+          "group": "sky",
+          "role": "Warnings as a signal; the search highlighter"
+        },
+        "yellow_text": {
+          "hex": "#776c06",
+          "rgb": [
+            119,
+            108,
+            6
+          ],
+          "oklch": [
+            0.525,
+            0.108,
+            101.8
+          ],
+          "contrast": 4.98,
+          "group": "sky",
+          "role": "Warnings as text; ANSI yellow"
+        },
+        "type": {
+          "hex": "#016b66",
+          "rgb": [
+            1,
+            107,
+            102
+          ],
+          "oklch": [
+            0.475,
+            0.082,
+            189.4
+          ],
+          "contrast": 5.96,
+          "group": "water",
+          "role": "Types, classes, interfaces, enums"
+        },
+        "cyan": {
+          "hex": "#057772",
+          "rgb": [
+            5,
+            119,
+            114
+          ],
+          "oklch": [
+            0.515,
+            0.088,
+            189.5
+          ],
+          "contrast": 5.0,
+          "group": "water",
+          "role": "Hints, symlinks, ANSI cyan"
+        },
+        "red": {
+          "hex": "#a30033",
+          "rgb": [
+            163,
+            0,
+            51
+          ],
+          "oklch": [
+            0.455,
+            0.182,
+            15.4
+          ],
+          "contrast": 7.49,
+          "group": "water",
+          "role": "Errors, deletions, breakpoints"
+        }
+      },
+      "derived": {
+        "search": {
+          "hex": "#e4e2ce",
+          "rgb": [
+            228,
+            226,
+            206
+          ],
+          "oklch": [
+            0.909,
+            0.027,
+            101.8
+          ],
+          "contrast": 1.22,
+          "role": "Search matches, like a highlighter",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.2
+          },
+          "alpha": {
+            "hex8": "#877b062b",
+            "over": "base",
+            "composite": "#e4e2ce",
+            "error": 0.0
+          }
+        },
+        "search_current": {
+          "hex": "#dfdcc2",
+          "rgb": [
+            223,
+            220,
+            194
+          ],
+          "oklch": [
+            0.889,
+            0.035,
+            101.8
+          ],
+          "contrast": 1.29,
+          "role": "Current search match, under a seed outline",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.26
+          },
+          "alpha": {
+            "hex8": "#8a7c0638",
+            "over": "base",
+            "composite": "#dfdcc2",
+            "error": 0.0
+          }
+        },
+        "diff_add": {
+          "hex": "#d5ddd2",
+          "rgb": [
+            213,
+            221,
+            210
+          ],
+          "oklch": [
+            0.889,
+            0.017,
+            137.2
+          ],
+          "contrast": 1.29,
+          "role": "Added line background; merge conflict, current",
+          "mix": {
+            "from": "base",
+            "to": "function",
+            "amount": 0.15
+          },
+          "alpha": {
+            "hex8": "#144a0026",
+            "over": "base",
+            "composite": "#d5ddd2",
+            "error": 0.0
+          }
+        },
+        "diff_add_strong": {
+          "hex": "#b9c7b4",
+          "rgb": [
+            185,
+            199,
+            180
+          ],
+          "oklch": [
+            0.814,
+            0.031,
+            137.2
+          ],
+          "contrast": 1.64,
+          "role": "Added characters inside a changed line",
+          "mix": {
+            "from": "base",
+            "to": "function",
+            "amount": 0.28
+          },
+          "alpha": {
+            "hex8": "#1a4c0847",
+            "over": "base",
+            "composite": "#b9c7b4",
+            "error": 0.0
+          }
+        },
+        "diff_delete": {
+          "hex": "#efd6d7",
+          "rgb": [
+            239,
+            214,
+            215
+          ],
+          "oklch": [
+            0.897,
+            0.027,
+            15.4
+          ],
+          "contrast": 1.28,
+          "role": "Deleted line background",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.15
+          },
+          "alpha": {
+            "hex8": "#c21b2226",
+            "over": "base",
+            "composite": "#efd6d7",
+            "error": 0.0
+          }
+        },
+        "diff_delete_strong": {
+          "hex": "#e6babc",
+          "rgb": [
+            230,
+            186,
+            188
+          ],
+          "oklch": [
+            0.829,
+            0.051,
+            15.4
+          ],
+          "contrast": 1.61,
+          "role": "Deleted characters inside a changed line",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.28
+          },
+          "alpha": {
+            "hex8": "#b3030b40",
+            "over": "base",
+            "composite": "#e6babc",
+            "error": 0.0
+          }
+        },
+        "diff_change": {
+          "hex": "#dae3f1",
+          "rgb": [
+            218,
+            227,
+            241
+          ],
+          "oklch": [
+            0.913,
+            0.021,
+            259.2
+          ],
+          "contrast": 1.2,
+          "role": "Changed line background; merge conflict, incoming",
+          "mix": {
+            "from": "base",
+            "to": "blue",
+            "amount": 0.13
+          },
+          "alpha": {
+            "hex8": "#3672cf26",
+            "over": "base",
+            "composite": "#dae3f1",
+            "error": 0.0
+          }
+        },
+        "diff_change_strong": {
+          "hex": "#becfea",
+          "rgb": [
+            190,
+            207,
+            234
+          ],
+          "oklch": [
+            0.851,
+            0.042,
+            259.2
+          ],
+          "contrast": 1.46,
+          "role": "Changed characters",
+          "mix": {
+            "from": "base",
+            "to": "blue",
+            "amount": 0.26
+          },
+          "alpha": {
+            "hex8": "#0a50c13d",
+            "over": "base",
+            "composite": "#becfea",
+            "error": 0.0
+          }
+        },
+        "error_bg": {
+          "hex": "#f0dddd",
+          "rgb": [
+            240,
+            221,
+            221
+          ],
+          "oklch": [
+            0.913,
+            0.022,
+            15.4
+          ],
+          "contrast": 1.22,
+          "role": "Background behind inline error text",
+          "mix": {
+            "from": "base",
+            "to": "red",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#c84a4a26",
+            "over": "base",
+            "composite": "#f0dddd",
+            "error": 0.0
+          }
+        },
+        "warning_bg": {
+          "hex": "#eceade",
+          "rgb": [
+            236,
+            234,
+            222
+          ],
+          "oklch": [
+            0.935,
+            0.016,
+            101.8
+          ],
+          "contrast": 1.12,
+          "role": "Background behind inline warning text",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#aea05026",
+            "over": "base",
+            "composite": "#eceade",
+            "error": 0.0
+          }
+        },
+        "info_bg": {
+          "hex": "#dde7e6",
+          "rgb": [
+            221,
+            231,
+            230
+          ],
+          "oklch": [
+            0.92,
+            0.011,
+            189.5
+          ],
+          "contrast": 1.17,
+          "role": "Background behind inline information text",
+          "mix": {
+            "from": "base",
+            "to": "cyan",
+            "amount": 0.12
+          },
+          "alpha": {
+            "hex8": "#4a8c8626",
+            "over": "base",
+            "composite": "#dde7e6",
+            "error": 0.0
+          }
+        },
+        "debug_line": {
+          "hex": "#eae8da",
+          "rgb": [
+            234,
+            232,
+            218
+          ],
+          "oklch": [
+            0.929,
+            0.019,
+            101.8
+          ],
+          "contrast": 1.15,
+          "role": "Line where the debugger is paused",
+          "mix": {
+            "from": "base",
+            "to": "yellow",
+            "amount": 0.14
+          },
+          "alpha": {
+            "hex8": "#a0933626",
+            "over": "base",
+            "composite": "#eae8da",
+            "error": 0.0
+          }
+        }
+      },
+      "ansi": {
+        "normal": {
+          "black": {
+            "index": 0,
+            "token": "text",
+            "hex": "#222222"
+          },
+          "red": {
+            "index": 1,
+            "token": "red",
+            "hex": "#a30033"
+          },
+          "green": {
+            "index": 2,
+            "token": "function",
+            "hex": "#27540f"
+          },
+          "yellow": {
+            "index": 3,
+            "token": "yellow_text",
+            "hex": "#776c06"
+          },
+          "blue": {
+            "index": 4,
+            "token": "blue",
+            "hex": "#225fbc"
+          },
+          "magenta": {
+            "index": 5,
+            "token": "keyword",
+            "hex": "#761d81"
+          },
+          "cyan": {
+            "index": 6,
+            "token": "cyan",
+            "hex": "#057772"
+          },
+          "white": {
+            "index": 7,
+            "token": "overlay",
+            "hex": "#dfdfdf"
+          }
+        },
+        "bright": {
+          "black": {
+            "index": 8,
+            "token": "muted",
+            "hex": "#676767"
+          },
+          "red": {
+            "index": 9,
+            "from": "red",
+            "hex": "#860029",
+            "oklch": [
+              0.395,
+              0.158,
+              15.4
+            ]
+          },
+          "green": {
+            "index": 10,
+            "from": "function",
+            "hex": "#1a4301",
+            "oklch": [
+              0.34,
+              0.102,
+              137.2
+            ]
+          },
+          "yellow": {
+            "index": 11,
+            "token": "yellow",
+            "hex": "#9f8f00"
+          },
+          "blue": {
+            "index": 12,
+            "from": "blue",
+            "hex": "#0d4da8",
+            "oklch": [
+              0.44,
+              0.16,
+              259.2
+            ]
+          },
+          "magenta": {
+            "index": 13,
+            "from": "keyword",
+            "hex": "#63006f",
+            "oklch": [
+              0.36,
+              0.17,
+              323.0
+            ]
+          },
+          "cyan": {
+            "index": 14,
+            "from": "cyan",
+            "hex": "#036460",
+            "oklch": [
+              0.455,
+              0.078,
+              189.5
+            ]
+          },
+          "white": {
+            "index": 15,
+            "token": "mantle",
+            "hex": "#ededed"
+          }
+        },
+        "rule": "Bright colours step one rung toward the text colour: lightness +0.06 on the dark flavor, -0.06 on the light, chroma reduced only if out of gamut. Bright green on the dark flavor is also capped at chroma 0.11 so it stays apart from the seed. The seed is never an ANSI colour. Exception: on the light flavor bright yellow is the gold signal."
+      }
+    }
+  }
+}
