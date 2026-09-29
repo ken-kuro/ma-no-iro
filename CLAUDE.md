@@ -55,6 +55,9 @@ site/                   the website (to be built)
 
 ## Writing
 
+Keep the two flavors in balance. Any story, image or correspondence added about one flavor needs its counterpart in the other; if Byakuroku has no honest counterpart, leave it out for Kuromurasaki too.
+
+
 Sentence case. Plain verbs. Lead with the exchange (the leaf, the sky, the water, the ink), then the number, then the limit. Never present a model as nature, a correspondence as a proof, or a design choice as a law; SPEC section 2 lists the limits of every claim. Say "purple", "green", "blue", "yellow", "cyan" and "red", not "violet", "lavender", "lime" or "teal". Ma no Iro is four pairs around a grey, not a purple theme. Use the full name on first mention and in titles; Ma is fine after that. Japanese names keep their characters on first use: 間の色 Ma no Iro, 黒紫 Kuromurasaki, 白緑 Byakuroku.
 
 ## Open decisions (ask before assuming)

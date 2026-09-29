@@ -3,7 +3,7 @@
   "short": "Ma",
   "slug": "ma-no-iro",
   "jp": "間の色",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Eight colours in four complementary pairs, all crossing at one grey, and a guide to how colour works.",
   "derivation": {
     "white_point": "D65",

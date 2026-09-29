@@ -4,6 +4,23 @@ All notable changes to Ma no Iro 間の色 are recorded here. The version is the
 
 Ports and the design system read colours from `palette.json` by token name, so every entry lists changed token values as old → new. Until 1.0, a minor version may change token values; a patch version never does. `SPEC.md` section 10 keeps the reasoning behind each decision.
 
+## [0.4.1] - 2026-09-30
+
+No token value changed.
+
+### Changed
+
+- **Showcase, as the base for the landing page.**
+  - A new "At a glance" scene after the title shows both flavors in an editor.
+  - The anchors scene is headed "Three anchors, and the ink" and says what each anchor is: the peak of daylight vision, the law of scattering, the end of the visible spectrum.
+  - A footer states the version, the licence and where the values live.
+- SPEC section 3: the c540 and c550 hues in the anchor table are corrected from 332.4 and 326.4 to 332.5 and 326.5, as `derive.py` solves them.
+- Licence holder: ken-kuro.
+
+### Removed
+
+- **The anchor slider.** It moved the green anchor and re-solved the purple, which made a fixed palette look adjustable and made 555 nm, a measured peak of vision, look like an arbitrary pick. The chart is now static.
+
 ## [0.4.0] - 2026-09-29
 
 ### Changed

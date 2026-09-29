@@ -40,7 +40,7 @@ import os
 import sys
 from itertools import combinations
 
-VERSION = "0.4.0"
+VERSION = "0.4.1"
 GREEN_NM = 555.0
 BRIGHT_STEP = 0.08      # one ANSI rung of lightness, toward the text colour
 BRIGHT_GREEN_C = 0.11   # dark bright green, softened so it never reads as the seed
