@@ -1,0 +1,33 @@
+# Checks that must pass before a palette change lands.
+name: palette
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  PYTHON: "3.13"
+  STRICT: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON }}
+      - name: Derive and check
+        run: |
+          python tools/derive.py --check
+          git diff --exit-code palette.json
+      - &notify
+        name: Report
+        if: failure()
+        run: echo "palette is stale or breaks policy" >&2
+anchors:
+  flavors: &flavors
+    - kuromurasaki
+    - byakuroku
+  weak_pairs: ~

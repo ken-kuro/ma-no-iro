@@ -4,6 +4,28 @@ All notable changes to Ma no Iro 間の色 are recorded here. The version is the
 
 Ports and the design system read colours from `palette.json` by token name, so every entry lists changed token values as old → new. Until 1.0, a minor version may change token values; a patch version never does. `SPEC.md` section 10 keeps the reasoning behind each decision.
 
+## [0.4.0] - 2026-09-29
+
+### Changed
+
+- **Day-flavor types stand apart from comments.** For protanopes, `type` was ΔE 0.009 from `muted` (comments), effectively one colour. The sRGB gamut caps dark cyan near chroma 0.076, so the fix is lightness: the pair is now 0.039 apart, and the day flavor's weak pairs fall from five to two.
+  - Byakuroku `type`: `#016b66` → `#07625e` (L 0.475 → 0.45)
+  - Byakuroku `subtle`: `#525252` → `#424242` (L 0.44 → 0.38)
+- **Only the seed is vivid (R7).** Night red had the seed's chroma.
+  - Kuromurasaki `red`: `#fa5573` → `#ed647a` (C 0.20 → 0.17), and ANSI 1 red with it
+  - Derived from it: `diff_delete` `#321f20` → `#302021`, `diff_delete_strong` `#4d282c` → `#4a2a2e`, `error_bg` `#2c1d1e` → `#2a1d1e`
+- **ANSI brights are a visible step.** The bright rung grew from 0.06 to 0.08 lightness; most pairs were only ΔE 0.06 apart and are now 0.078 or more.
+  - Kuromurasaki brights: red `#ff7b8c` → `#fe8897`, green `#b6eda6` → `#bdf3ac`, yellow `#fff4ad` → `#fff7c3`, blue `#98b5fe` → `#a1bcff`, magenta `#df8ced` → `#e692f4`, cyan `#7df6ee` → `#84fcf4`
+  - Byakuroku brights: red `#860029` → `#7d0025`, green `#1a4301` → `#173d01`, blue `#0d4da8` → `#0446a2`, magenta `#63006f` → `#5c0166`, cyan `#036460` → `#045e5a`
+  - Byakuroku ANSI 7 white: `#dfdfdf` (`overlay`) → `#a4a4a4` (`dim`); ANSI 15 bright white: `#ededed` (`mantle`) → `#dfdfdf` (`overlay`). Text printed in white was 1.23:1 on the ground and is now 2.31:1.
+
+### Added
+
+- Policy check: every ANSI bright must be at least 0.07 from its normal in Oklab.
+- Policy check: no colour may have as much chroma as `seed` (R7).
+- `samples/`: one file per language and format that ports are checked against.
+- MIT licence.
+
 ## [0.3.0] - 2026-09-29
 
 ### Changed

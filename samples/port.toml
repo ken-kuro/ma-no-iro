@@ -1,0 +1,18 @@
+# A port manifest: what a port declares about itself.
+
+[port]
+name = "Ma no Iro"
+target = "ghostty"
+version = "1.0.0"
+flavors = ["ma-no-iro-kuromurasaki", "ma-no-iro-byakuroku"]
+translucent = false
+
+[port.checks]
+samples = ["derive.py", "flavor.rs", "terminal.sh"]
+min_contrast = 4.5
+released = 2026-09-29
+
+[[screenshot]]
+flavor = "kuromurasaki"
+path = 'shots/kuromurasaki.png'
+size = { width = 1280, height = 800 }

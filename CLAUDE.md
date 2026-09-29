@@ -39,6 +39,7 @@ This repository is the base for the Ma no Iro design system, which reads tokens 
 
 ```
 palette.json            generated palette, both flavors
+LICENSE                 MIT
 CHANGELOG.md            what changed per palette version, old → new hex
 SPEC.md                 specification
 tools/derive.py         derivation and policy check
@@ -58,6 +59,5 @@ Sentence case. Plain verbs. Lead with the exchange (the leaf, the sky, the water
 
 ## Open decisions (ask before assuming)
 
-- Licence (MIT is the common choice for palettes).
-- Registry availability for `ma-no-iro`: GitHub, npm, the VS Code Marketplace, Open VSX and the JetBrains Marketplace.
+- Claiming the `ma-no-iro` names. As of 2026-09-29 none was taken: the GitHub org, the npm package and scope, the VS Code Marketplace publisher, the Open VSX namespace, the JetBrains Marketplace, PyPI, crates.io, ma-no-iro.com and manoiro.com.
 - Hosting for the website.

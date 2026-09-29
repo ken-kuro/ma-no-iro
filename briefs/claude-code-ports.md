@@ -17,7 +17,7 @@ Run this in the repository root. `CLAUDE.md` has the working rules; `SPEC.md` se
 
 ## Samples
 
-`samples/palette.ts` exists. Add samples for Python, Rust, Go, HTML, CSS, JSON, YAML, TOML, Markdown, a unified diff and a shell session, each exercising the roles in `SPEC.md` section 6: parameters, instance words, decorators, escapes, interpolation, regex, doc-comment tags, markup attributes, headings, links and code spans.
+`samples/` holds one file per language and format; `samples/README.md` lists which rows of `SPEC.md` section 6 each covers. Check every port against all of them, and run `samples/terminal.sh` inside every terminal port. When the role map gains a row, extend the sample that fits.
 
 ## Order
 

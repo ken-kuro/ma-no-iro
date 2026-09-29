@@ -1,0 +1,31 @@
+diff --git a/tools/derive.py b/tools/derive.py
+index 3f1c2a9..8b0d4e7 100644
+--- a/tools/derive.py
++++ b/tools/derive.py
+@@ -196,7 +196,7 @@ FLAVORS = {
+             "mantle": ("n", 0.165), "base": ("n", 0.19), "surface": ("n", 0.225), "overlay": ("n", 0.27),
+             "dim": ("n", 0.45), "muted": ("n", 0.63), "subtle": ("n", 0.76), "text": ("n", 0.92),
+-            "hl_low": ("n", 0.215), "hl_med": ("n", 0.255), "hl_high": ("n", 0.30),
++            "hl_low": ("n", 0.215), "hl_med": ("n", 0.255), "hl_high": ("n", 0.34),
+             "keyword": ("p", 0.70, 0.16), "special": ("p", 0.86, 0.075),
+             "function": ("g", 0.83, 0.13), "seed": ("g", 0.90, 0.20),
+             "string": ("b", 0.79, 0.095), "blue": ("b", 0.72, 0.13),
+@@ -401,9 +401,8 @@ def build():
+         brights = {
+             "black": ("token", "muted"), "red": ("step", "red"),
+-            "green": ("token", "seed") if dark else ("step", "function"),
++            "green": ("step", "function"),
+             "yellow": ("step", "yellow_text") if dark else ("token", "yellow"),
+             "blue": ("step", "blue"),
+-            "magenta": ("step", "keyword") if dark else ("token", "seed"),
+-            "cyan": ("step", "cyan"),
++            "magenta": ("step", "keyword"),
++            "cyan": ("step", "cyan"), "white": ("token", "text" if dark else "overlay"),
+         }
+diff --git a/NOTES b/NOTES
+deleted file mode 100644
+--- a/NOTES
++++ /dev/null
+@@ -1 +0,0 @@
+-the seed is the bright of its own hue
+\ No newline at end of file

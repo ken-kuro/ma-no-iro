@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>間の色 Ma no Iro &middot; the four exchanges</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- tokens come from palette.json at build time -->
+</head>
+<body class="kuromurasaki">
+  <header id="top">
+    <h1 lang="ja">間の色</h1>
+    <p>Eight colours, four pairs, one grey &amp; nothing picked by eye.</p>
+  </header>
+  <main>
+    <ol class="scenes" data-count="4">
+      <li><a href="#leaf" title="555 nm">The leaf</a></li>
+      <li><a href="#sky" title="&lambda;&#8315;&#8308;">The sky</a></li>
+      <li><a href="#water" title="700 nm">The water</a></li>
+      <li><a href="#ink">The ink</a></li>
+    </ol>
+    <input type="checkbox" id="day" checked disabled>
+    <label for="day">Byakuroku</label>
+  </main>
+  <script type="module">
+    document.body.classList.toggle("byakuroku", matchMedia("(prefers-color-scheme: light)").matches);
+  </script>
+</body>
+</html>

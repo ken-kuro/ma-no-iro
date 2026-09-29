@@ -40,8 +40,9 @@ import os
 import sys
 from itertools import combinations
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 GREEN_NM = 555.0
+BRIGHT_STEP = 0.08      # one ANSI rung of lightness, toward the text colour
 BRIGHT_GREEN_C = 0.11   # dark bright green, softened so it never reads as the seed
 D65 = (0.3127, 0.3290)
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -204,7 +205,7 @@ FLAVORS = {
             "string": ("b", 0.79, 0.095), "blue": ("b", 0.72, 0.13),
             "yellow": ("y", 0.90, 0.15), "yellow_text": ("y", 0.90, 0.15),
             "type": ("q", 0.68, 0.10), "cyan": ("q", 0.84, 0.11),
-            "red": ("r", 0.68, 0.20),
+            "red": ("r", 0.68, 0.17),
         },
     },
     "byakuroku": {
@@ -212,13 +213,13 @@ FLAVORS = {
         "appearance": "light", "ground": "white", "home": "green", "seed_hue": "purple",
         "tokens": {
             "mantle": ("n", 0.945), "base": ("n", 0.975), "surface": ("n", 0.995), "overlay": ("n", 0.905),
-            "dim": ("n", 0.72), "muted": ("n", 0.515), "subtle": ("n", 0.44), "text": ("n", 0.25),
+            "dim": ("n", 0.72), "muted": ("n", 0.515), "subtle": ("n", 0.38), "text": ("n", 0.25),
             "hl_low": ("n", 0.955), "hl_med": ("n", 0.93), "hl_high": ("n", 0.86),
             "keyword": ("p", 0.42, 0.17), "special": ("p", 0.54, 0.10),
             "function": ("g", 0.40, 0.11), "seed": ("p", 0.47, 0.22),
             "string": ("b", 0.49, 0.14), "blue": ("b", 0.50, 0.16),
             "yellow": ("y", 0.645, 0.135), "yellow_text": ("y", 0.525, 0.12),
-            "type": ("q", 0.475, 0.09), "cyan": ("q", 0.515, 0.09),
+            "type": ("q", 0.45, 0.09), "cyan": ("q", 0.515, 0.09),
             "red": ("r", 0.455, 0.19),
         },
     },
@@ -394,10 +395,10 @@ def build():
             derived[k]["alpha"] = alpha_equivalent(derived[k]["hex"], colors["base"]["hex"])
 
         dark = f["appearance"] == "dark"
-        step = 0.06 if dark else -0.06
+        step = BRIGHT_STEP if dark else -BRIGHT_STEP
         normal = {
             "black": "overlay" if dark else "text", "red": "red", "green": "function", "yellow": "yellow_text",
-            "blue": "blue", "magenta": "keyword", "cyan": "cyan", "white": "subtle" if dark else "overlay",
+            "blue": "blue", "magenta": "keyword", "cyan": "cyan", "white": "subtle" if dark else "dim",
         }
         brights = {
             "black": ("token", "muted"), "red": ("step", "red"),
@@ -405,10 +406,10 @@ def build():
             "yellow": ("step", "yellow_text") if dark else ("token", "yellow"),
             "blue": ("step", "blue"),
             "magenta": ("step", "keyword"),
-            "cyan": ("step", "cyan"), "white": ("token", "text" if dark else "mantle"),
+            "cyan": ("step", "cyan"), "white": ("token", "text" if dark else "overlay"),
         }
         ansi = {"normal": {}, "bright": {}, "rule": "Bright colours step one rung toward the text colour: "
-                "lightness +0.06 on the dark flavor, -0.06 on the light, chroma reduced only if out of gamut. "
+                f"lightness +{BRIGHT_STEP} on the dark flavor, -{BRIGHT_STEP} on the light, chroma reduced only if out of gamut. "
                 "Bright green on the dark flavor is also capped at chroma 0.11 so it stays apart from the seed. "
                 "The seed is never an ANSI colour. Exception: on the light flavor bright yellow is the gold signal."}
         for i, (name, tok) in enumerate(normal.items()):
@@ -450,6 +451,15 @@ def report(pal, verbose=True):
                 d = delta_e(lin["seed"], hex_to_lin(e["hex"]))
                 if d < 0.07:
                     failures.append(f"{fid}: ANSI {r} {name} is only {d:.3f} from the seed")
+        # every bright must read as a step of its own from its normal
+        for name, e in f["ansi"]["normal"].items():
+            d = delta_e(hex_to_lin(e["hex"]), hex_to_lin(f["ansi"]["bright"][name]["hex"]))
+            if d < 0.07:
+                failures.append(f"{fid}: ANSI {name} and bright {name} are only {d:.3f} apart")
+        # the dose (R7): only the seed is vivid
+        for k, v in c.items():
+            if k != "seed" and v["oklch"][1] >= c["seed"]["oklch"][1]:
+                failures.append(f"{fid}: {k} has chroma {v['oklch'][1]}, as vivid as the seed")
         # selection must read as a step of its own, apart from borders and the word highlight
         for other in ["overlay", "hl_med"]:
             d = abs(c["hl_high"]["oklch"][0] - c[other]["oklch"][0])

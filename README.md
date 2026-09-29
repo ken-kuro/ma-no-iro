@@ -63,3 +63,7 @@ The script is plain Python with no dependencies.
 ## Contributing
 
 Read `SPEC.md` before anything else. Never type a hex value by hand: ports are generated from `palette.json`, and `tools/derive.py --check` must pass.
+
+## Licence
+
+MIT. See `LICENSE`. If you fork Ma no Iro and change its colours, please give the fork a different name.
