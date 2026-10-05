@@ -15,7 +15,7 @@ Ma no Iro (Ma for short) is a two-flavor colour palette for code editors, termin
 | Night | 黒紫 Kuromurasaki | black | purple | green |
 | Day | 白緑 Byakuroku | white | green | purple |
 
-The name 間の色 means *the colour of the interval*. 間 is read *ma* in Japanese and *gian* in Vietnamese: the gap between things that gives them their shape. In Ma no Iro the interval is literal. It is the grey where every pair of colours in the palette meets.
+The name 間の色 means *the colour of the interval*. 間 is read *ma* in Japanese and *gian* in Vietnamese, where it sits inside everyday words: *thời gian* (時間), time, and *không gian* (空間), space. It is the gap between things that gives them their shape. In Ma no Iro the interval is literal. It is the grey where every pair of colours in the palette meets.
 
 ## 2. The idea
 
@@ -36,7 +36,7 @@ Ma no Iro is four of those exchanges:
 
 **The eye.** The retina has three cone types, most sensitive near 570, 545 and 445 nm (Stockman and Sharpe fundamentals). Colour is how strongly light excites the three, so different spectra can look identical. Purple is non-spectral: no single wavelength excites the long and short cones while sparing the medium, so purple is made by the eye. Post-receptoral comparisons run roughly between green and magenta and between violet and yellow; they do not line up exactly with the perceptual opposites red–green and blue–yellow.
 
-**The interval.** A screen's colours fill the RGB cube, whose eight corners are the terminal's eight colours. Opposite corners are complements for the screen's primaries, and the four lines joining them cross at mid grey. That grey is 間, the interval, and it is Ma no Iro's ground. Seen down the grey axis, the cube is a hexagon of six colours around a grey centre: the project's mark. The cube is a model of a display, not of light or perception.
+**The interval.** A screen's colours fill the RGB cube, whose eight corners are the terminal's eight colours. Opposite corners are complements for the screen's primaries, and the four lines joining them cross at mid grey. That grey is 間, the interval, and it is Ma no Iro's ground. The palette's eight colours are named for the corners but are not the corners: each is solved from its anchor (section 3) and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey. Seen down the grey axis, the cube is a hexagon of six colours around a grey centre: the project's mark. The cube is a model of a display, not of light or perception.
 
 **Night and day.** In the sRGB luminance formula, green contributes 71.52% of white and red and blue together 28.48%. Pairing green with the day flavor and purple with the night is a design choice grounded in that split.
 

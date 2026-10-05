@@ -62,7 +62,7 @@ A screen makes every colour from three lights, red, green and blue, so the colou
 
 The grey is where the palette takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks.
 
-*Strictly speaking:* the cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen's three lights; painters mixing pigments, and perception itself, pair colours a little differently.
+*Strictly speaking:* the cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen's three lights; painters mixing pigments, and perception itself, pair colours a little differently. And Ma no Iro's colours are named for the corners, not taken from them: each is solved from its anchor and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey.
 
 ## Traditions
 

@@ -23,7 +23,7 @@ Fire, stars and screens make colour by giving light off. Almost everything else 
 - **The water** absorbs red, so deep water looks cyan. Anchored at 700 nm, the end of red.
 - **The ink** takes almost all light and paper gives it all back: black and white, the amount of light itself.
 
-Those eight colours are the corners of the colour cube, which is also the terminal's eight. Opposite corners are complements, and all four lines between them cross at one grey. That grey is the interval, 間, and it is the ground everything in Ma no Iro sits on.
+Those eight colours are the terminal's eight, named for the corners of the colour cube. They are not the corners themselves: each is solved from its anchor and sits a few degrees of hue from the corner it is named for. Opposite colours are complements, and all four lines between them cross at one grey. That grey is the interval, 間, and it is the ground everything in Ma no Iro sits on.
 
 Each pair is named for its scene and anchored at one reference point: the eye's daylight peak for the leaf, the scattering curve for the sky, the end of red for the water. Only the sky's anchor is the physics of its own scene; the other two are choices, not measurements of a leaf or a lake. From each anchor the partner is solved on the far side of white, and every shade is solved the same way, so once the anchors are set no hue is picked by eye. You can rerun the derivation yourself.
 
