@@ -16,7 +16,7 @@ A static site generator that renders Markdown and ships no JavaScript by default
 
 ## Pages
 
-- **Home.** The story in the order `docs/showcase.html` uses: the exchange, the leaf, the sky, the water, the ink, the eye, the interval, traditions, three anchors, two flavors, the palette in use. Every scene keeps its strictly-speaking note. Each scene links onward to the palette and ports.
+- **Home.** The story in the order `docs/showcase.html` uses: the exchange, the leaf, the sky, the water, the ink, the eye, the in-between, traditions, three anchors, two flavors, the palette in use. Every scene keeps its strictly-speaking note. Each scene links onward to the palette and ports.
 - **Palette.** Both flavors as tables generated from `palette.json`, grouped by scene: token, role, hex, RGB, OKLCH, contrast, and the alpha equivalent where one exists. Copy buttons for each format. The ANSI table and derived washes.
 - **Specification.** `SPEC.md` rendered, with a table of contents.
 - **Story.** `docs/story.md` rendered.
@@ -37,7 +37,7 @@ A static site generator that renders Markdown and ships no JavaScript by default
 ## Requirements
 
 - **Colour.** Generate CSS custom properties from `palette.json` at build time. A build step fails if any source file other than generated output contains a hex colour.
-- **Rules.** Follow `SPEC.md` section 4 on the site itself: home colour for chrome, seed only for focus and the point of attention, grey grounds and highlights, no gradients.
+- **Rules.** Follow `SPEC.md` section 4 on the site itself: home colour for chrome, seed only for focus and the point of attention, grey grounds and highlights, and gradients only as R9 allows.
 - **Accessibility.** WCAG 2.2 AA. Visible focus everywhere. Full keyboard use of every interactive piece.
 - **Performance.** No layout shift from fonts. Subset CJK fonts to the characters used.
 - **Tests.** A parity test that runs `tools/derive.py` and compares the TypeScript derivation against it for every accent. Link checking. `python3 tools/derive.py --check` in CI.

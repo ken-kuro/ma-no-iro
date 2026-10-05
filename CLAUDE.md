@@ -1,6 +1,6 @@
 # Ma no Iro 間の色: working notes for Claude
 
-Ma no Iro (Ma for short, slug `ma-no-iro`) is an open-source colour palette with two flavors, Kuromurasaki (night) and Byakuroku (day). Its eight colours are four complementary pairs, each anchored by one spectrum and all crossing at one grey: the leaf (green and purple, 555 nm), the sky (blue and yellow, λ⁻⁴), the water (cyan and red, 700 nm) and the ink (black and white). This repository holds the palette, its specification, the ports that apply it to software, and the website.
+Ma no Iro (Ma for short, slug `ma-no-iro`) is an open-source colour palette with two flavors, Kuromurasaki (night) and Byakuroku (day). Its eight colours are four complementary pairs, each anchored by one spectrum and all crossing at one grey, the in-between: the leaf (green and purple, 555 nm), the sky (blue and yellow, λ⁻⁴), the water (cyan and red, 700 nm) and the ink (black and white). This repository holds the palette, its specification, the ports that apply it to software, and the website.
 
 ## Sources of truth
 
@@ -24,7 +24,8 @@ This repository is the base for the Ma no Iro design system, which reads tokens 
 ## Rules that are easy to break
 
 - Never introduce a hex value that is not in `palette.json`. Ports read colours through templates.
-- Never raise chroma, add a gradient, or tint a neutral or a highlight. See SPEC R5, R7, R9.
+- Never raise chroma or tint a neutral or a highlight. See SPEC R5 and R7.
+- Ports are flat. Elsewhere a gradient is only a two-stop mix of partners (one pair, or two inks) in linear light. See SPEC R9.
 - Code uses `keyword`, `function`, `string`, `type`, `special` and the neutrals. `red` and `yellow` never colour code; they are for errors, deletions, warnings and search. See SPEC R4.
 - Green colours only functions and added lines. See SPEC R6.
 - Selection, current line and word highlights are the grey `hl_*` tokens, never an accent.

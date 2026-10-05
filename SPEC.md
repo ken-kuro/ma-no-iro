@@ -8,14 +8,21 @@ The words *must*, *should* and *may* are used in their usual specification sense
 
 ## 1. What Ma no Iro is
 
-Ma no Iro (Ma for short) is a two-flavor colour palette for code editors, terminals and interfaces.
+Ma no Iro (Ma for short) is a two-flavor colour palette for code editors, terminals and interfaces, and the base of the Ma no Iro design system.
 
 | Flavor | Name | Ground | Home colour | Seed |
 | --- | --- | --- | --- | --- |
 | Night | 黒紫 Kuromurasaki | black | purple | green |
 | Day | 白緑 Byakuroku | white | green | purple |
 
-The name 間の色 means *the colour of the interval*. 間 is read *ma* in Japanese and *gian* in Vietnamese, where it sits inside everyday words: *thời gian* (時間), time, and *không gian* (空間), space. It is the gap between things that gives them their shape. In Ma no Iro the interval is literal. It is the grey where every pair of colours in the palette meets.
+The name 間の色 means *the colour of the in-between*. 間 is a Chinese character. Its older form, 閒, puts the moon 月 inside a door 門; the *Shuowen* glosses it as 隙, a gap, and Xu Kai's commentary explains why: a door shut at night that still shows moonlight has a gap in it. The name is Japanese, and *ma* is the Japanese word for the gap itself, the in-between that gives things their shape. The character is shared more widely than the word. Chinese, Japanese, Korean and Vietnamese all build their words for time and space from it:
+
+| | Chinese | Japanese | Korean | Vietnamese |
+| --- | --- | --- | --- | --- |
+| Time, 時間 | shíjiān | jikan | sigan | thời gian |
+| Space, 空間 | kōngjiān | kūkan | gonggan | không gian |
+
+In Ma no Iro the in-between is literal. It is the grey where every pair of colours in the palette meets.
 
 ## 2. The idea
 
@@ -36,11 +43,18 @@ Ma no Iro is four of those exchanges:
 
 **The eye.** The retina has three cone types, most sensitive near 570, 545 and 445 nm (Stockman and Sharpe fundamentals). Colour is how strongly light excites the three, so different spectra can look identical. Purple is non-spectral: no single wavelength excites the long and short cones while sparing the medium, so purple is made by the eye. Post-receptoral comparisons run roughly between green and magenta and between violet and yellow; they do not line up exactly with the perceptual opposites red–green and blue–yellow.
 
-**The interval.** A screen's colours fill the RGB cube, whose eight corners are the terminal's eight colours. Opposite corners are complements for the screen's primaries, and the four lines joining them cross at mid grey. That grey is 間, the interval, and it is Ma no Iro's ground. The palette's eight colours are named for the corners but are not the corners: each is solved from its anchor (section 3) and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey. Seen down the grey axis, the cube is a hexagon of six colours around a grey centre: the project's mark. The cube is a model of a display, not of light or perception.
+**The in-between.** A screen's colours fill the RGB cube, whose eight corners are the terminal's eight colours. Each channel is either off or on at a corner, so the corners are the eight values of three bits. Opposite corners are complements for the screen's primaries, and the four lines joining them cross at mid grey. Mixed as light, each of Ma no Iro's pairs passes through a neutral grey on the way from one colour to the other, because both halves lie on one line through the white point. That grey is 間, the in-between, and it is Ma no Iro's ground. The palette's eight colours are named for the corners but are not the corners: each is solved from its anchor (section 3) and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey. Seen down the grey axis, the cube is a hexagon of six colours around a grey centre: the project's mark. The cube is a model of a display, not of light or perception.
 
 **Night and day.** In the sRGB luminance formula, green contributes 71.52% of white and red and blue together 28.48%. Pairing green with the day flavor and purple with the night is a design choice grounded in that split.
 
-**Traditions.** Classical Chinese colour theory named five 正色, cardinal colours, and 間色, intermediary colours, between them; in one common list green, purple and jade (綠, 紫, 碧) are intermediaries. Yin and yang, opposites that each hold a seed of the other, give the flavors their seed. In Japanese aesthetics 間 is the interval or negative space that gives a form its shape, the idea that a thing can be known by what it lacks. These are correspondences and borrowed images, not proofs, and classical colour words do not map one to one onto modern hues; nothing in the derivation depends on them.
+**Traditions.** Ma no Iro borrows from four traditions. Each is a correspondence, not a proof, and nothing in the derivation depends on any of them.
+
+- **In-between colours.** Classical Chinese colour theory named five 正色, cardinal colours, and 間色, intermediary colours, between them; in one common list green, purple and jade (綠, 紫, 碧) are intermediaries, so the leaf's pair are in-between colours in that older sense too. Purple's standing changed while the colour did not: Confucius objected to purple displacing vermilion (惡紫之奪朱也, *Analects* 17.18), Tang rules of 630 dressed officials of the third rank and above in purple, and Japan's Yōrō code, in force from 757, gave the first rank deep purple. Green's name in Ma changes the other way: 白緑 is malachite ground so fine that it turns pale. The mineral is the same; smaller grains scatter more light.
+- **Yin and yang.** Opposites that each hold a seed of the other and turn into each other. Ma no Iro borrows the image for its two flavors and their seeds, never for the grey: yin and yang touch but do not mix, and light does.
+- **The eight trigrams.** 易有太極，是生兩儀，兩儀生四象，四象生八卦 (*Yijing*, Xici): one gives two, two give four, four give eight. Each trigram is three lines, each yin or yang, so the trigrams are the eight values of three bits, like the cube's corners. ☷ 坤, all yin, is black; ☰ 乾, all yang, is white. In the arrangement attributed to Fuxi and set down by Shao Yong in the eleventh century, every trigram faces its inverse across the centre, as every corner of the cube faces its complement, and Leibniz read the same figures as binary arithmetic in 1703. The match is structural only. The *Yijing*'s four images are not Ma's four pairs, and single trigrams do not map onto colours: 坎 water and 離 fire are inverses, so they always land on a complementary pair, but which pair depends only on which channel is read as the middle line. Green and purple, red and cyan, or blue and yellow; in one reading water comes out red. A correspondence that can be made to say anything proves nothing.
+- **Ma.** In Japanese aesthetics 間 is the interval or negative space that gives a form its shape. Ma no Iro extends it to the idea that a thing can be known by what it lacks; that extension is the project's, not the tradition's.
+
+Classical colour words do not map one to one onto modern hues: 青 covers blue and green, 碧 is broader than jade, and lists of intermediary colours differ between sources.
 
 ## 3. Derivation
 
@@ -70,7 +84,7 @@ The anchors are reference points chosen for each scene, not measurements of it; 
 
 **R4. Code is written in the leaf, the sky and the water.** Keywords are purple and functions are green (the leaf). Strings are blue (the sky). Types are cyan (the water). Numbers, constants and escapes are a pale purple. Red and yellow never colour code: red is kept for errors and deletions, yellow for warnings and search. Meaning is fixed across flavors. The scenes explain where each colour comes from; the assignment to tokens is a design choice, made so that the most frequent tokens carry the palette's own pair.
 
-**R5. The ground is the interval.** Neutrals are pure grey, chroma 0, in both flavors. Selection, current line and word highlights are grey steps of the ground, so the code under them never changes hue. Neither flavor uses pure black or pure white as its base.
+**R5. The ground is the in-between.** Neutrals are pure grey, chroma 0, in both flavors. Selection, current line and word highlights are grey steps of the ground, so the code under them never changes hue. Neither flavor uses pure black or pure white as its base.
 
 **R6. One green in code.** Green colours only functions, so an added line in a diff is the only green background a reader sees.
 
@@ -78,7 +92,13 @@ The anchors are reference points chosen for each scene, not measurements of it; 
 
 **R8. Two yellows on white.** A yellow that is readable as text on white does not exist, since dark yellow is olive or brown. The day flavor has `yellow` for signals at 3:1 and `yellow_text` for text at 4.5:1. In the night flavor both names hold the same colour. Ports use `yellow` for squiggles, icons, borders and the search wash, and `yellow_text` for anything read as text, including ANSI yellow.
 
-**R9. Flat colour.** No gradients, anywhere.
+**R9. Flat, except a mix.** This rule binds Ma no Iro's own ports, website and design system; what others build with the palette is theirs. Ports are flat: every colour a port writes is one opaque value from `palette.json`, or its `alpha.hex8`. Outside ports, in figures, the website and the design system, a gradient is allowed only as a mix of light:
+
+- it has exactly two stops, either the two halves of one pair or two steps of the ink;
+- it interpolates in linear light (in CSS, `in srgb-linear`), so a pair's mix passes through a neutral grey;
+- it obeys R7 like any other area, and it never glows: no blur, no colour shadows, no third hue.
+
+A gradient between colours that are not partners sweeps through other hues on the way. The purple-to-green aurora that generated interfaces default to takes the long way round, through blue, and stays bright; Ma's leaf, mixed as light, takes the short way, through grey.
 
 **R10. Opaque first.** Every colour is specified opaque. Where a target requires translucent highlights (VS Code and Zed do for several backgrounds, so decorations underneath stay visible), a port must use the `alpha.hex8` value from `palette.json`, which composites over `base` to the exact opaque colour.
 
@@ -381,10 +401,10 @@ A port is accepted when it meets all of the following.
 
 ## 9. Naming and voice
 
-- **Ma no Iro** (間の色): the project, *the colour of the interval*. Read ま の いろ. Use the full name on first mention, in titles and in package names; `Ma` is the short form in running text.
+- **Ma no Iro** (間の色): the project, *the colour of the in-between*. Read ま の いろ. Use the full name on first mention, in titles and in package names; `Ma` is the short form in running text.
 - **Kuromurasaki** (黒紫): the night flavor, black-purple. Read くろむらさき. The other reading of 黒紫, *kokushi*, collides with 黒子 (a mole on the skin), so it is not used.
 - **Byakuroku** (白緑): the day flavor, white-green. Read びゃくろく. It is also the name of a pale green pigment in Japanese painting, made by grinding malachite until it lightens.
-- **The scenes** are the leaf, the sky, the water and the ink, plus the eye, the interval and the traditions. Use them when explaining why a colour is where it is, and always keep the limits that go with them.
+- **The scenes** are the leaf, the sky, the water and the ink, plus the eye, the in-between and the traditions. Use them when explaining why a colour is where it is, and always keep the limits that go with them.
 - **Token names** are by role (`keyword`, `hl_high`), not by colour, so a port is a lookup.
 
 When writing about Ma no Iro, lead with the exchange, then the number, then the limit. Never present a model as nature, a correspondence as a proof, or a design choice as a law. Say "purple", "green", "blue", "yellow", "cyan" and "red"; avoid "violet", "lavender", "lime" and "teal", which name other hues. Ma no Iro is not a purple theme: it is four pairs around a grey.
@@ -407,6 +427,9 @@ When writing about Ma no Iro, lead with the exchange, then the number, then the 
 - **0.4: types apart from comments.** On the day flavor, `type` was ΔE 0.009 from `muted` for protanopes, effectively the same colour. Dark cyan is capped near chroma 0.076 by the sRGB gamut, so chroma could not separate them; `type` moved to L 0.45 and `subtle` to 0.38, which raised the pair to 0.039 and cleared two other weak pairs.
 - **0.4: only the seed is vivid.** Night `red` had chroma 0.20, the same as the seed, which broke R7. It moved to 0.17, and `derive.py` now fails if any colour reaches the seed's chroma.
 - **0.4: brights are a visible step.** Most brights were ΔE 0.06 from their normals. The step grew from 0.06 to 0.08 lightness, day-flavor ANSI white moved from `overlay` to `dim`, and `derive.py` requires 0.07.
+- **0.4.1: the in-between, not the interval.** "Interval" read as music or arithmetic. 間の色 is now glossed *the colour of the in-between*, its literal reading; "interval" stays as one gloss of *ma*.
+- **0.4.1: yin-yang is the flavors, not the grey.** The taijitu has no grey: its halves touch and never blend. The grey is credited to light mixing and to 間, and yin-yang only to the flavors and their seeds.
+- **0.4.1: a gradient is a mix.** R9 banned gradients anywhere, as a guard against the purple-to-green aurora of generated interfaces. That was too strict for a design system, and it hid the palette's clearest demonstration: a pair mixed in linear light passes through its grey. Ports stay flat; elsewhere a gradient may be a two-stop mix of partners in linear light.
 - **0.4.1: no anchor slider.** The showcase had a slider that moved the green anchor and re-solved the purple. It made a fixed palette look adjustable and the one anchor that comes from the eye look arbitrary, so it was removed. The table above keeps the comparison for readers who want it. Anchoring the leaf at its purple (c555 nm) was tried and dropped for the same reason: 555 nm is a measured peak of vision, and naming the pair by its complement added nothing.
 
 ## 11. References
@@ -419,6 +442,12 @@ When writing about Ma no Iro, lead with the exchange, then the number, then the 
 - Andrew Stockman and Lindsay T. Sharpe, 2-degree cone fundamentals (2000), via the colour-science package.
 - CIE photopic luminosity function V(λ), peak at 555 nm.
 - IEC 61966-2-1 (sRGB) and ITU-R BT.709: luminance coefficients.
+- *Analects* 17.18 (陽貨): 惡紫之奪朱也.
+- *Yijing*, Xici I, 11: 易有太極，是生兩儀，兩儀生四象，四象生八卦.
+- Xu Shen, *Shuowen jiezi*, entry 閒 (隙也，从門从月), with Xu Kai's commentary.
+- *Old Book of Tang*, 輿服志 (juan 45): the robe colours of 630. The Yōrō code, 衣服令: robe colours by court rank.
+- G. W. Leibniz, *Explication de l'arithmétique binaire*, Mémoires de l'Académie royale des sciences (1703); Joachim Bouvet's letter of 1701 with Shao Yong's Fuxi-order diagram.
+- Japanese mineral pigments (岩絵具): finer grades of the same mineral are paler; 白緑 is the finest grade of malachite green.
 - Machado, Oliveira and Fernandes, *A physiologically-based model for simulation of color vision deficiency* (2009).
 - W3C, WCAG 2.2: contrast minimum (1.4.3), non-text contrast (1.4.11), use of colour (1.4.1).
 - Structure borrowed from the Catppuccin style guide, the Dracula specification, the Nord documentation, the One Dark style guide and Kanagawa's split between palette colours and theme roles.

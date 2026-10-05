@@ -1,16 +1,16 @@
 # Every colour comes with the colour it takes away
 
-*Ma no Iro, 間の色: the colour of the interval.*
+*Ma no Iro, 間の色: the colour of the in-between.*
 
 Colour is confusing because it lives in three places at once. It is in the light, as a spread of wavelengths. It is in the eye, as the response of three kinds of cell. And it is in the models we draw it with: the colour wheel, the RGB cube, the charts colour scientists use. Each place has its own rules, and they do not always agree. Purple, for instance, is perfectly real to the eye and absent from the rainbow.
 
-Ma no Iro is a palette for code and terminals, and it is also a short guide through those three places, plus the traditions that named colours long before anyone measured them. Every explanation here is meant to be true. Where one is a simplification, a model or a borrowed image, it says so.
+Ma no Iro is a palette, for code and terminals first and the base of a design system next, and it is also a short guide through those three places, plus the traditions that named colours long before anyone measured them. Every explanation here is meant to be true. Where one is a simplification, a model or a borrowed image, it says so.
 
 ## The exchange
 
 Fire, stars and screens make colour by giving light off. Almost everything else you see makes it by taking light away. A leaf, the sky, water and ink each keep part of the light that reaches them and let the rest travel on to your eye. What arrives leans toward the complement of what was taken: the colour on the far side of white.
 
-That is the idea Ma no Iro is built on, and there is a second idea underneath it. A thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in a piece of music or the empty space that makes a room: 間, *ma*, the interval.
+That is the idea Ma no Iro is built on, and there is a second idea underneath it. A thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in a piece of music or the empty space that makes a room: 間, *ma*, the gap, the in-between.
 
 *Strictly speaking:* a real object removes a range of wavelengths, not a single colour, so what is left only leans toward the exact complement. The pairs in the palette are exact because they are solved in a colour model.
 
@@ -56,25 +56,27 @@ Behind the cones, the visual system compares them. One comparison runs roughly b
 
 *Strictly speaking:* the comparisons measured in the retina do not line up exactly with the opposites people name, red against green and blue against yellow. Vision science has not fully reconciled the two.
 
-## The interval
+## The in-between
 
-A screen makes every colour from three lights, red, green and blue, so the colours it can show fill a cube. Its eight corners are the eight colours a terminal names: black, red, green, yellow, blue, magenta, cyan and white. Opposite corners are complements, pairs that add up to white, and the four lines joining them all cross at the grey at the centre. Look straight down the cube from white to black and it becomes a hexagon: the colour wheel, with grey at its heart. That hexagon is Ma no Iro's mark.
+A screen makes every colour from three lights, red, green and blue, so the colours it can show fill a cube. Its eight corners are the eight colours a terminal names: black, red, green, yellow, blue, magenta, cyan and white. At each corner every light is either off or on, so the eight corners are the eight values of three bits. Opposite corners are complements, pairs that add up to white, and the four lines joining them all cross at the grey at the centre. Look straight down the cube from white to black and it becomes a hexagon: the colour wheel, with grey at its heart. That hexagon is Ma no Iro's mark.
 
-The grey is where the palette takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks.
+The grey is where the palette takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks. Run it backwards and it holds too: mix a pair as light, a little more of one and a little less of the other, and somewhere on the way there is a grey with no hue at all. Purple and green, blue and yellow, red and cyan: each pair crosses the same grey.
 
 *Strictly speaking:* the cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen's three lights; painters mixing pigments, and perception itself, pair colours a little differently. And Ma no Iro's colours are named for the corners, not taken from them: each is solved from its anchor and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey.
 
 ## Traditions
 
-Older traditions drew similar lines, and Ma no Iro borrows from three of them.
+Older traditions drew similar lines, and Ma no Iro borrows from four of them.
 
-Classical Chinese colour theory named five cardinal colours, 正色: black, white, red, yellow and 青, a blue-green. Between them lay the intermediary colours, 間色, and in one common list green, purple and jade (綠, 紫, 碧) are among them: three of the terminal's colours, in the interval.
+Classical Chinese colour theory named five cardinal colours, 正色: black, white, red, yellow and 青, a blue-green. Between them lay the intermediary colours, 間色, and in one common list green, purple and jade (綠, 紫, 碧) are among them: the leaf's pair were in-between colours long before this palette. Purple's place among them was not comfortable. Confucius said he hated the way purple displaced vermilion. More than a thousand years later, Tang officials of the third rank and above dressed in purple, and Japan's court code gave its first rank deep purple. The colour had not changed; the people looking at it had.
 
-Yin and yang are opposites that each hold a seed of the other. The palette borrows that image for its two flavors.
+Yin and yang are opposites that each hold a seed of the other and turn into each other. The palette borrows that image for its two flavors: a night that keeps a dot of green, a day that keeps a dot of purple. It does not borrow it for the grey. Yin and yang touch but never mix. Light does.
 
-And in Japanese aesthetics, *ma* is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. It is the same character that names the intermediary colours.
+The *Yijing* says that the great ultimate gives rise to two modes, the two to four images, and the four to eight trigrams. A trigram is three lines, each yin or yang, so the eight trigrams are the eight values of three bits, the same eight as the corners of the colour cube. All yin, ☷, is black; all yang, ☰, is white. In the circle attributed to Fuxi, every trigram faces its exact inverse across the centre, as every corner of the cube faces its complement. In 1703 Leibniz read the same figures as the binary arithmetic he had worked out himself.
 
-*Strictly speaking:* classical colour words do not map one to one onto modern hues. 青 covers both blue and green, and lists of intermediary colours differ between sources. These are correspondences, not proofs, and nothing in the palette depends on them.
+And in Japanese aesthetics, *ma* is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. It is the same character that names the intermediary colours. Its older form, 閒, is a door with the moon in it: shut a door at night, and if moonlight still shows, there is a gap.
+
+*Strictly speaking:* these are correspondences, not proofs, and nothing in the palette depends on them. Classical colour words do not map one to one onto modern hues: 青 covers both blue and green, and lists of intermediary colours differ between sources. The trigrams match the cube in structure only. Try to match single trigrams to single colours and it falls apart: water and fire, 坎 and 離, always land on a complementary pair, but which pair depends only on which light you read as the middle line, and in one reading water comes out red. A match that can be made to say anything proves nothing.
 
 ## Three anchors
 
@@ -88,7 +90,7 @@ Each pair in Ma no Iro has one anchor, and its partner lies on the straight line
 
 In the formula screens use for brightness, green contributes about 72% of white, and red and blue together about 28%. So green belongs to the day flavor and purple to the night.
 
-The night flavor is 黒紫, *kuromurasaki*, black-purple. The day flavor is 白緑, *byakuroku*, white-green, which is also the name of a pale green pigment in Japanese painting, made by grinding malachite until it lightens. Like a yin-yang, each keeps a dot of the other half and spends it only on what you are looking at: the cursor, the current match, the focused control.
+The night flavor is 黒紫, *kuromurasaki*, black-purple. The day flavor is 白緑, *byakuroku*, white-green, which is also the name of a pale green pigment in Japanese painting, made by grinding malachite until it lightens. The stone is the same; finer grains scatter more light, so the green turns pale without anything being added. Like a yin-yang, each keeps a dot of the other half and spends it only on what you are looking at: the cursor, the current match, the focused control.
 
 *Strictly speaking:* the pairing is a design choice grounded in that brightness split, not a law. The seed goes where it is most visible on each ground: bright green on black, deep purple on white.
 
@@ -105,7 +107,7 @@ The dose follows one rule: the larger the area, the lower the chroma. The ground
 The research behind Ma no Iro turned up more than one page can hold. These are starting points for separate essays. Anything marked for checking should be verified against a primary source before it is published.
 
 - **The aurora.** Its green and red both come from oxygen, at 557.7 nm and 630.0 nm. The first version of the palette was anchored on the green line.
-- **Purple's history as an outsider.** Twelve-rank caps at the Japanese court in 603 put purple at the top; genuine purple from gromwell root (本紫) was imitated with cheaper dyes (似紫) to get around sumptuary law. Confucius complained that purple was usurping vermilion's place at court.
+- **Purple's history as an outsider.** Twelve-rank caps at the Japanese court in 603 are often said to have put purple at the top, though the colours are a later reconstruction; check before citing. Genuine purple from gromwell root (本紫) was imitated with cheaper dyes (似紫) to get around sumptuary law. The verified part, from Confucius to the Tang and Yōrō robe rules, is now in Traditions.
 - **Tím Huế.** One account traces Huế purple to a Chăm garment colour that became the colour of the city's schoolgirls' áo dài. Vietnamese reads purple as constancy and reserve; the West often reads the same hue as poison and villainy.
 - **Villains in secondary colours.** Early comics printed with a four-colour process in which primaries reproduced cleanly and secondaries muddied, which may be why so many villains wear green and purple. Worth checking against printing histories.
 - **The machine default.** A widely repeated story holds that indigo became the default accent of generated interfaces through one component library's placeholder buttons. Verify against the original sources before citing.

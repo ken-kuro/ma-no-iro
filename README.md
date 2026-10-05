@@ -1,8 +1,8 @@
 # 間の色 Ma no Iro
 
-*The colour of the interval.* Ma for short.
+*The colour of the in-between.* Ma for short.
 
-A two-flavor colour palette for code and terminals, and a short guide to how colour works: in light, in the eye, in the models we draw it with, and in the traditions that named it.
+A two-flavor colour palette, for code and terminals first and the base of a design system next, and a short guide to how colour works: in light, in the eye, in the models we draw it with, and in the traditions that named it.
 
 <!-- flavors:start -->
 | | 黒紫 Kuromurasaki | 白緑 Byakuroku |
@@ -23,11 +23,11 @@ Fire, stars and screens make colour by giving light off. Almost everything else 
 - **The water** absorbs red, so deep water looks cyan. Anchored at 700 nm, the end of red.
 - **The ink** takes almost all light and paper gives it all back: black and white, the amount of light itself.
 
-Those eight colours are the terminal's eight, named for the corners of the colour cube. They are not the corners themselves: each is solved from its anchor and sits a few degrees of hue from the corner it is named for. Opposite colours are complements, and all four lines between them cross at one grey. That grey is the interval, 間, and it is the ground everything in Ma no Iro sits on.
+Those eight colours are the terminal's eight, named for the corners of the colour cube. They are not the corners themselves: each is solved from its anchor and sits a few degrees of hue from the corner it is named for. Opposite colours are complements, and all four lines between them cross at one grey: mix any pair as light and it passes through that grey on the way. That grey is the in-between, 間, and it is the ground everything in Ma no Iro sits on.
 
 Each pair is named for its scene and anchored at one reference point: the eye's daylight peak for the leaf, the scattering curve for the sky, the end of red for the water. Only the sky's anchor is the physics of its own scene; the other two are choices, not measurements of a leaf or a lake. From each anchor the partner is solved on the far side of white, and every shade is solved the same way, so once the anchors are set no hue is picked by eye. You can rerun the derivation yourself.
 
-Every explanation comes with its limits. The scenes are real physics told simply, the cube is a model of a screen, and the links to wuxing and yin-yang are correspondences, not proofs. `SPEC.md` section 2 states each one precisely.
+Every explanation comes with its limits. The scenes are real physics told simply, the cube is a model of a screen, and the links to yin-yang, the eight trigrams and the classical in-between colours are correspondences, not proofs. `SPEC.md` section 2 states each one precisely.
 
 ## Principles
 

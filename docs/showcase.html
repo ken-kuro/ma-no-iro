@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ma no Iro 間の色: every colour comes with the colour it takes away</title>
-<meta name="description" content="Ma no Iro is a two-flavor palette of eight colours in four complementary pairs, all crossing at one grey.">
+<meta name="description" content="Ma no Iro is a two-flavor palette of eight colours in four complementary pairs, all crossing at one grey: the colour of the in-between.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500&text=%E3%81%AE%E9%BB%92%E7%B4%AB%E7%99%BD%E7%B7%91%E9%96%93%E6%AD%A3%E8%89%B2%E7%B6%A0%E7%A2%A7%E9%99%B0%E9%99%BD%E9%9D%92&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500&text=%E3%81%84%E3%81%8D%E3%81%8F%E3%81%95%E3%81%AE%E3%81%B3%E3%81%BE%E3%82%80%E3%82%83%E3%82%89%E3%82%8D%E5%85%AB%E5%8D%A6%E5%9D%8E%E6%AD%A3%E7%99%BD%E7%A2%A7%E7%B4%AB%E7%B6%A0%E7%B7%91%E8%89%B2%E9%96%92%E9%96%93%E9%99%B0%E9%99%BD%E9%9B%A2%E9%9D%92%E9%BB%92&display=swap" rel="stylesheet">
 <style>
 /* tokens:start */
 :root{--k-mantle:#0e0e0e;--k-base:#141414;--k-surface:#1c1c1c;--k-overlay:#262626;--k-dim:#555555;--k-muted:#898989;--k-subtle:#b1b1b1;--k-text:#e4e4e4;--k-hl_low:#191919;--k-hl_med:#232323;--k-hl_high:#383838;--k-keyword:#cc79d9;--k-special:#e8c2f0;--k-function:#9cdc88;--k-seed:#98fc70;--k-string:#a3b8f8;--k-blue:#80a1f6;--k-yellow:#f4e05e;--k-yellow_text:#f4e05e;--k-type:#3caca5;--k-cyan:#67e2da;--k-red:#ed647a;--k-home:#cc79d9;--b-mantle:#ededed;--b-base:#f7f7f7;--b-surface:#fdfdfd;--b-overlay:#dfdfdf;--b-dim:#a4a4a4;--b-muted:#676767;--b-subtle:#424242;--b-text:#222222;--b-hl_low:#f0f0f0;--b-hl_med:#e8e8e8;--b-hl_high:#d1d1d1;--b-keyword:#761d81;--b-special:#895a91;--b-function:#27540f;--b-seed:#90039f;--b-string:#305daf;--b-blue:#225fbc;--b-yellow:#9f8f00;--b-yellow_text:#776c06;--b-type:#07625e;--b-cyan:#057772;--b-red:#a30033;--b-home:#27540f;--c-mantle:#ededed;--c-base:#f7f7f7;--c-surface:#fdfdfd;--c-overlay:#dfdfdf;--c-dim:#a4a4a4;--c-muted:#676767;--c-subtle:#424242;--c-text:#222222;--c-hl_low:#f0f0f0;--c-hl_med:#e8e8e8;--c-hl_high:#d1d1d1;--c-keyword:#761d81;--c-special:#895a91;--c-function:#27540f;--c-seed:#90039f;--c-string:#305daf;--c-blue:#225fbc;--c-yellow:#9f8f00;--c-yellow_text:#776c06;--c-type:#07625e;--c-cyan:#057772;--c-red:#a30033;--c-home:#27540f;}
@@ -87,6 +87,27 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
 #title .hint { font-size: 14px; color: var(--c-muted); margin-top: 48px; }
 .hex { width: min(100%, 460px); margin-left: auto; }
 
+/* the negative */
+#negative .in { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.neg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 18px); width: 100%; max-width: 960px; cursor: pointer; }
+@media (max-width: 700px) { .neg { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.neg figure { margin: 0; }
+.tile { position: relative; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-overlay); }
+.tile svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.tile .gave { clip-path: inset(0 100% 0 0); transition: clip-path 1.1s cubic-bezier(.65, 0, .25, 1); }
+.neg figure:nth-child(2) .gave { transition-delay: .2s; }
+.neg figure:nth-child(3) .gave { transition-delay: .4s; }
+.neg figure:nth-child(4) .gave { transition-delay: .6s; }
+#negative.given .tile .gave { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) { .tile .gave { transition: none; } }
+.neg figcaption { font-size: 14px; color: var(--c-muted); margin-top: 10px; line-height: 1.4; min-height: 2.8em; }
+#negative.given .t, #negative:not(.given) .g { display: none; }
+.scene .riddle p { font-size: clamp(28px, 4vw, 52px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.1; color: var(--c-text); max-width: 30ch; margin: clamp(32px, 6vh, 64px) auto 0; }
+.scene p.riddle-sub { margin: 16px auto 0; }
+#negative:not(.given) .riddle-sub { visibility: hidden; }
+.neg-ctl { display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 28px; font-size: 14px; color: var(--c-muted); }
+.neg-ctl button { font: inherit; color: var(--c-text); background: var(--c-surface); border: 1px solid var(--c-overlay); border-radius: 8px; padding: 6px 14px; cursor: pointer; }
+
 /* exchange */
 .pairs4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 @media (max-width: 700px) { .pairs4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -100,8 +121,12 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
 .cube-ctl label { font-size: 14px; color: var(--k-muted); }
 .cube-ctl input { flex: 1; min-width: 160px; accent-color: var(--k-keyword); }
 .cube-ctl button, .reset { font: inherit; font-size: 14px; color: var(--k-text); background: var(--k-surface); border: 1px solid var(--k-overlay); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
-.wuxing { font-size: 15px !important; }
-.wuxing .jp { color: var(--c-text); }
+.three-col.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .three-col.four { grid-template-columns: 1fr; } }
+.mix { display: grid; gap: 14px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--k-overlay); }
+.mix .ends { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--k-muted); margin-bottom: 6px; }
+.mix .strip { position: relative; height: 22px; border-radius: 6px; }
+.mix .tick { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; border-radius: 1px; background: var(--k-text); }
 
 /* flavors seam */
 .seam { display: grid; grid-template-columns: 1fr 1fr; min-height: clamp(300px, 42vw, 520px); border-radius: 18px; overflow: hidden; border: 1px solid var(--c-overlay); margin-top: 36px; }
@@ -205,14 +230,23 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
 <nav class="rail" aria-label="Scenes" id="rail"></nav>
 
 <main>
+  <section class="scene" id="negative" data-name="What they took">
+    <div class="in">
+      <div class="neg" id="neg"></div>
+      <div class="riddle" aria-live="polite"><p class="t">These are the colours they took.</p><p class="g">These are the colours they gave back.</p></div>
+      <p class="riddle-sub">Every colour comes with the colour it takes away. Ma no Iro is built from four exchanges like these.</p>
+      <div class="neg-ctl"><button type="button" id="neg-btn" aria-pressed="false">Show what they gave back</button><span>Scroll, or use the arrow keys.</span></div>
+    </div>
+  </section>
+
   <section class="scene" id="title" data-name="Ma no Iro">
     <div class="in split">
       <div>
         <h1 lang="ja">間の色</h1>
         <div class="en">Ma no Iro</div>
-        <div class="tag">The colour of the interval.</div>
-        <p>A two-flavor palette for code and terminals, and a short guide to how colour works: in light, in the eye, in the models we draw it with, and in the traditions that named it.</p>
-        <p class="hint">Scroll, or use the arrow keys.</p>
+        <div class="tag">The colour of the in-between.</div>
+        <p>A colour palette in two flavors, night and day: for code and terminals first, and the ground of a design system next. Four pairs of colours, each with the colour it takes away, and one colour that belongs to all of them.</p>
+        <p>It is also a short guide to how colour works: in light, in the eye, in the models we draw it with, and in the traditions that named it.</p>
       </div>
       <div class="hex" id="hexmark" role="img" aria-label="The Ma no Iro mark: six colours around a grey centre, the colour cube seen along its grey axis."></div>
     </div>
@@ -230,7 +264,7 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
     <div class="in">
       <h2>Every colour comes with the colour it takes away.</h2>
       <p>Fire, stars and screens make colour by giving light off. Almost everything else you see makes it by taking light away: a leaf, the sky, water and ink each keep part of the light that reaches them and let the rest through to your eye. What reaches you leans toward the complement of what was taken, the colour on the far side of white.</p>
-      <p>Ma no Iro is built from four of those exchanges, and from the idea underneath them: a thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in music or the empty space in a room. It is 間, ma, the interval.</p>
+      <p>Ma no Iro is built from four of those exchanges, and from the idea underneath them: a thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in music or the empty space in a room. It is 間, ma: the gap, the in-between.</p>
       <p class="strict"><b>Strictly speaking.</b> A real object removes a range of wavelengths, not a single colour, so what is left only leans toward the exact complement. The pairs in Ma no Iro are exact because they are solved in a colour model, as the rest of this page shows.</p>
       <div class="pairs4" id="pairs4" style="margin-top: 36px"></div>
     </div>
@@ -301,12 +335,12 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
     </div>
   </section>
 
-  <section class="scene" id="cube" data-name="The interval">
+  <section class="scene" id="cube" data-name="The in-between">
     <div class="in split">
       <div>
         <h2>Eight colours, four pairs, one grey.</h2>
         <p>A screen makes every colour from three lights, red, green and blue, so the colours it can show fill a cube. The eight corners are the eight colours a terminal names. Opposite corners are complements, pairs that add up to white, and the four lines joining them all cross at the grey at the centre. Look straight down from white to black and the cube becomes a hexagon: the colour wheel, with grey at its heart.</p>
-        <p>That grey is where Ma no Iro takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks.</p>
+        <p>That grey is where Ma no Iro takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks. Run it backwards and it still holds: mix a pair as light, a little more of one and a little less of the other, and somewhere on the way there is a grey with no hue at all.</p>
         <p class="strict"><b>Strictly speaking.</b> The cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen’s three lights; painters mixing pigments, and perception itself, pair colours a little differently. And Ma no Iro’s colours are named for the corners, not taken from them: each is solved from its anchor and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey.</p>
       </div>
       <div class="night">
@@ -316,6 +350,8 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
           <input type="range" id="turn" min="0" max="100" value="0">
           <button type="button" id="look">Look down the grey axis</button>
         </div>
+        <div class="mix" id="fig-mix" role="img" aria-label="Purple to green, blue to yellow and red to cyan, each mixed as light. Each passes through a grey with no hue, marked with a tick."></div>
+        <div class="cap"><span><b>Each pair mixed as light.</b> The tick marks the grey where it has no hue.</span><span>computed</span></div>
       </div>
     </div>
   </section>
@@ -323,12 +359,13 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
   <section class="scene" id="traditions" data-name="Traditions">
     <div class="in">
       <h2>Older traditions drew similar lines.</h2>
-      <div class="three-col">
-        <div><div class="big" lang="zh">正色 間色</div><p>Classical Chinese colour theory named five cardinal colours, black, white, red, yellow and <span class="jp" lang="zh">青</span> (blue-green), and a set of intermediary colours mixed between them. In one common list, green, purple and jade (<span class="jp" lang="zh">綠</span>, <span class="jp" lang="zh">紫</span>, <span class="jp" lang="zh">碧</span>) are among those intermediaries: three of the terminal’s colours, in the interval.</p></div>
-        <div><div class="big" lang="zh">陰陽</div><p>Yin and yang are opposites that each hold a seed of the other. Ma no Iro borrows the image for its two flavors: a night that keeps a dot of green, and a day that keeps a dot of purple.</p></div>
-        <div><div class="big" lang="ja">間</div><p>In Japanese aesthetics, ma is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. It is the same character that names the intermediary colours. Ma no Iro extends it, as a correspondence rather than a reading of the tradition: a colour can be known by what it lacks.</p></div>
+      <div class="three-col four">
+        <div><div class="big" lang="zh">正色 間色</div><p>Classical Chinese colour theory named five cardinal colours, black, white, red, yellow and <span class="jp" lang="zh">青</span> (blue-green), and a set of intermediary colours mixed between them. In one common list, green, purple and jade (<span class="jp" lang="zh">綠</span>, <span class="jp" lang="zh">紫</span>, <span class="jp" lang="zh">碧</span>) are among those intermediaries: the leaf’s pair were in-between colours long before this palette. Confucius hated the way purple displaced vermilion; more than a thousand years later, Tang officials of the third rank and above wore it. The colour had not changed. The people looking at it had.</p></div>
+        <div><div class="big" lang="zh">陰陽</div><p>Yin and yang are opposites that each hold a seed of the other and turn into each other. Ma no Iro borrows the image for its two flavors: a night that keeps a dot of green, and a day that keeps a dot of purple. Not for the grey: yin and yang touch but never mix. Light does.</p></div>
+        <div><div class="big" lang="zh">八卦</div><p>One gives two, two give four, four give eight. A trigram is three lines, each yin or yang: three bits, like the corners of the colour cube. All yin, ☷, is black; all yang, ☰, is white. In the circle attributed to Fuxi every trigram faces its inverse across the centre, as every corner faces its complement, and in 1703 Leibniz read the same figures as binary.</p></div>
+        <div><div class="big" lang="ja">閒 間</div><p>In Japanese aesthetics, ma is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. Its older form, <span class="jp" lang="zh">閒</span>, is a door with the moon in it: shut a door at night, and if moonlight still shows, there is a gap. Today’s form, <span class="jp" lang="ja">間</span>, has the sun in the door instead. It is the same character that names the intermediary colours. Ma no Iro extends it, as a correspondence rather than a reading of the tradition: a colour can be known by what it lacks.</p></div>
       </div>
-      <p class="strict"><b>Strictly speaking.</b> Classical colour words do not map one to one onto modern hues: <span class="jp" lang="zh">青</span> covers both blue and green, and lists of intermediary colours differ between sources. These are correspondences, not proofs, and nothing in the palette depends on them.</p>
+      <p class="strict"><b>Strictly speaking.</b> These are correspondences, not proofs, and nothing in the palette depends on them. Classical colour words do not map one to one onto modern hues: <span class="jp" lang="zh">青</span> covers both blue and green, and lists of intermediary colours differ between sources. The trigrams match the cube in structure only: water and fire, <span class="jp" lang="zh">坎</span> and <span class="jp" lang="zh">離</span>, always land on a complementary pair, but which pair depends only on which light is read as the middle line. A match that can be made to say anything proves nothing.</p>
     </div>
   </section>
 
@@ -382,9 +419,9 @@ h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
 
   <section class="scene" id="names" data-name="Names">
     <div class="in">
-      <h2>The colour of the interval is the grey where every pair meets, and the absence that defines each colour.</h2>
+      <h2>The colour of the in-between is the grey where every pair meets, and the absence that defines each colour.</h2>
       <div class="grid">
-        <div><div class="big" lang="ja">間の色</div><p><b>Ma no Iro</b>, ま の いろ. The colour of the interval. Ma for short; <code>ma-no-iro</code> in registries.</p></div>
+        <div><div class="big" lang="ja">間の色</div><p><b>Ma no Iro</b>, ま の いろ. The colour of the in-between. Ma for short; <code>ma-no-iro</code> in registries.</p></div>
         <div><div class="big" lang="ja">黒紫</div><p><b>Kuromurasaki</b>, くろむらさき. Black-purple, the night flavor.</p></div>
         <div><div class="big" lang="ja">白緑</div><p><b>Byakuroku</b>, びゃくろく. White-green, the day flavor; also a pale green pigment ground from malachite.</p></div>
       </div>
@@ -445,6 +482,34 @@ function drawMark() {
   for (const [n, x, y] of pts) s += `<circle cx="${x}" cy="${y}" r="30" fill="${a[n].hex}"/>`;
   s += `<circle cx="${c}" cy="${c}" r="30" fill="${css("dim")}"/><text x="${c}" y="${c + 9}" text-anchor="middle" font-size="26" fill="${css("base")}" font-family="IBM Plex Sans JP, sans-serif">間</text></svg>`;
   document.getElementById("hexmark").innerHTML = s;
+}
+
+/* ---------- the negative: each thing in the colour it took, then in the colour it gave back ---------- */
+function initNegative() {
+  const leaf = c => `<g transform="rotate(-30 50 50)"><path d="M50 10 C80 28 82 64 50 86 C18 64 20 28 50 10 Z" style="fill:${c}"/><path d="M50 20 V82" style="fill:none;stroke:var(--c-surface);stroke-width:2;stroke-linecap:round"/><path d="M50 84 V96" style="fill:none;stroke:${c};stroke-width:2.4;stroke-linecap:round"/></g>`;
+  const sun = c => `<circle cx="50" cy="60" r="22" style="fill:${c}"/><rect x="0" y="68" width="100" height="32" style="fill:var(--c-surface)"/><path d="M12 68 H88" style="stroke:var(--c-dim);stroke-width:1.2"/>`;
+  const drop = c => `<path d="M50 14 C58 30 76 46 76 62 A26 26 0 0 1 24 62 C24 46 42 30 50 14 Z" style="fill:${c}"/>`;
+  const enso = (paper, ink) => `<rect width="100" height="100" style="fill:${paper}"/><path d="M63 27.5 A26 26 0 1 0 75 43" style="fill:none;stroke:${ink};stroke-width:7;stroke-linecap:round"/>`;
+  const tiles = [
+    [leaf("var(--c-keyword)"), leaf("var(--c-function)"), "A leaf.", "A leaf takes purple and gives back green."],
+    [sun("var(--c-blue)"), sun("var(--c-yellow)"), "The sun, low in the sky.", "Air takes blue from sunlight and leaves the sun yellow."],
+    [drop("var(--c-red)"), drop("var(--c-cyan)"), "Deep water.", "Water takes red and leaves cyan."],
+    [enso("var(--k-base)", "var(--b-base)"), enso("var(--b-base)", "var(--k-base)"), "Ink on paper.", "Ink takes all the light; paper gives it all back."],
+  ];
+  const svg = (cls, body) => `<svg class="${cls}" viewBox="0 0 100 100" aria-hidden="true">${body}</svg>`;
+  const fig = document.getElementById("neg"), scene = document.getElementById("negative"), btn = document.getElementById("neg-btn");
+  fig.innerHTML = tiles.map(([took, gave, t, g]) => `<figure><div class="tile">${svg("took", took)}${svg("gave", gave)}</div><figcaption><span class="t">${t}</span><span class="g">${g}</span></figcaption></figure>`).join("");
+  let auto;
+  const set = given => {
+    clearTimeout(auto);
+    scene.classList.toggle("given", given);
+    btn.setAttribute("aria-pressed", String(given));
+    btn.textContent = given ? "Show what they took" : "Show what they gave back";
+  };
+  const flip = () => set(!scene.classList.contains("given"));
+  btn.addEventListener("click", flip);
+  fig.addEventListener("click", flip);
+  auto = setTimeout(() => set(true), 2800);
 }
 
 /* ---------- the four exchanges ---------- */
@@ -565,6 +630,20 @@ function initCube() {
     requestAnimationFrame(step);
   });
   drawCube(r.value / 100);
+}
+
+/* ---------- the in-between: each pair mixed as light (SPEC R9) ---------- */
+const enc = x => { const v = x <= 0.0031308 ? 12.92 * x : 1.055 * x ** (1 / 2.4) - 0.055; return Math.round(Math.min(Math.max(v, 0), 1) * 255).toString(16).padStart(2, "0"); };
+const linToHex = c => "#" + c.map(enc).join("");
+function drawMix() {
+  const pairs = [["purple", K.keyword.hex, "green", K.function.hex], ["blue", K.blue.hex, "yellow", K.yellow.hex], ["red", K.red.hex, "cyan", K.cyan.hex]];
+  document.getElementById("fig-mix").innerHTML = pairs.map(([an, a, bn, b]) => {
+    const A = hexToLin(a), B = hexToLin(b), at = t => A.map((v, k) => v + (B[k] - v) * t);
+    const stops = Array.from({ length: 33 }, (_, i) => `${linToHex(at(i / 32))} ${(i / 32 * 100).toFixed(2)}%`).join(", ");
+    let grey = 0, least = Infinity;   // the point where the three lights are most nearly equal
+    for (let i = 0; i <= 1000; i++) { const c = at(i / 1000), m = (c[0] + c[1] + c[2]) / 3, v = c.reduce((s, x) => s + (x - m) ** 2, 0); if (v < least) { least = v; grey = i / 1000; } }
+    return `<div><div class="ends"><span>${an}</span><span>${bn}</span></div><div class="strip" style="background:linear-gradient(90deg, ${stops})"><i class="tick" style="left:${(grey * 100).toFixed(1)}%"></i></div></div>`;
+  }).join("");
 }
 
 /* ---------- three anchors on the chromaticity diagram ---------- */
@@ -807,7 +886,7 @@ document.addEventListener("click", e => {
 });
 window.__redraw = () => { drawMark(); drawPairs(); drawUses(); };
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => window.__redraw());
-drawMark(); drawPairs(); drawSpectra(); drawEye(); drawUses(); initCube(); drawCIE(); initRail();
+initNegative(); drawMark(); drawPairs(); drawSpectra(); drawEye(); drawUses(); initCube(); drawMix(); drawCIE(); initRail();
 </script>
 </body>
 </html>

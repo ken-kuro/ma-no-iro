@@ -15,7 +15,7 @@ The story: every colour comes with the colour it takes away.
 
   A terminal has eight colours, the corners of the RGB cube. Opposite corners
   are complements, and all four lines between them cross at one grey: the
-  interval, 間, which is Ma no Iro's ground. Each pair is one scene in which
+  in-between, 間, which is Ma no Iro's ground. Each pair is one scene in which
   something takes a colour away. The scene names the pair; the anchor is a
   reference spectrum chosen for it, not a measurement of the scene:
 
