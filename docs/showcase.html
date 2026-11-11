@@ -3,460 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
 <title>Ma no Iro 間の色: every colour comes with the colour it takes away</title>
 <meta name="description" content="Ma no Iro is a two-flavor palette of eight colours in four complementary pairs, all crossing at one grey: the colour of the in-between.">
+<link rel="stylesheet" href="showcase-story.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500&text=%E3%81%84%E3%81%8D%E3%81%8F%E3%81%95%E3%81%AE%E3%81%B3%E3%81%BE%E3%82%80%E3%82%83%E3%82%89%E3%82%8D%E5%85%AB%E5%8D%A6%E5%9D%8E%E6%AD%A3%E7%99%BD%E7%A2%A7%E7%B4%AB%E7%B6%A0%E7%B7%91%E8%89%B2%E9%96%92%E9%96%93%E9%99%B0%E9%99%BD%E9%9B%A2%E9%9D%92%E9%BB%92&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500&text=%E3%81%84%E3%81%8D%E3%81%8F%E3%81%95%E3%81%AE%E3%81%B3%E3%81%BE%E3%82%80%E3%82%83%E3%82%89%E3%82%8D%E5%85%AB%E5%8D%A6%E5%9D%8E%E6%AD%A3%E7%99%BD%E7%A2%A7%E7%B4%AB%E7%B6%A0%E7%B7%91%E8%89%B2%E9%96%91%E9%96%92%E9%96%93%E9%99%B0%E9%99%BD%E9%9B%A2%E9%9D%92%E9%BB%92&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="showcase-components.css">
 <style>
 /* tokens:start */
 :root{--k-mantle:#0e0e0e;--k-base:#141414;--k-surface:#1c1c1c;--k-overlay:#262626;--k-dim:#555555;--k-muted:#898989;--k-subtle:#b1b1b1;--k-text:#e4e4e4;--k-hl_low:#191919;--k-hl_med:#232323;--k-hl_high:#383838;--k-keyword:#cc79d9;--k-special:#e8c2f0;--k-function:#9cdc88;--k-seed:#98fc70;--k-string:#a3b8f8;--k-blue:#80a1f6;--k-yellow:#f4e05e;--k-yellow_text:#f4e05e;--k-type:#3caca5;--k-cyan:#67e2da;--k-red:#ed647a;--k-home:#cc79d9;--b-mantle:#ededed;--b-base:#f7f7f7;--b-surface:#fdfdfd;--b-overlay:#dfdfdf;--b-dim:#a4a4a4;--b-muted:#676767;--b-subtle:#424242;--b-text:#222222;--b-hl_low:#f0f0f0;--b-hl_med:#e8e8e8;--b-hl_high:#d1d1d1;--b-keyword:#761d81;--b-special:#895a91;--b-function:#27540f;--b-seed:#90039f;--b-string:#305daf;--b-blue:#225fbc;--b-yellow:#9f8f00;--b-yellow_text:#776c06;--b-type:#07625e;--b-cyan:#057772;--b-red:#a30033;--b-home:#27540f;--c-mantle:#ededed;--c-base:#f7f7f7;--c-surface:#fdfdfd;--c-overlay:#dfdfdf;--c-dim:#a4a4a4;--c-muted:#676767;--c-subtle:#424242;--c-text:#222222;--c-hl_low:#f0f0f0;--c-hl_med:#e8e8e8;--c-hl_high:#d1d1d1;--c-keyword:#761d81;--c-special:#895a91;--c-function:#27540f;--c-seed:#90039f;--c-string:#305daf;--c-blue:#225fbc;--c-yellow:#9f8f00;--c-yellow_text:#776c06;--c-type:#07625e;--c-cyan:#057772;--c-red:#a30033;--c-home:#27540f;}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--c-mantle:#0e0e0e;--c-base:#141414;--c-surface:#1c1c1c;--c-overlay:#262626;--c-dim:#555555;--c-muted:#898989;--c-subtle:#b1b1b1;--c-text:#e4e4e4;--c-hl_low:#191919;--c-hl_med:#232323;--c-hl_high:#383838;--c-keyword:#cc79d9;--c-special:#e8c2f0;--c-function:#9cdc88;--c-seed:#98fc70;--c-string:#a3b8f8;--c-blue:#80a1f6;--c-yellow:#f4e05e;--c-yellow_text:#f4e05e;--c-type:#3caca5;--c-cyan:#67e2da;--c-red:#ed647a;--c-home:#cc79d9;}}
 :root[data-theme="dark"]{--c-mantle:#0e0e0e;--c-base:#141414;--c-surface:#1c1c1c;--c-overlay:#262626;--c-dim:#555555;--c-muted:#898989;--c-subtle:#b1b1b1;--c-text:#e4e4e4;--c-hl_low:#191919;--c-hl_med:#232323;--c-hl_high:#383838;--c-keyword:#cc79d9;--c-special:#e8c2f0;--c-function:#9cdc88;--c-seed:#98fc70;--c-string:#a3b8f8;--c-blue:#80a1f6;--c-yellow:#f4e05e;--c-yellow_text:#f4e05e;--c-type:#3caca5;--c-cyan:#67e2da;--c-red:#ed647a;--c-home:#cc79d9;}
 /* tokens:end */
-:root {
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-  --sans: "IBM Plex Sans", "IBM Plex Sans JP", system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
-  --cjk: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-}
-*, *::before, *::after { box-sizing: inherit; }
-html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-snap-type: y proximity; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-body { margin: 0; background: var(--c-base); color: var(--c-text); font-family: var(--sans); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: var(--c-blue); text-underline-offset: 3px; }
-:focus-visible { outline: 2px solid var(--c-seed); outline-offset: 3px; }
-code { font-family: var(--mono); font-size: 0.88em; }
-.jp { font-family: var(--cjk); }
 
-/* chrome */
-.top { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: calc(env(safe-area-inset-top, 0px) + 14px) clamp(16px, 3vw, 32px) 14px; pointer-events: none; }
-.top > * { pointer-events: auto; }
-.mark { color: var(--c-text); text-decoration: none; font-weight: 500; font-size: 16px; display: flex; gap: 8px; align-items: baseline; white-space: nowrap; }
-.mark .jp { color: var(--c-home); }
-.theme { display: inline-flex; gap: 2px; padding: 2px; border: 1px solid var(--c-overlay); border-radius: 8px; background: var(--c-base); }
-.theme button { font: inherit; font-size: 13px; color: var(--c-muted); background: transparent; border: 0; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
-.theme button[aria-pressed="true"] { background: var(--c-home); color: var(--c-base); }
-
-.rail { position: fixed; right: clamp(10px, 2vw, 28px); top: 50%; transform: translateY(-50%); z-index: 15; display: flex; flex-direction: column; gap: 2px; }
-.rail a { display: flex; align-items: center; justify-content: flex-end; gap: 10px; text-decoration: none; color: var(--c-dim); font-size: 13px; padding: 3px 0; }
-.rail a span { opacity: 0; transition: opacity .2s; white-space: nowrap; }
-.rail:hover a span, .rail a:focus-visible span { opacity: 1; }
-.rail:hover { background: var(--c-base); border-radius: 10px; padding: 6px 0 6px 12px; }
-.rail a i { width: 18px; height: 2px; background: var(--c-overlay); border-radius: 2px; transition: width .2s, background .2s; }
-.rail a[aria-current="true"] { color: var(--c-text); }
-.rail a[aria-current="true"] i { width: 30px; background: var(--c-seed); }
-@media (max-width: 900px) { .rail { display: none; } }
-@media (prefers-reduced-motion: reduce) { .rail a span, .rail a i { transition: none; } }
-
-/* scenes */
-.scene { min-height: 100svh; scroll-snap-align: start; display: grid; align-items: center; padding: clamp(80px, 12vh, 140px) clamp(20px, 6vw, 96px); }
-.scene > .in { width: 100%; max-width: 1180px; margin: 0 auto; }
-.split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
-@media (max-width: 920px) { .split { grid-template-columns: 1fr; } }
-h1, h2 { font-weight: 300; letter-spacing: -0.025em; line-height: 1.04; margin: 0; }
-h2 { font-size: clamp(34px, 5vw, 64px); max-width: 16ch; }
-.scene p { max-width: 54ch; color: var(--c-subtle); margin: 22px 0 0; }
-.scene p.anchor { font-size: 15px; color: var(--c-muted); border-left: 2px solid var(--c-overlay); padding-left: 14px; }
-.scene p.anchor b { color: var(--c-text); font-weight: 500; }
-.uses { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 15px; color: var(--c-muted); }
-.uses span { display: inline-flex; align-items: center; gap: 8px; }
-.uses i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
-
-.scene p.strict { font-size: 15px; color: var(--c-muted); }
-.scene p.strict b { color: var(--c-subtle); font-weight: 500; }
-.three-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; margin-top: 40px; }
-@media (max-width: 900px) { .three-col { grid-template-columns: 1fr; } }
-.three-col > div { border-top: 1px solid var(--c-overlay); padding-top: 18px; }
-.three-col .big { font-family: var(--cjk); font-size: 40px; font-weight: 300; line-height: 1.1; color: var(--c-text); }
-.three-col p { font-size: 16px; margin-top: 12px; }
-
-/* night panel: light is seen best in the dark */
-.night { background: var(--k-base); color: var(--k-text); border-radius: 18px; padding: clamp(18px, 3vw, 32px); border: 1px solid var(--c-overlay); }
-.night svg { width: 100%; height: auto; display: block; }
-.night .cap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--k-muted); margin-top: 10px; }
-.night .cap b { color: var(--k-text); font-weight: 500; }
-
-/* title */
-#title h1 { white-space: nowrap; font-size: clamp(56px, 10vw, 150px); font-family: var(--cjk); font-weight: 300; letter-spacing: 0.02em; }
-#title .en { font-size: clamp(26px, 3.4vw, 44px); font-weight: 400; letter-spacing: -0.01em; margin-top: 14px; }
-#title .tag { font-size: clamp(20px, 2.2vw, 26px); color: var(--c-subtle); margin-top: 6px; }
-#title .hint { font-size: 14px; color: var(--c-muted); margin-top: 48px; }
-.hex { width: min(100%, 460px); margin-left: auto; }
-
-/* the negative */
-#negative .in { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.neg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 18px); width: 100%; max-width: 960px; cursor: pointer; }
-@media (max-width: 700px) { .neg { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.neg figure { margin: 0; }
-.tile { position: relative; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-overlay); }
-.tile svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.tile .gave { clip-path: inset(0 100% 0 0); transition: clip-path 1.1s cubic-bezier(.65, 0, .25, 1); }
-.neg figure:nth-child(2) .gave { transition-delay: .2s; }
-.neg figure:nth-child(3) .gave { transition-delay: .4s; }
-.neg figure:nth-child(4) .gave { transition-delay: .6s; }
-#negative.given .tile .gave { clip-path: inset(0 0 0 0); }
-@media (prefers-reduced-motion: reduce) { .tile .gave { transition: none; } }
-.neg figcaption { font-size: 14px; color: var(--c-muted); margin-top: 10px; line-height: 1.4; min-height: 2.8em; }
-#negative.given .t, #negative:not(.given) .g { display: none; }
-.scene .riddle p { font-size: clamp(28px, 4vw, 52px); font-weight: 300; letter-spacing: -0.025em; line-height: 1.1; color: var(--c-text); max-width: 30ch; margin: clamp(32px, 6vh, 64px) auto 0; }
-.scene p.riddle-sub { margin: 16px auto 0; }
-#negative:not(.given) .riddle-sub { visibility: hidden; }
-.neg-ctl { display: flex; gap: 18px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 28px; font-size: 14px; color: var(--c-muted); }
-.neg-ctl button { font: inherit; color: var(--c-text); background: var(--c-surface); border: 1px solid var(--c-overlay); border-radius: 8px; padding: 6px 14px; cursor: pointer; }
-
-/* exchange */
-.pairs4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-@media (max-width: 700px) { .pairs4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.pairs4 figure { margin: 0; }
-.pairs4 .bar { height: 150px; border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: 1fr 1fr; border: 1px solid var(--c-overlay); }
-.pairs4 figcaption { font-size: 15px; margin-top: 10px; color: var(--c-subtle); }
-.pairs4 figcaption b { color: var(--c-text); font-weight: 500; display: block; }
-
-/* cube */
-.cube-ctl { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
-.cube-ctl label { font-size: 14px; color: var(--k-muted); }
-.cube-ctl input { flex: 1; min-width: 160px; accent-color: var(--k-keyword); }
-.cube-ctl button, .reset { font: inherit; font-size: 14px; color: var(--k-text); background: var(--k-surface); border: 1px solid var(--k-overlay); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
-.three-col.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (max-width: 900px) { .three-col.four { grid-template-columns: 1fr; } }
-.mix { display: grid; gap: 14px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--k-overlay); }
-.mix .ends { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--k-muted); margin-bottom: 6px; }
-.mix .strip { position: relative; height: 22px; border-radius: 6px; }
-.mix .tick { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; border-radius: 1px; background: var(--k-text); }
-
-/* flavors seam */
-.seam { display: grid; grid-template-columns: 1fr 1fr; min-height: clamp(300px, 42vw, 520px); border-radius: 18px; overflow: hidden; border: 1px solid var(--c-overlay); margin-top: 36px; }
-.half { position: relative; padding: clamp(22px, 4vw, 44px); display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
-.half .nm { font-family: var(--cjk); font-weight: 400; font-size: clamp(52px, 8vw, 116px); line-height: 1; }
-.half .en { font-size: clamp(19px, 2vw, 24px); font-weight: 500; }
-.half .ds { font-size: 15px; max-width: 30ch; }
-.half .dot { position: absolute; width: clamp(18px, 2.2vw, 28px); aspect-ratio: 1; border-radius: 50%; }
-.half.k { background: var(--k-base); color: var(--k-text); }
-.half.k .nm { color: var(--k-keyword); } .half.k .ds { color: var(--k-muted); } .half.k .dot { background: var(--k-seed); right: 22%; top: 24%; }
-.half.b { background: var(--b-base); color: var(--b-text); justify-content: flex-start; align-items: flex-end; text-align: right; }
-.half.b .nm { color: var(--b-function); } .half.b .ds { color: var(--b-muted); } .half.b .dot { background: var(--b-seed); left: 22%; bottom: 24%; }
-@media (max-width: 760px) { .seam { grid-template-columns: 1fr; } .half { min-height: 280px; } }
-
-/* in use */
-.stack { display: grid; gap: 22px; margin-top: 30px; }
-.pair { display: grid; grid-template-columns: 1fr 1fr; border-radius: 14px; overflow: hidden; border: 1px solid var(--c-overlay); }
-@media (max-width: 1040px) { .pair { grid-template-columns: 1fr; } }
-.pane { background: var(--base); color: var(--text); min-width: 0; }
-.pane-cap { display: flex; gap: 10px; align-items: baseline; padding: 11px 18px; background: var(--mantle); border-bottom: 1px solid var(--overlay); font-size: 14px; }
-.pane-cap .jp { color: var(--home); font-size: 16px; }
-.pane-cap .en { font-weight: 600; }
-.pane-cap .sub { color: var(--muted); margin-left: auto; font-size: 13px; }
-.tabs { display: flex; background: var(--mantle); border-bottom: 1px solid var(--overlay); font-size: 13px; }
-.tab { padding: 7px 16px; color: var(--muted); border-right: 1px solid var(--overlay); }
-.tab.active { background: var(--base); color: var(--text); box-shadow: inset 0 2px 0 var(--home); }
-.code { font-family: var(--mono); font-size: 13px; line-height: 1.65; overflow-x: auto; padding: 8px 0; }
-.row { display: grid; grid-template-columns: 3px 4.5ch 1fr; white-space: pre; min-width: max-content; }
-.row.current { background: var(--hl_low); }
-.gut { position: relative; }
-.gut.add { background: var(--function); } .gut.mod { background: var(--blue); }
-.gut.del::after { content: ""; position: absolute; left: 0; top: -4px; border-left: 6px solid var(--red); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
-.ln { color: var(--muted); text-align: right; padding-right: 2ch; user-select: none; }
-.row.current .ln { color: var(--home); }
-.src { padding-right: 24px; }
-.k { color: var(--keyword); } .sp { color: var(--special); } .t { color: var(--type); } .s { color: var(--string); } .f { color: var(--function); }
-.p { color: var(--subtle); } .c { color: var(--muted); font-style: italic; } .i { font-style: italic; }
-.sel { background: var(--hl_high); } .match { background: var(--search); }
-.cm { background: var(--search_current); outline: 1px solid var(--seed); outline-offset: -1px; } .br { outline: 1px solid var(--home); outline-offset: -1px; }
-.err { text-decoration: underline wavy var(--red); text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
-.warn { text-decoration: underline wavy var(--yellow); text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-skip-ink: none; }
-.cursor { display: inline-block; width: 2px; height: 1.3em; background: var(--seed); vertical-align: -0.28em; margin-right: -2px; }
-.lens { color: var(--red); background: var(--error_bg); margin-left: 3ch; padding: 0 0.7ch; border-radius: 3px; font-style: italic; }
-.status { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; padding: 5px 14px; background: var(--mantle); color: var(--subtle); border-top: 1px solid var(--overlay); flex-wrap: wrap; }
-.status span + span { margin-left: 14px; }
-.status .e { color: var(--red); } .status .w { color: var(--yellow_text); } .status .mode { color: var(--home); }
-.drow { display: grid; grid-template-columns: 4ch 4ch 2.5ch 1fr; white-space: pre; min-width: max-content; }
-.drow .dl { color: var(--muted); text-align: right; padding-right: 1ch; user-select: none; }
-.drow .sg { text-align: center; user-select: none; }
-.drow.add { background: var(--diff_add); } .drow.add .sg { color: var(--function); }
-.drow.del { background: var(--diff_delete); } .drow.del .sg { color: var(--red); }
-.drow.hunk { background: var(--hl_low); color: var(--special); }
-.xa { background: var(--diff_add_strong); } .xd { background: var(--diff_delete_strong); }
-.term { font-family: var(--mono); font-size: 13px; line-height: 1.6; padding: 16px 20px 18px; white-space: pre; overflow-x: auto; }
-.term .blk { display: inline-block; width: 0.62em; height: 1.2em; background: var(--seed); vertical-align: -0.22em; }
-.ansi { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; padding: 0 20px 20px; }
-.ansi div { font-family: var(--mono); font-size: 11px; color: var(--muted); min-width: 0; overflow: hidden; }
-.ansi i { display: block; height: 28px; border-radius: 5px; margin-bottom: 4px; box-shadow: inset 0 0 0 1px var(--overlay); }
-
-/* palette */
-.swatches { overflow-x: auto; padding-bottom: 12px; }
-.swatches table { border-collapse: collapse; width: 100%; font-size: 13px; }
-.swatches thead th { font-weight: 400; color: var(--muted); text-align: left; padding: 12px 8px 6px; font-size: 12px; }
-.swatches tr.grp th { text-align: left; font-size: 14px; font-weight: 500; color: var(--subtle); padding: 18px 8px 6px 18px; }
-.swatches td { padding: 5px 8px; border-top: 1px solid var(--overlay); vertical-align: middle; }
-.swatches td:first-child, .swatches thead th:first-child { padding-left: 18px; width: 32px; }
-.swatches td:last-child, .swatches thead th:last-child { padding-right: 18px; text-align: right; }
-.chip { width: 22px; height: 22px; border-radius: 5px; box-shadow: inset 0 0 0 1px var(--overlay); }
-.tok { font-family: var(--mono); color: var(--text); white-space: nowrap; }
-.role { color: var(--muted); min-width: 140px; }
-.num { font-family: var(--mono); color: var(--subtle); white-space: nowrap; }
-.copy { font: inherit; font-family: var(--mono); color: var(--subtle); background: transparent; border: 0; padding: 2px 4px; margin: -2px -4px; border-radius: 4px; cursor: pointer; }
-.copy:hover { color: var(--text); background: var(--surface); }
-.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-#names .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 44px; }
-@media (max-width: 860px) { #names .grid { grid-template-columns: 1fr; } }
-#names .grid div { border-top: 1px solid var(--c-overlay); padding-top: 18px; }
-#names .grid .big { font-family: var(--cjk); font-size: 44px; font-weight: 300; line-height: 1.1; }
-#names .grid p { font-size: 15px; margin-top: 10px; }
-
-
-/* footer */
-.foot { border-top: 1px solid var(--c-overlay); padding: 44px clamp(20px, 6vw, 96px) 56px; color: var(--c-muted); font-size: 15px; }
-.foot .in { max-width: 1180px; margin: 0 auto; }
-.foot .in > div { color: var(--c-text); font-weight: 500; }
-.foot .jp { color: var(--c-home); }
-.foot p { max-width: 62ch; margin: 10px 0 0; }
-.foot .fine { font-size: 13px; }
 </style>
 </head>
 <body>
-<header class="top">
-  <a class="mark" href="#title"><span class="jp" lang="ja">間の色</span>Ma no Iro</a>
-  <div class="theme" role="group" aria-label="Page theme">
-    <button type="button" data-t="system" aria-pressed="true">System</button>
-    <button type="button" data-t="dark" aria-pressed="false">Dark</button>
-    <button type="button" data-t="light" aria-pressed="false">Light</button>
-  </div>
-</header>
-<nav class="rail" aria-label="Scenes" id="rail"></nav>
-
+<a class="skip-link" href="#work">Skip to the theme preview</a>
+<header class="mast"><a href="#light" class="identity"><span lang="ja">間の色</span><span>MA NO IRO</span></a><nav aria-label="Main"><a href="#work">Try the palette</a><button id="open-notes" type="button">Field notes</button><div class="theme-switch" role="group" aria-label="Appearance"><button data-theme-choice="dark" aria-pressed="false">Night</button><button data-theme-choice="light" aria-pressed="false">Day</button><button data-theme-choice="system" aria-pressed="true" aria-label="Use system appearance">Auto</button></div></nav></header>
 <main>
-  <section class="scene" id="negative" data-name="What they took">
-    <div class="in">
-      <div class="neg" id="neg"></div>
-      <div class="riddle" aria-live="polite"><p class="t">These are the colours they took.</p><p class="g">These are the colours they gave back.</p></div>
-      <p class="riddle-sub">Every colour comes with the colour it takes away. Ma no Iro is built from four exchanges like these.</p>
-      <div class="neg-ctl"><button type="button" id="neg-btn" aria-pressed="false">Show what they gave back</button><span>Scroll, or use the arrow keys.</span></div>
-    </div>
-  </section>
-
-  <section class="scene" id="title" data-name="Ma no Iro">
-    <div class="in split">
-      <div>
-        <h1 lang="ja">間の色</h1>
-        <div class="en">Ma no Iro</div>
-        <div class="tag">The colour of the in-between.</div>
-        <p>A colour palette in two flavors, night and day: for code and terminals first, and the ground of a design system next. Four pairs of colours, each with the colour it takes away, and one colour that belongs to all of them.</p>
-        <p>It is also a short guide to how colour works: in light, in the eye, in the models we draw it with, and in the traditions that named it.</p>
-      </div>
-      <div class="hex" id="hexmark" role="img" aria-label="The Ma no Iro mark: six colours around a grey centre, the colour cube seen along its grey axis."></div>
-    </div>
-  </section>
-
-  <section class="scene" id="glance" data-name="At a glance">
-    <div class="in">
-      <h2>Two flavors, one grammar.</h2>
-      <p><span lang="ja">黒紫</span> Kuromurasaki for the night and <span lang="ja">白緑</span> Byakuroku for the day. Code reads the same in both: keywords purple, functions green, strings blue, types cyan. Grey holds the structure, and one vivid seed marks the cursor.</p>
-      <div class="pair" id="glance-pair" style="margin-top: 30px"></div>
-    </div>
-  </section>
-
-  <section class="scene" id="exchange" data-name="The exchange">
-    <div class="in">
-      <h2>Every colour comes with the colour it takes away.</h2>
-      <p>Fire, stars and screens make colour by giving light off. Almost everything else you see makes it by taking light away: a leaf, the sky, water and ink each keep part of the light that reaches them and let the rest through to your eye. What reaches you leans toward the complement of what was taken, the colour on the far side of white.</p>
-      <p>Ma no Iro is built from four of those exchanges, and from the idea underneath them: a thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in music or the empty space in a room. It is 間, ma: the gap, the in-between.</p>
-      <p class="strict"><b>Strictly speaking.</b> A real object removes a range of wavelengths, not a single colour, so what is left only leans toward the exact complement. The pairs in Ma no Iro are exact because they are solved in a colour model, as the rest of this page shows.</p>
-      <div class="pairs4" id="pairs4" style="margin-top: 36px"></div>
-    </div>
-  </section>
-
-  <section class="scene" id="leaf" data-name="The leaf">
-    <div class="in split">
-      <div>
-        <h2>A leaf takes purple from sunlight, and gives back green.</h2>
-        <p>Chlorophyll absorbs strongly at both ends of the visible spectrum, the blue and the red, and much less in the middle. Light from both ends at once is what we see as purple, so what the leaf takes, seen together, is purple, and what it gives back looks green. Some grow lights skip the middle entirely, and glow purple, for the same reason.</p>
-        <p class="anchor"><b>Anchor: 555 nm.</b> This pair is anchored not in the leaf but in the eye: 555 nm is where human vision is most sensitive in daylight, as the eye scene shows.</p>
-        <p class="strict"><b>Strictly speaking.</b> A leaf absorbs most of the green light too; it looks green because green is what it absorbs least. It also reflects a great deal of infrared, which we cannot see.</p>
-        <div class="uses" id="uses-leaf"></div>
-      </div>
-      <div class="night"><div id="fig-leaf"></div><div class="cap"><span><b>White light,</b> split into what a leaf takes and what it returns.</span><span>schematic</span></div></div>
-    </div>
-  </section>
-
-  <section class="scene" id="sky" data-name="The sky">
-    <div class="in split">
-      <div>
-        <h2>The sky takes blue out of sunlight, and leaves the sun yellower.</h2>
-        <p>Air molecules scatter short wavelengths far more than long ones, in proportion to one over the wavelength to the fourth power. The scattered blue reaches you from every direction and fills the sky. The direct sunlight that gets through has lost some of its blue and looks a little yellower, and much more so at sunset, when it passes through more air.</p>
-        <p class="anchor"><b>Anchor: the λ⁻⁴ curve.</b> The same curve is the limit a glowing hot body approaches as its temperature rises without end, so the blue of the sky and the blue of infinite heat are one colour.</p>
-        <p class="strict"><b>Strictly speaking.</b> Sunlight is not an even spectrum to begin with, and scattering is even stronger in violet; the sky looks blue rather than violet partly because the sun gives off less violet and our eyes are less sensitive to it.</p>
-        <div class="uses" id="uses-sky"></div>
-      </div>
-      <div class="night"><div id="fig-sky"></div><div class="cap"><span><b>Sunlight,</b> split into the scattered sky and the sun that gets through.</span><span>exact λ⁻⁴</span></div></div>
-    </div>
-  </section>
-
-  <section class="scene" id="water" data-name="The water">
-    <div class="in split">
-      <div>
-        <h2>Water takes red, so it looks cyan.</h2>
-        <p>The bonds in a water molecule vibrate, and a few of those vibrations absorb red light. The effect is invisible in a glass but adds up over metres, so deep clear water and glacier ice show what is left: cyan and blue. Water is one of very few everyday things whose colour comes from its molecules vibrating rather than from its electrons.</p>
-        <p class="anchor"><b>Anchor: 700 nm, the end of red.</b> In the CIE standard observer, every longer visible wavelength has exactly the same chromaticity, so this is the reddest red there is. Cyan is its complement.</p>
-        <p class="strict"><b>Strictly speaking.</b> The colour of a real lake or sea also depends on what is dissolved and floating in it, and on the sky it reflects.</p>
-        <div class="uses" id="uses-water"></div>
-      </div>
-      <div class="night"><div id="fig-water"></div><div class="cap"><span><b>White light</b> after deep water: the red end is taken.</span><span>schematic</span></div></div>
-    </div>
-  </section>
-
-  <section class="scene" id="ink" data-name="The ink">
-    <div class="in split">
-      <div>
-        <h2>Ink takes everything. Paper gives it all back.</h2>
-        <p>Sumi ink is made of soot: fine carbon that absorbs almost every visible wavelength. Paper, like snow, is a tangle of fibres that scatters every wavelength back about equally. So black and white are not a colour and its opposite but the amount of light itself, none of it and all of it.</p>
-        <p>In Ma no Iro they are the ground: pure grey from black to white, so no colour is ever spent on the background.</p>
-        <p class="strict"><b>Strictly speaking.</b> No ink is perfectly black and no paper perfectly white; both return a little light, and paper often a little more blue than red.</p>
-        <div class="uses" id="uses-ink"></div>
-      </div>
-      <div class="night"><div id="fig-ink"></div><div class="cap"><span><b>Paper and ink:</b> all of the light, and almost none of it.</span><span>schematic</span></div></div>
-    </div>
-  </section>
-
-  <section class="scene" id="eye" data-name="The eye">
-    <div class="in split">
-      <div>
-        <h2>The eye turns a spectrum into three numbers.</h2>
-        <p>Your retina has three kinds of cone, long, medium and short, most sensitive near 570, 545 and 445 nm. Every colour you see is how strongly light excites those three. Two quite different spectra can excite them equally and look identical, which is why a screen can show you a leaf with only three kinds of light.</p>
-        <p>In daylight, your sense of brightness peaks at 555 nm, in the green: Ma no Iro’s first anchor. And purple exists only here. No single wavelength excites the long and short cones while sparing the middle one, so purple is a colour the eye makes, not one the rainbow has.</p>
-        <p>Behind the cones, the visual system compares them. One comparison runs roughly between green and magenta, the other roughly between violet and yellow, which is part of why those colours feel like opposites.</p>
-        <p class="strict"><b>Strictly speaking.</b> The comparisons measured in the retina do not line up exactly with the opposites people name, red against green and blue against yellow. Vision science has not fully reconciled the two.</p>
-      </div>
-      <div class="night"><div id="fig-eye"></div><div class="cap"><span><b>Cone sensitivities</b> (Stockman and Sharpe), with daylight brightness dashed.</span><span>measured</span></div></div>
-    </div>
-  </section>
-
-  <section class="scene" id="cube" data-name="The in-between">
-    <div class="in split">
-      <div>
-        <h2>Eight colours, four pairs, one grey.</h2>
-        <p>A screen makes every colour from three lights, red, green and blue, so the colours it can show fill a cube. The eight corners are the eight colours a terminal names. Opposite corners are complements, pairs that add up to white, and the four lines joining them all cross at the grey at the centre. Look straight down from white to black and the cube becomes a hexagon: the colour wheel, with grey at its heart.</p>
-        <p>That grey is where Ma no Iro takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks. Run it backwards and it still holds: mix a pair as light, a little more of one and a little less of the other, and somewhere on the way there is a grey with no hue at all.</p>
-        <p class="strict"><b>Strictly speaking.</b> The cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen’s three lights; painters mixing pigments, and perception itself, pair colours a little differently. And Ma no Iro’s colours are named for the corners, not taken from them: each is solved from its anchor and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey.</p>
-      </div>
-      <div class="night">
-        <div id="fig-cube"></div>
-        <div class="cube-ctl">
-          <label for="turn">Turn</label>
-          <input type="range" id="turn" min="0" max="100" value="0">
-          <button type="button" id="look">Look down the grey axis</button>
-        </div>
-        <div class="mix" id="fig-mix" role="img" aria-label="Purple to green, blue to yellow and red to cyan, each mixed as light. Each passes through a grey with no hue, marked with a tick."></div>
-        <div class="cap"><span><b>Each pair mixed as light.</b> The tick marks the grey where it has no hue.</span><span>computed</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene" id="traditions" data-name="Traditions">
-    <div class="in">
-      <h2>Older traditions drew similar lines.</h2>
-      <div class="three-col four">
-        <div><div class="big" lang="zh">正色 間色</div><p>Classical Chinese colour theory named five cardinal colours, black, white, red, yellow and <span class="jp" lang="zh">青</span> (blue-green), and a set of intermediary colours mixed between them. In one common list, green, purple and jade (<span class="jp" lang="zh">綠</span>, <span class="jp" lang="zh">紫</span>, <span class="jp" lang="zh">碧</span>) are among those intermediaries: the leaf’s pair were in-between colours long before this palette. Confucius hated the way purple displaced vermilion; more than a thousand years later, Tang officials of the third rank and above wore it. The colour had not changed. The people looking at it had.</p></div>
-        <div><div class="big" lang="zh">陰陽</div><p>Yin and yang are opposites that each hold a seed of the other and turn into each other. Ma no Iro borrows the image for its two flavors: a night that keeps a dot of green, and a day that keeps a dot of purple. Not for the grey: yin and yang touch but never mix. Light does.</p></div>
-        <div><div class="big" lang="zh">八卦</div><p>One gives two, two give four, four give eight. A trigram is three lines, each yin or yang: three bits, like the corners of the colour cube. All yin, ☷, is black; all yang, ☰, is white. In the circle attributed to Fuxi every trigram faces its inverse across the centre, as every corner faces its complement, and in 1703 Leibniz read the same figures as binary.</p></div>
-        <div><div class="big" lang="ja">閒 間</div><p>In Japanese aesthetics, ma is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. Its older form, <span class="jp" lang="zh">閒</span>, is a door with the moon in it: shut a door at night, and if moonlight still shows, there is a gap. Today’s form, <span class="jp" lang="ja">間</span>, has the sun in the door instead. It is the same character that names the intermediary colours. Ma no Iro extends it, as a correspondence rather than a reading of the tradition: a colour can be known by what it lacks.</p></div>
-      </div>
-      <p class="strict"><b>Strictly speaking.</b> These are correspondences, not proofs, and nothing in the palette depends on them. Classical colour words do not map one to one onto modern hues: <span class="jp" lang="zh">青</span> covers both blue and green, and lists of intermediary colours differ between sources. The trigrams match the cube in structure only: water and fire, <span class="jp" lang="zh">坎</span> and <span class="jp" lang="zh">離</span>, always land on a complementary pair, but which pair depends only on which light is read as the middle line. A match that can be made to say anything proves nothing.</p>
-    </div>
-  </section>
-
-  <section class="scene" id="anchors" data-name="Three anchors">
-    <div class="in split">
-      <div>
-        <h2>Three anchors, and the ink.</h2>
-        <p>Colorimetry maps every colour a person can see onto one chart, the CIE 1931 chromaticity diagram. Pure wavelengths run around its curved edge; the purples close the bottom with a straight line, because no single wavelength makes them. White sits inside.</p>
-        <p>Each pair in Ma no Iro has one anchor, and its partner lies on the straight line through white, on the far side. Each anchor is a reference point from the eye or from physics: the peak of daylight vision for the leaf, the law of scattering for the sky, and the end of red for the water. Only the sky’s anchor is the physics of its own scene; the other two are choices, not measurements of a leaf or a lake. Once the anchors are set, no hue is picked by eye. The ink has no hue, so it needs no anchor.</p>
-        <p class="strict"><b>Strictly speaking.</b> The diagram shows chromaticity and ignores brightness. Hues in the palette are solved; lightness and chroma are design choices, set so that text stays readable.</p>
-      </div>
-      <div class="night">
-        <div id="fig-cie" role="img" aria-label="CIE 1931 chromaticity diagram with the three anchors, the D65 white point, and each anchor's complement on the far side of white."></div>
-        <div class="cap"><span><b>CIE 1931 chromaticity,</b> with each anchor and its complement across white.</span><span>measured</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene" id="flavors" data-name="Two flavors">
-    <div class="in">
-      <h2>Night and day, each keeping a dot of the other.</h2>
-      <p>In the formula screens use for brightness, green contributes about 72% of white, and red and blue together about 28%. So green belongs to the day flavor and purple to the night. Like a yin-yang, each keeps a dot of the other half, and spends it only on what you are looking at: the cursor, the current match, the focused control.</p>
-      <p class="strict"><b>Strictly speaking.</b> The pairing is a design choice grounded in that brightness split, not a law. The seed is placed where it is most visible on each ground: bright green on black, deep purple on white.</p>
-      <div class="seam">
-        <div class="half k"><span class="dot" aria-hidden="true"></span><span class="nm" lang="ja">黒紫</span><span class="en">Kuromurasaki</span><span class="ds">Black-purple. The night flavor, with a green seed.</span></div>
-        <div class="half b"><span class="dot" aria-hidden="true"></span><span class="nm" lang="ja">白緑</span><span class="en">Byakuroku</span><span class="ds">White-green. The day flavor, with a purple seed.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene" id="use" data-name="In use">
-    <div class="in">
-      <h2>Code, written in the leaf, the sky and the water.</h2>
-      <p>Keywords are purple and functions are green. Strings are the sky’s blue and types are the water’s cyan; numbers and escapes are a pale purple. Red and yellow never colour code: they are kept for errors, deletions, warnings and search. Selections are grey steps of the ground, so nothing under them changes colour, and there is one green in code, so an added line is the only green background you will see.</p>
-      <p class="strict"><b>Strictly speaking.</b> The scenes explain where each colour comes from, not what it means in code; which token gets which colour is a design choice, made so that the most frequent tokens carry the palette’s own pair.</p>
-      <div class="stack" id="sim">
-        <div class="pair" id="editors"></div>
-        <div class="pair" id="diffs"></div>
-        <div class="pair" id="terminals"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene" id="palette" data-name="Every value">
-    <div class="in">
-      <h2>Every value, with its contrast.</h2>
-      <p>Select a hex value to copy it. Text reaches 4.5:1 on its ground; signals and the cursor reach 3:1. Everything here is generated by <code>tools/derive.py</code>.</p>
-      <div class="pair" id="palettes" style="margin-top: 30px"></div>
-    </div>
-  </section>
-
-  <section class="scene" id="names" data-name="Names">
-    <div class="in">
-      <h2>The colour of the in-between is the grey where every pair meets, and the absence that defines each colour.</h2>
-      <div class="grid">
-        <div><div class="big" lang="ja">間の色</div><p><b>Ma no Iro</b>, ま の いろ. The colour of the in-between. Ma for short; <code>ma-no-iro</code> in registries.</p></div>
-        <div><div class="big" lang="ja">黒紫</div><p><b>Kuromurasaki</b>, くろむらさき. Black-purple, the night flavor.</p></div>
-        <div><div class="big" lang="ja">白緑</div><p><b>Byakuroku</b>, びゃくろく. White-green, the day flavor; also a pale green pigment ground from malachite.</p></div>
-      </div>
-      <p style="margin-top: 44px; font-size: 15px; color: var(--c-muted)">Version <span id="ver"></span>. Source of truth: <code>palette.json</code>. Specification: <code>SPEC.md</code>.</p>
-    </div>
-  </section>
-</main>
-<footer class="foot">
-  <div class="in">
-    <div><span class="jp" lang="ja">間の色</span> Ma no Iro <span id="ver-foot"></span></div>
-    <p>Ports for editors and terminals are on the way. Until then, every value is in <code>palette.json</code>, and <code>SPEC.md</code> says how to use it.</p>
-    <p class="fine">MIT licence. Colours generated by <code>tools/derive.py</code>; changes are listed in <code>CHANGELOG.md</code>.</p>
-  </div>
-</footer>
-
+<section class="exhibit" id="light"><header class="exhibit-heading"><p class="eyebrow">01 / THE WORLD → YOUR SCREEN</p><h1>Colour is<br><em>what remains.</em></h1><div><p class="intro">A leaf keeps purple. You get the green.<br>Four exchanges. Eight colours. One quiet grey.</p><p>Ma no Iro is a palette for code and terminals.<br>Every hue has a reason—and an opposite.</p><a class="text-link" href="#work">See it in your work ↗</a></div></header>
+<div class="exchanges"><article class="exchange leaf"><div class="object"><svg viewBox="0 0 560 400" role="img" aria-label="A leaf with green veins; purple light is absorbed, green light is returned"><path d="M285 345C80 260 105 85 235 35C445 130 425 300 285 345Z" fill="none" stroke="var(--c-function)" stroke-width="2"/><path d="M235 35Q235 200 310 385" fill="none" stroke="var(--c-function)" stroke-width="2"/><path d="M240 85Q185 65 145 120M240 85Q350 70 380 135" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M242 103Q184 83 148 136M242 103Q350 88 378 150" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M244 121Q183 101 151 152M244 121Q350 106 376 165" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M246 139Q182 119 154 168M246 139Q350 124 374 180" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M248 157Q181 137 157 184M248 157Q350 142 372 195" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M250 175Q180 155 160 200M250 175Q350 160 370 210" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M252 193Q179 173 163 216M252 193Q350 178 368 225" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M254 211Q178 191 166 232M254 211Q350 196 366 240" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M256 229Q177 209 169 248M256 229Q350 214 364 255" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M258 247Q176 227 172 264M258 247Q350 232 362 270" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M260 265Q175 245 175 280M260 265Q350 250 360 285" fill="none" stroke="var(--c-function)" opacity=".6"/><path d="M262 283Q174 263 178 296M262 283Q350 268 358 300" fill="none" stroke="var(--c-function)" opacity=".6"/></svg></div><h2>The leaf</h2><p class="exchange-pair"><span>Purple</span><span aria-hidden="true">→</span><strong>Green</strong></p><p>Chlorophyll absorbs red and blue most strongly. Green is what it absorbs least.</p><small>Eye anchor · 555 nm</small></article><article class="exchange sky"><div class="object"><svg viewBox="0 0 560 400" role="img" aria-label="Blue scattered sky above a landscape; direct sunlight is yellow"><circle cx="390" cy="110" r="34" fill="var(--c-yellow)"/><path class="sky-ray" d="M60 100Q230 20 500 170" fill="none" stroke="var(--c-blue)" opacity="0.2"/><path class="sky-ray" d="M60 112Q230 35 500 176" fill="none" stroke="var(--c-blue)" opacity="0.24000000000000002"/><path class="sky-ray" d="M60 124Q230 50 500 182" fill="none" stroke="var(--c-blue)" opacity="0.28"/><path class="sky-ray" d="M60 136Q230 65 500 188" fill="none" stroke="var(--c-blue)" opacity="0.32"/><path class="sky-ray" d="M60 148Q230 80 500 194" fill="none" stroke="var(--c-blue)" opacity="0.36"/><path class="sky-ray" d="M60 160Q230 95 500 200" fill="none" stroke="var(--c-blue)" opacity="0.4"/><path class="sky-ray" d="M60 172Q230 110 500 206" fill="none" stroke="var(--c-blue)" opacity="0.44"/><path class="sky-ray" d="M60 184Q230 125 500 212" fill="none" stroke="var(--c-blue)" opacity="0.48000000000000004"/><path class="sky-ray" d="M60 196Q230 140 500 218" fill="none" stroke="var(--c-blue)" opacity="0.52"/><path class="sky-ray" d="M60 208Q230 155 500 224" fill="none" stroke="var(--c-blue)" opacity="0.56"/><path class="sky-ray" d="M60 220Q230 170 500 230" fill="none" stroke="var(--c-blue)" opacity="0.6000000000000001"/><path class="sky-ray" d="M60 232Q230 185 500 236" fill="none" stroke="var(--c-blue)" opacity="0.64"/><path class="sky-ray" d="M60 244Q230 200 500 242" fill="none" stroke="var(--c-blue)" opacity="0.6799999999999999"/><path class="sky-ray" d="M60 256Q230 215 500 248" fill="none" stroke="var(--c-blue)" opacity="0.72"/><path class="sky-ray" d="M60 268Q230 230 500 254" fill="none" stroke="var(--c-blue)" opacity="0.76"/><path d="M20 340L140 280L215 310L355 235L540 340" fill="var(--c-surface)" stroke="var(--c-dim)"/></svg></div><h2>The sky</h2><p class="exchange-pair"><span>Blue</span><span aria-hidden="true">→</span><strong>Yellow</strong></p><p>Blue scatters into the sky. The sunlight that gets through is yellower.</p><small>Scattering law · λ⁻⁴</small></article><article class="exchange water"><div class="object"><svg viewBox="0 0 560 400" role="img" aria-label="Red light fades as it descends into cyan waves"><path class="water-line" style="--i:0" d="M20 170Q100 135 180 170T340 170T560 170" fill="none" stroke="var(--c-cyan)" opacity="0.25"/><path class="water-line" style="--i:1" d="M20 178Q100 143 180 178T340 178T560 178" fill="none" stroke="var(--c-cyan)" opacity="0.275"/><path class="water-line" style="--i:2" d="M20 186Q100 151 180 186T340 186T560 186" fill="none" stroke="var(--c-cyan)" opacity="0.3"/><path class="water-line" style="--i:3" d="M20 194Q100 159 180 194T340 194T560 194" fill="none" stroke="var(--c-cyan)" opacity="0.325"/><path class="water-line" style="--i:4" d="M20 202Q100 167 180 202T340 202T560 202" fill="none" stroke="var(--c-cyan)" opacity="0.35"/><path class="water-line" style="--i:5" d="M20 210Q100 175 180 210T340 210T560 210" fill="none" stroke="var(--c-cyan)" opacity="0.375"/><path class="water-line" style="--i:6" d="M20 218Q100 183 180 218T340 218T560 218" fill="none" stroke="var(--c-cyan)" opacity="0.4"/><path class="water-line" style="--i:7" d="M20 226Q100 191 180 226T340 226T560 226" fill="none" stroke="var(--c-cyan)" opacity="0.42500000000000004"/><path class="water-line" style="--i:8" d="M20 234Q100 199 180 234T340 234T560 234" fill="none" stroke="var(--c-cyan)" opacity="0.45"/><path class="water-line" style="--i:9" d="M20 242Q100 207 180 242T340 242T560 242" fill="none" stroke="var(--c-cyan)" opacity="0.475"/><path class="water-line" style="--i:10" d="M20 250Q100 215 180 250T340 250T560 250" fill="none" stroke="var(--c-cyan)" opacity="0.5"/><path class="water-line" style="--i:11" d="M20 258Q100 223 180 258T340 258T560 258" fill="none" stroke="var(--c-cyan)" opacity="0.525"/><path class="water-line" style="--i:12" d="M20 266Q100 231 180 266T340 266T560 266" fill="none" stroke="var(--c-cyan)" opacity="0.55"/><path class="water-line" style="--i:13" d="M20 274Q100 239 180 274T340 274T560 274" fill="none" stroke="var(--c-cyan)" opacity="0.575"/><path class="water-line" style="--i:14" d="M20 282Q100 247 180 282T340 282T560 282" fill="none" stroke="var(--c-cyan)" opacity="0.6000000000000001"/><path class="water-line" style="--i:15" d="M20 290Q100 255 180 290T340 290T560 290" fill="none" stroke="var(--c-cyan)" opacity="0.625"/><path class="water-line" style="--i:16" d="M20 298Q100 263 180 298T340 298T560 298" fill="none" stroke="var(--c-cyan)" opacity="0.65"/><path class="water-line" style="--i:17" d="M20 306Q100 271 180 306T340 306T560 306" fill="none" stroke="var(--c-cyan)" opacity="0.675"/><path class="water-line" style="--i:18" d="M20 314Q100 279 180 314T340 314T560 314" fill="none" stroke="var(--c-cyan)" opacity="0.7"/><path class="water-line" style="--i:19" d="M20 322Q100 287 180 322T340 322T560 322" fill="none" stroke="var(--c-cyan)" opacity="0.7250000000000001"/><path class="water-line" style="--i:20" d="M20 330Q100 295 180 330T340 330T560 330" fill="none" stroke="var(--c-cyan)" opacity="0.75"/><path class="water-line" style="--i:21" d="M20 338Q100 303 180 338T340 338T560 338" fill="none" stroke="var(--c-cyan)" opacity="0.775"/><path class="water-line" style="--i:22" d="M20 346Q100 311 180 346T340 346T560 346" fill="none" stroke="var(--c-cyan)" opacity="0.8"/><path class="water-line" style="--i:23" d="M20 354Q100 319 180 354T340 354T560 354" fill="none" stroke="var(--c-cyan)" opacity="0.8250000000000001"/><path d="M100 35L80 170" stroke="var(--c-red)" opacity="1.0" fill="none"/><path d="M150 35L130 180" stroke="var(--c-red)" opacity="0.9" fill="none"/><path d="M200 35L180 190" stroke="var(--c-red)" opacity="0.8" fill="none"/><path d="M250 35L230 200" stroke="var(--c-red)" opacity="0.7" fill="none"/><path d="M300 35L280 210" stroke="var(--c-red)" opacity="0.6" fill="none"/><path d="M350 35L330 220" stroke="var(--c-red)" opacity="0.5" fill="none"/><path d="M400 35L380 230" stroke="var(--c-red)" opacity="0.3999999999999999" fill="none"/><path d="M450 35L430 240" stroke="var(--c-red)" opacity="0.29999999999999993" fill="none"/></svg></div><h2>The water</h2><p class="exchange-pair"><span>Red</span><span aria-hidden="true">→</span><strong>Cyan</strong></p><p>Molecular vibrations absorb red over metres. Deep water reveals what remains.</p><small>Red limit · 700 nm</small></article><article class="exchange ink"><div class="object"><div class="ink-paper" role="img" aria-label="Sumi ink on paper: a dark brushstroke against a light ground"><span lang="ja">墨</span></div></div><h2>The ink</h2><p class="exchange-pair"><span>All light</span><span aria-hidden="true">→</span><strong>Almost none</strong></p><p>Soot absorbs. Paper scatters light back. Pure greys become the ground.</p><small>No hue · no anchor</small></article></div><p class="scene-foot">Objects remove bands of wavelengths; these are natural analogies. The palette’s pairs are solved exactly in a colour model. <a href="#model">Here’s how ↓</a></p></section>
+<section class="exhibit" id="model"><header class="exhibit-heading"><p class="eyebrow">02 / THE EYE → THE MODEL</p><h2>Three signals.<br><em>A whole world.</em></h2><p>Your eye reduces a spectrum to three responses.<br>A screen builds it back with three lights.<br>The surprising part lives between them.</p></header>
+<div class="model-grid"><article><p class="eyebrow">01 / PERCEPTION</p><h3>Purple isn’t in the rainbow.</h3><div id="fig-eye" class="diagram" role="img" aria-label="Measured cone sensitivities and daylight brightness"></div><p>Long, medium and short cones peak near 570, 545 and 445 nm. Different spectra can look identical. Purple combines the ends; it has no wavelength of its own.</p><p class="fact"><b>555 nm</b>Daylight brightness peaks in green.</p></article><article><p class="eyebrow">02 / STRUCTURE</p><h3>Every opposite meets at grey.</h3><div id="fig-cube" class="diagram"></div><p>Eight RGB corners. Four complementary pairs. Look down the white–black axis: the cube becomes a colour wheel. Its centre is 間, ma.</p><div id="fig-mix"></div></article><article><p class="eyebrow">03 / DERIVATION</p><h3>Anchored. Never eyeballed.</h3><div id="fig-cie" class="diagram" role="img" aria-label="Three anchors and complements across D65 white"></div><p>555 nm, λ⁻⁴ and 700 nm set the directions. Partners lie across D65 white; hues are solved in Oklab. Lightness and chroma are chosen for readability.</p><p class="fact"><b>0</b>Hues picked by eye.</p></article></div>
+<p class="scene-foot">The cube models a screen, not pigments. Only the sky’s anchor describes its own scene directly; leaf and water anchors are reference choices. <a href="#meaning">Why “the in-between”? ↓</a></p></section>
+<section class="exhibit" id="meaning"><header class="exhibit-heading"><p class="eyebrow">03 / THE MODEL → THE MEANING</p><h2>The space between<br><em>is part of the form.</em></h2><p>In a room, an interval. In music, a pause.<br>In this palette, the grey each pair passes through.<br>Older traditions offer echoes—not proofs.</p></header>
+<div class="meaning-grid"><article><div lang="ja" class="glyph">閒<span>→</span>間</div><h3>A door. A moon. A gap.</h3><p>The older character holds the moon in a doorway; today’s holds the sun. Ma is the interval that gives form its shape. A colour, here, is also known by what it lacks.</p></article><article><div lang="zh" class="glyph">正<span>／</span>間</div><h3>The colour stayed. Its status changed.</h3><p>Green, purple and jade were intermediary colours in one classical Chinese list. Confucius opposed purple displacing vermilion; later, senior Tang officials wore purple.</p></article><article><div class="trigrams" aria-label="Eight trigrams, paired with their binary inverses">☰ ☷<br>☱ ☶<br>☲ ☵<br>☴ ☳</div><h3>Three bits. Eight possibilities.</h3><p>Three yin-or-yang lines echo the cube’s eight corners. In the Fuxi arrangement, each faces its inverse. Leibniz read the figures as binary in 1703.</p></article></div>
+<p class="scene-foot">Colour words and intermediary lists vary. The trigram match is structural, not a physical derivation. Yin and yang touch without mixing; light can mix to grey. <a href="#work">Carry the idea into code ↓</a></p></section>
+<section class="exhibit" id="work"><header class="exhibit-heading"><p class="eyebrow">04 / THE MEANING → YOUR WORK</p><h2>Night and day.<br><em>One language.</em></h2><div><p>Green contributes about 72% of white’s screen luminance; red and blue, about 28%. Day takes green. Night takes purple. Each keeps the other at the cursor.</p><p class="flavour-label" id="flavour-label"></p></div></header>
+<div class="work-toolbar"><div role="tablist" aria-label="Preview"><button role="tab" id="tab-editor" data-view="editor" aria-selected="true" aria-controls="preview">Editor</button><button role="tab" id="tab-diff" data-view="diff" aria-selected="false" aria-controls="preview" tabindex="-1">Diff</button><button role="tab" id="tab-terminal" data-view="terminal" aria-selected="false" aria-controls="preview" tabindex="-1">Terminal</button></div><span>Change Night / Day above. The whole showcase follows.</span></div>
+<div class="workbench"><div id="preview" role="tabpanel" aria-labelledby="tab-editor"></div><aside class="role-key"><h3>The world, as syntax.</h3><p><i class="keyword"></i><b>Purple</b> Keywords</p><p><i class="function"></i><b>Green</b> Functions</p><p><i class="string"></i><b>Blue</b> Strings</p><p><i class="type"></i><b>Cyan</b> Types</p><p><i class="special"></i><b>Pale purple</b> Numbers & escapes</p><hr><p>Red and yellow stay available for errors, deletions, warnings and search. Selections stay grey. The seed appears only at focus, cursor and current match.</p><small>Token roles and the night/day pairing are design choices, not laws of nature.</small></aside></div>
+<footer class="takeaway"><div><h3>Take the in-between with you.</h3><p>間の色 · Ma no Iro · ま の いろ<br>黒紫 · Kuromurasaki · black-purple<br>白緑 · Byakuroku · white-green, also a malachite pigment</p></div><div><a class="download" href="../palette.json" download>Download palette.json ↓</a><button id="open-palette">Every value & contrast ↗</button><p>Text ≥ 4.5:1 · signals ≥ 3:1 · 16 ANSI colours<br>Generated from one source. MIT licensed.<br>Editor ports are in progress. <a href="../SPEC.md">Specification</a> · <a href="../CHANGELOG.md">Changes</a></p></div></footer></section>
+</main><dialog id="palette-dialog" aria-labelledby="palette-heading"><div class="dialog-heading"><div><p class="eyebrow">THE COLOUR OF THE IN-BETWEEN</p><h2 id="palette-heading">Take a closer look.</h2></div><button type="button" id="close-palette" aria-label="Close palette">×</button></div><p>Every colour comes from the same three anchors. Choose a flavour; click a hex to copy it.</p><div class="palette-tools"><div role="group" aria-label="Palette flavour"><button type="button" data-flavour="kuromurasaki" aria-pressed="true">黒紫 Night</button><button type="button" data-flavour="byakuroku" aria-pressed="false">白緑 Day</button></div><label>Find a token <input type="search" id="palette-search" placeholder="keyword, function, error…"></label></div><div id="palette-table"></div><p id="copy-live" role="status"></p><details><summary>The science behind the story</summary><p>Leaves absorb strongly at the blue and red ends and less in the green. They absorb most green too; green is what they absorb least. Air scatters short wavelengths; pure water absorbs red over distance. Real skies and seas are more complex than these illustrations.</p><p>Ma no Iro anchors green at 555 nm, blue at the λ⁻⁴ scattering curve, and red at 700 nm. Their partners are solved across the D65 white point. Only the sky’s anchor describes its scene directly; the other anchors are reference choices. Lightness, chroma, and code roles are design choices.</p><p>The cube is a model of a screen. Its opposite corners meet at grey. The palette’s colours are solved near those corners; mixed as light, their pairs pass through a neutral balance. 間, ma, names the interval—we borrow it for that meeting place.</p><a href="../SPEC.md">Read the full specification ↗</a></details></dialog>
+<dialog id="notes-dialog" aria-labelledby="notes-title"><header><div><p class="eyebrow">THE COMPLETE FIELD GUIDE</p><h2 id="notes-title">The reasoning behind the colours.</h2></div><button id="close-notes" aria-label="Close field notes">×</button></header><p>The original explanations and qualifications, kept together for reference.</p><div><section class="act"><header class="act-heading"><p class="eyebrow">01 / LIGHT / THE WORLD</p><h2>What reaches you is what remains.</h2><p class="bridge">Follow one idea from sunlight to the screen.</p></header><p class="bridge">For code and terminals first, and the ground of a design system next. Anchored in colorimetry and daylight vision, solved across white in Oklab.</p><div class="opening-prose"><p>Fire, stars and screens make colour by giving light off. Almost everything else you see makes it by taking light away: a leaf, the sky, water and ink each keep part of the light that reaches them and let the rest through to your eye. What reaches you leans toward the complement of what was taken, the colour on the far side of white.</p>
+<p>Ma no Iro is built from four of those exchanges, and from the idea underneath them: a thing can be known by what it does not keep. Japanese has a word for form defined by absence, for the pause in music or the empty space in a room. It is 間, ma: the gap, the in-between.</p>
+<p class="strict"><b>Strictly speaking.</b> A real object removes a range of wavelengths, not a single colour, so what is left only leans toward the exact complement. The pairs in Ma no Iro are exact because they are solved in a colour model, as the rest of this page shows.</p></div><div class="nature-grid"><article class="story-spread"><div class="reading"><h3>A leaf takes purple from sunlight, and gives back green.</h3><p>Chlorophyll absorbs strongly at both ends of the visible spectrum, the blue and the red, and much less in the middle. Light from both ends at once is what we see as purple, so what the leaf takes, seen together, is purple, and what it gives back looks green. Some grow lights skip the middle entirely, and glow purple, for the same reason.</p>
+<p class="anchor"><b>Anchor: 555 nm.</b> This pair is anchored not in the leaf but in the eye: 555 nm is where human vision is most sensitive in daylight, as the eye scene shows.</p>
+<p class="strict"><b>Strictly speaking.</b> A leaf absorbs most of the green light too; it looks green because green is what it absorbs least. It also reflects a great deal of infrared, which we cannot see.</p></div></article><article class="story-spread"><div class="reading"><h3>The sky takes blue out of sunlight, and leaves the sun yellower.</h3><p>Air molecules scatter short wavelengths far more than long ones, in proportion to one over the wavelength to the fourth power. The scattered blue reaches you from every direction and fills the sky. The direct sunlight that gets through has lost some of its blue and looks a little yellower, and much more so at sunset, when it passes through more air.</p>
+<p class="anchor"><b>Anchor: the &lambda;<sup>&minus;4</sup> curve.</b> The same curve is the limit a glowing hot body approaches as its temperature rises without end, so the blue of the sky and the blue of infinite heat are one colour.</p>
+<p class="strict"><b>Strictly speaking.</b> Sunlight is not an even spectrum to begin with, and scattering is even stronger in violet; the sky looks blue rather than violet partly because the sun gives off less violet and our eyes are less sensitive to it.</p></div></article><article class="story-spread"><div class="reading"><h3>Water takes red, so it looks cyan.</h3><p>The bonds in a water molecule vibrate, and a few of those vibrations absorb red light. The effect is invisible in a glass but adds up over metres, so deep clear water and glacier ice show what is left: cyan and blue. Water is one of very few everyday things whose colour comes from its molecules vibrating rather than from its electrons.</p>
+<p class="anchor"><b>Anchor: 700 nm, the end of red.</b> In the CIE standard observer, every longer visible wavelength has exactly the same chromaticity, so this is the reddest red there is. Cyan is its complement.</p>
+<p class="strict"><b>Strictly speaking.</b> The colour of a real lake or sea also depends on what is dissolved and floating in it, and on the sky it reflects.</p></div></article><article class="story-spread"><div class="reading"><h3>Ink takes everything. Paper gives it all back.</h3><p>Sumi ink is made of soot: fine carbon that absorbs almost every visible wavelength. Paper, like snow, is a tangle of fibres that scatters every wavelength back about equally. So black and white are not a colour and its opposite but the amount of light itself, none of it and all of it.</p>
+<p>In Ma no Iro they are the ground: pure grey from black to white, so no colour is ever spent on the background.</p>
+<p class="strict"><b>Strictly speaking.</b> No ink is perfectly black and no paper perfectly white; both return a little light, and paper often a little more blue than red.</p></div></article></div></section><section class="act"><header class="act-heading"><p class="eyebrow">02 / LIGHT / THE EYE</p><h2>Then the eye changes everything.</h2><p class="bridge">A spectrum becomes three signals. Three lights become a cube. The cube reveals the in-between.</p></header><article class="story-spread"><div class="reading"><h3>The eye turns a spectrum into three numbers.</h3><p>Your retina has three kinds of cone, long, medium and short, most sensitive near 570, 545 and 445 nm. Every colour you see is how strongly light excites those three. Two quite different spectra can excite them equally and look identical, which is why a screen can show you a leaf with only three kinds of light.</p>
+<p>In daylight, your sense of brightness peaks at 555 nm, in the green: Ma no Iro&rsquo;s first anchor. And purple exists only here. No single wavelength excites the long and short cones while sparing the middle one, so purple is a colour the eye makes, not one the rainbow has.</p>
+<p>Behind the cones, the visual system compares them. One comparison runs roughly between green and magenta, the other roughly between violet and yellow, which is part of why those colours feel like opposites.</p>
+<p class="strict"><b>Strictly speaking.</b> The comparisons measured in the retina do not line up exactly with the opposites people name, red against green and blue against yellow. Vision science has not fully reconciled the two.</p></div></article><article class="story-spread"><div class="reading"><h3>Eight colours, four pairs, one grey.</h3><p>A screen makes every colour from three lights, red, green and blue, so the colours it can show fill a cube. The eight corners are the eight colours a terminal names. Opposite corners are complements, pairs that add up to white, and the four lines joining them all cross at the grey at the centre. Look straight down from white to black and the cube becomes a hexagon: the colour wheel, with grey at its heart.</p>
+<p>That grey is where Ma no Iro takes its name. Every pair leaves it in opposite directions, and each colour is defined by the one it lacks. Run it backwards and it still holds: mix a pair as light, a little more of one and a little less of the other, and somewhere on the way there is a grey with no hue at all.</p>
+<p class="strict"><b>Strictly speaking.</b> The cube is a model of a screen, not of light or of the eye. Its complements are exact for a screen&rsquo;s three lights; painters mixing pigments, and perception itself, pair colours a little differently. And Ma no Iro&rsquo;s colours are named for the corners, not taken from them: each is solved from its anchor and sits a few degrees of hue from its corner, while each pair still lies on a line through the grey.</p></div></article><article class="story-spread"><div class="reading"><h3>Three anchors, and the ink.</h3><p>Colorimetry maps every colour a person can see onto one chart, the CIE 1931 chromaticity diagram. Pure wavelengths run around its curved edge; the purples close the bottom with a straight line, because no single wavelength makes them. White sits inside.</p>
+<p>Each pair in Ma no Iro has one anchor, and its partner lies on the straight line through white, on the far side. Each anchor is a reference point from the eye or from physics: the peak of daylight vision for the leaf, the law of scattering for the sky, and the end of red for the water. Only the sky&rsquo;s anchor is the physics of its own scene; the other two are choices, not measurements of a leaf or a lake. Once the anchors are set, no hue is picked by eye. The ink has no hue, so it needs no anchor.</p>
+<p class="strict"><b>Strictly speaking.</b> The diagram shows chromaticity and ignores brightness. Hues in the palette are solved; lightness and chroma are design choices, set so that text stays readable.</p></div></article></section><section class="act"><header class="act-heading"><p class="eyebrow">03 / LIGHT / MEANING</p><h2>The geometry is new. The echoes are old.</h2><p class="bridge">Correspondences, not proofs. The science sets the colours; these stories give the in-between another way to be seen.</p></header><article class="tradition-row"><div class="tradition-mark" lang="zh">正色 間色</div><div class="reading"><p class="eyebrow">INTERMEDIARY COLOURS</p><p>Classical Chinese colour theory named five cardinal colours, black, white, red, yellow and <span class="jp" lang="zh">青</span> (blue-green), and a set of intermediary colours mixed between them. In one common list, green, purple and jade (<span class="jp" lang="zh">綠</span>, <span class="jp" lang="zh">紫</span>, <span class="jp" lang="zh">碧</span>) are among those intermediaries: the leaf&rsquo;s pair were in-between colours long before this palette. Confucius hated the way purple displaced vermilion; more than a thousand years later, Tang officials of the third rank and above wore it. The colour had not changed. The people looking at it had.</p></div></article><article class="tradition-row"><div class="tradition-mark" lang="zh">陰陽</div><div class="reading"><p class="eyebrow">EACH KEEPS THE OTHER</p><p>Yin and yang are opposites that each hold a seed of the other and turn into each other. Ma no Iro borrows the image for its two flavors: a night that keeps a dot of green, and a day that keeps a dot of purple. Not for the grey: yin and yang touch but never mix. Light does.</p></div></article><article class="tradition-row"><div class="tradition-mark" lang="zh">八卦</div><div class="reading"><p class="eyebrow">THREE LINES / EIGHT STATES</p><p>One gives two, two give four, four give eight. A trigram is three lines, each yin or yang: three bits, like the corners of the colour cube. All yin, &#9783;, is black; all yang, &#9776;, is white. In the circle attributed to Fuxi every trigram faces its inverse across the centre, as every corner faces its complement, and in 1703 Leibniz read the same figures as binary.</p></div></article><article class="tradition-row"><div class="tradition-mark" lang="ja">閒 間</div><div class="reading"><p class="eyebrow">THE INTERVAL</p><p>In Japanese aesthetics, ma is the interval that gives a form its shape: the gap between stones in a garden, the pause between notes. Its older form, <span class="jp" lang="zh">閒</span>, is a door with the moon in it: shut a door at night, and if moonlight still shows, there is a gap. Today&rsquo;s form, <span class="jp" lang="ja">間</span>, has the sun in the door instead. It is the same character that names the intermediary colours. Ma no Iro extends it, as a correspondence rather than a reading of the tradition: a colour can be known by what it lacks.</p></div></article><aside class="tradition-note"><p class="strict"><b>Strictly speaking.</b> These are correspondences, not proofs, and nothing in the palette depends on them. Classical colour words do not map one to one onto modern hues: <span class="jp" lang="zh">青</span> covers both blue and green, and lists of intermediary colours differ between sources. The trigrams match the cube in structure only: water and fire, <span class="jp" lang="zh">坎</span> and <span class="jp" lang="zh">離</span>, always land on a complementary pair, but which pair depends only on which light is read as the middle line. A match that can be made to say anything proves nothing.</p></aside></section><section class="act"><header class="act-heading"><p class="eyebrow">04 / LIGHT / YOUR WORK</p><h2>All of that, in your next line of code.</h2><p class="bridge">The same relationships survive the change of ground.</p></header><div class="flavour-intro"><h3>Night and day, each keeping a dot of the other.</h3><p>In the formula screens use for brightness, green contributes about 72% of white, and red and blue together about 28%. So green belongs to the day flavor and purple to the night. Like a yin-yang, each keeps a dot of the other half, and spends it only on what you are looking at: the cursor, the current match, the focused control.</p>
+<p class="strict"><b>Strictly speaking.</b> The pairing is a design choice grounded in that brightness split, not a law. The seed is placed where it is most visible on each ground: bright green on black, deep purple on white.</p></div><div class="flavour-names"><div><span>夜 / NIGHT</span><h3>黒紫 <small>Kuromurasaki</small></h3><p>Black-purple. A green cursor on a dark ground.</p></div><div><span>昼 / DAY</span><h3>白緑 <small>Byakuroku</small></h3><p>White-green. A purple cursor on a light ground.</p></div></div><div class="usage-copy"><p>Both flavors read the same: keywords are purple and functions are green. Strings are the sky&rsquo;s blue and types are the water&rsquo;s cyan; numbers and escapes are a pale purple. Red and yellow never colour code: they are kept for errors, deletions, warnings and search. Selections are grey steps of the ground, so nothing under them changes colour, and there is one green in code, so an added line is the only green background you will see.</p>
+<p class="strict"><b>Strictly speaking.</b> The scenes explain where each colour comes from, not what it means in code; which token gets which colour is a design choice, made so that the most frequent tokens carry the palette&rsquo;s own pair.</p></div></section><section class="act closing"><header class="act-heading"><p class="eyebrow">05 / THE COLOUR OF THE IN-BETWEEN</p><h2>One grey. Three names.</h2><p class="bridge">The grey where every pair meets, and the absence that defines each colour.</p></header><div class="name-grid"><div><h3 lang="ja">間の色</h3><p><b>Ma no Iro</b>, ま の いろ. The colour of the in-between. Ma for short; <code>ma-no-iro</code> in registries.</p></div><div><h3 lang="ja">黒紫</h3><p><b>Kuromurasaki</b>, くろむらさき. Black-purple, the night flavor.</p></div><div><h3 lang="ja">白緑</h3><p><b>Byakuroku</b>, びゃくろく. White-green, the day flavor; also a pale green pigment ground from malachite.</p></div></div><p class="closing-note">Text reaches 4.5:1 on its ground; signals and the cursor reach 3:1. Every value is generated by <code>tools/derive.py</code>, never hand-set.</p><p class="closing-note">MIT licensed. Editor and terminal ports are on the way. <a href="../CHANGELOG.md">Changelog</a> · <span></span></p></section></div></dialog>
 <script>
 const DATA = /* data:start */{"version":"0.4.1","derivation":{"white_point":"D65","space":"OKLCH","pairs":{"leaf":{"anchor":"green","spectrum":"555 nm","xy":[0.3374,0.6588],"complement":"purple"},"water":{"anchor":"red","spectrum":"700 nm","xy":[0.7347,0.2653],"complement":"cyan"},"sky":{"anchor":"blue","spectrum":"lambda^-4","xy":[0.2399,0.2342],"complement":"yellow"},"ink":{"anchor":"black and white","spectrum":"none and all"}},"method":"each accent lies on the ray from D65 toward its anchor chromaticity, solved at its lightness and chroma","script":"tools/derive.py"},"flavors":{"kuromurasaki":{"name":"Kuromurasaki","jp":"黒紫","appearance":"dark","aliases":{"home":"keyword","on_accent":"base","cursor_text":"base"},"colors":{"mantle":{"hex":"#0e0e0e","oklch":[0.165,0.0,0.0],"contrast":1.04,"role":"Recessed frames: sidebar, title bar, tab strip, status bar","group":"ink"},"base":{"hex":"#141414","oklch":[0.19,0.0,0.0],"contrast":1.0,"role":"Editor and terminal background","group":"ink"},"surface":{"hex":"#1c1c1c","oklch":[0.225,0.0,0.0],"contrast":1.08,"role":"Raised elements: popups, hovers, suggestions, inputs","group":"ink"},"overlay":{"hex":"#262626","oklch":[0.27,0.0,0.0],"contrast":1.23,"role":"Borders, dividers, indent guides","group":"ink"},"dim":{"hex":"#555555","oklch":[0.45,0.0,0.0],"contrast":2.48,"role":"Disabled text, whitespace marks, scrollbar thumb","group":"ink"},"muted":{"hex":"#898989","oklch":[0.63,0.0,0.0],"contrast":5.28,"role":"Comments, line numbers, placeholders","group":"ink"},"subtle":{"hex":"#b1b1b1","oklch":[0.76,0.0,0.0],"contrast":8.6,"role":"Punctuation, operators, secondary text","group":"ink"},"text":{"hex":"#e4e4e4","oklch":[0.92,0.0,0.0],"contrast":14.57,"role":"Identifiers, body text","group":"ink"},"hl_low":{"hex":"#191919","oklch":[0.215,0.0,0.0],"contrast":1.05,"role":"Current line","group":"ink"},"hl_med":{"hex":"#232323","oklch":[0.255,0.0,0.0],"contrast":1.17,"role":"Other occurrences of the word or selection, inactive selection","group":"ink"},"hl_high":{"hex":"#383838","oklch":[0.34,0.0,0.0],"contrast":1.57,"role":"Selection","group":"ink"},"keyword":{"hex":"#cc79d9","oklch":[0.7,0.16,321.8],"contrast":6.43,"role":"Keywords, storage, control flow, markup tags; home colour of the dark flavor","group":"leaf"},"special":{"hex":"#e8c2f0","oklch":[0.86,0.075,320.7],"contrast":11.74,"role":"Numbers, constants, escapes, regex, decorators","group":"leaf"},"function":{"hex":"#9cdc88","oklch":[0.83,0.13,138.4],"contrast":11.39,"role":"Function and method names, added lines; home colour of the light flavor","group":"leaf"},"seed":{"hex":"#98fc70","oklch":[0.9,0.2,137.7],"contrast":14.5,"role":"Cursor, current search match, focus ring","group":"leaf"},"string":{"hex":"#a3b8f8","oklch":[0.79,0.095,269.9],"contrast":9.46,"role":"Strings, inline code","group":"sky"},"blue":{"hex":"#80a1f6","oklch":[0.72,0.13,266.9],"contrast":7.34,"role":"Links, information, modified lines, directories","group":"sky"},"yellow":{"hex":"#f4e05e","oklch":[0.9,0.15,100.7],"contrast":13.82,"role":"Warnings as a signal; the search highlighter","group":"sky"},"yellow_text":{"hex":"#f4e05e","oklch":[0.9,0.15,100.7],"contrast":13.82,"role":"Warnings as text; ANSI yellow","group":"sky"},"type":{"hex":"#3caca5","oklch":[0.68,0.1,189.6],"contrast":6.71,"role":"Types, classes, interfaces, enums","group":"water"},"cyan":{"hex":"#67e2da","oklch":[0.84,0.11,189.7],"contrast":11.81,"role":"Hints, symlinks, ANSI cyan","group":"water"},"red":{"hex":"#ed647a","oklch":[0.68,0.17,13.2],"contrast":5.9,"role":"Errors, deletions, breakpoints","group":"water"}},"derived":{"search":{"hex":"#393624","oklch":[0.332,0.03,100.7],"contrast":1.53,"role":"Search matches, like a highlighter"},"search_current":{"hex":"#454229","oklch":[0.375,0.039,100.7],"contrast":1.81,"role":"Current search match, under a seed outline"},"diff_add":{"hex":"#262d23","oklch":[0.286,0.019,138.4],"contrast":1.3,"role":"Added line background; merge conflict, current"},"diff_add_strong":{"hex":"#364432","oklch":[0.369,0.036,138.4],"contrast":1.79,"role":"Added characters inside a changed line"},"diff_delete":{"hex":"#302021","oklch":[0.264,0.026,13.2],"contrast":1.19,"role":"Deleted line background"},"diff_delete_strong":{"hex":"#4a2a2e","oklch":[0.327,0.048,13.2],"contrast":1.46,"role":"Deleted characters inside a changed line"},"diff_change":{"hex":"#20242c","oklch":[0.259,0.017,266.9],"contrast":1.18,"role":"Changed line background; merge conflict, incoming"},"diff_change_strong":{"hex":"#2d3447","oklch":[0.328,0.034,266.9],"contrast":1.5,"role":"Changed characters"},"error_bg":{"hex":"#2a1d1e","oklch":[0.249,0.02,13.2],"contrast":1.14,"role":"Background behind inline error text"},"warning_bg":{"hex":"#2a281e","oklch":[0.275,0.018,100.7],"contrast":1.25,"role":"Background behind inline warning text"},"info_bg":{"hex":"#1f2827","oklch":[0.268,0.013,189.7],"contrast":1.22,"role":"Background behind inline information text"},"debug_line":{"hex":"#2d2c20","oklch":[0.289,0.021,100.7],"contrast":1.31,"role":"Line where the debugger is paused"}},"ansi":{"normal":{"black":{"hex":"#262626","index":0},"red":{"hex":"#ed647a","index":1},"green":{"hex":"#9cdc88","index":2},"yellow":{"hex":"#f4e05e","index":3},"blue":{"hex":"#80a1f6","index":4},"magenta":{"hex":"#cc79d9","index":5},"cyan":{"hex":"#67e2da","index":6},"white":{"hex":"#b1b1b1","index":7}},"bright":{"black":{"hex":"#898989","index":8},"red":{"hex":"#fe8897","index":9},"green":{"hex":"#bdf3ac","index":10},"yellow":{"hex":"#fff7c3","index":11},"blue":{"hex":"#a1bcff","index":12},"magenta":{"hex":"#e692f4","index":13},"cyan":{"hex":"#84fcf4","index":14},"white":{"hex":"#e4e4e4","index":15}}}},"byakuroku":{"name":"Byakuroku","jp":"白緑","appearance":"light","aliases":{"home":"function","on_accent":"base","cursor_text":"base"},"colors":{"mantle":{"hex":"#ededed","oklch":[0.945,0.0,0.0],"contrast":1.09,"role":"Recessed frames: sidebar, title bar, tab strip, status bar","group":"ink"},"base":{"hex":"#f7f7f7","oklch":[0.975,0.0,0.0],"contrast":1.0,"role":"Editor and terminal background","group":"ink"},"surface":{"hex":"#fdfdfd","oklch":[0.995,0.0,0.0],"contrast":1.06,"role":"Raised elements: popups, hovers, suggestions, inputs","group":"ink"},"overlay":{"hex":"#dfdfdf","oklch":[0.905,0.0,0.0],"contrast":1.23,"role":"Borders, dividers, indent guides","group":"ink"},"dim":{"hex":"#a4a4a4","oklch":[0.72,0.0,0.0],"contrast":2.31,"role":"Disabled text, whitespace marks, scrollbar thumb","group":"ink"},"muted":{"hex":"#676767","oklch":[0.515,0.0,0.0],"contrast":5.24,"role":"Comments, line numbers, placeholders","group":"ink"},"subtle":{"hex":"#424242","oklch":[0.38,0.0,0.0],"contrast":9.31,"role":"Punctuation, operators, secondary text","group":"ink"},"text":{"hex":"#222222","oklch":[0.25,0.0,0.0],"contrast":14.89,"role":"Identifiers, body text","group":"ink"},"hl_low":{"hex":"#f0f0f0","oklch":[0.955,0.0,0.0],"contrast":1.06,"role":"Current line","group":"ink"},"hl_med":{"hex":"#e8e8e8","oklch":[0.93,0.0,0.0],"contrast":1.14,"role":"Other occurrences of the word or selection, inactive selection","group":"ink"},"hl_high":{"hex":"#d1d1d1","oklch":[0.86,0.0,0.0],"contrast":1.42,"role":"Selection","group":"ink"},"keyword":{"hex":"#761d81","oklch":[0.42,0.17,323.0],"contrast":8.66,"role":"Keywords, storage, control flow, markup tags; home colour of the dark flavor","group":"leaf"},"special":{"hex":"#895a91","oklch":[0.54,0.1,321.5],"contrast":4.95,"role":"Numbers, constants, escapes, regex, decorators","group":"leaf"},"function":{"hex":"#27540f","oklch":[0.4,0.11,137.2],"contrast":8.23,"role":"Function and method names, added lines; home colour of the light flavor","group":"leaf"},"seed":{"hex":"#90039f","oklch":[0.47,0.22,323.4],"contrast":7.22,"role":"Cursor, current search match, focus ring","group":"leaf"},"string":{"hex":"#305daf","oklch":[0.49,0.14,261.2],"contrast":5.93,"role":"Strings, inline code","group":"sky"},"blue":{"hex":"#225fbc","oklch":[0.5,0.16,259.2],"contrast":5.7,"role":"Links, information, modified lines, directories","group":"sky"},"yellow":{"hex":"#9f8f00","oklch":[0.645,0.135,101.8],"contrast":3.04,"role":"Warnings as a signal; the search highlighter","group":"sky"},"yellow_text":{"hex":"#776c06","oklch":[0.525,0.108,101.8],"contrast":4.98,"role":"Warnings as text; ANSI yellow","group":"sky"},"type":{"hex":"#07625e","oklch":[0.45,0.076,189.5],"contrast":6.65,"role":"Types, classes, interfaces, enums","group":"water"},"cyan":{"hex":"#057772","oklch":[0.515,0.088,189.5],"contrast":5.0,"role":"Hints, symlinks, ANSI cyan","group":"water"},"red":{"hex":"#a30033","oklch":[0.455,0.182,15.4],"contrast":7.49,"role":"Errors, deletions, breakpoints","group":"water"}},"derived":{"search":{"hex":"#e4e2ce","oklch":[0.909,0.027,101.8],"contrast":1.22,"role":"Search matches, like a highlighter"},"search_current":{"hex":"#dfdcc2","oklch":[0.889,0.035,101.8],"contrast":1.29,"role":"Current search match, under a seed outline"},"diff_add":{"hex":"#d5ddd2","oklch":[0.889,0.017,137.2],"contrast":1.29,"role":"Added line background; merge conflict, current"},"diff_add_strong":{"hex":"#b9c7b4","oklch":[0.814,0.031,137.2],"contrast":1.64,"role":"Added characters inside a changed line"},"diff_delete":{"hex":"#efd6d7","oklch":[0.897,0.027,15.4],"contrast":1.28,"role":"Deleted line background"},"diff_delete_strong":{"hex":"#e6babc","oklch":[0.829,0.051,15.4],"contrast":1.61,"role":"Deleted characters inside a changed line"},"diff_change":{"hex":"#dae3f1","oklch":[0.913,0.021,259.2],"contrast":1.2,"role":"Changed line background; merge conflict, incoming"},"diff_change_strong":{"hex":"#becfea","oklch":[0.851,0.042,259.2],"contrast":1.46,"role":"Changed characters"},"error_bg":{"hex":"#f0dddd","oklch":[0.913,0.022,15.4],"contrast":1.22,"role":"Background behind inline error text"},"warning_bg":{"hex":"#eceade","oklch":[0.935,0.016,101.8],"contrast":1.12,"role":"Background behind inline warning text"},"info_bg":{"hex":"#dde7e6","oklch":[0.92,0.011,189.5],"contrast":1.17,"role":"Background behind inline information text"},"debug_line":{"hex":"#eae8da","oklch":[0.929,0.019,101.8],"contrast":1.15,"role":"Line where the debugger is paused"}},"ansi":{"normal":{"black":{"hex":"#222222","index":0},"red":{"hex":"#a30033","index":1},"green":{"hex":"#27540f","index":2},"yellow":{"hex":"#776c06","index":3},"blue":{"hex":"#225fbc","index":4},"magenta":{"hex":"#761d81","index":5},"cyan":{"hex":"#057772","index":6},"white":{"hex":"#a4a4a4","index":7}},"bright":{"black":{"hex":"#676767","index":8},"red":{"hex":"#7d0025","index":9},"green":{"hex":"#173d01","index":10},"yellow":{"hex":"#9f8f00","index":11},"blue":{"hex":"#0446a2","index":12},"magenta":{"hex":"#5c0166","index":13},"cyan":{"hex":"#045e5a","index":14},"white":{"hex":"#dfdfdf","index":15}}}}},"cmf":[[0.001368,3.9e-05,0.00645],[0.00150205,4.28264e-05,0.00708322],[0.00164233,4.69146e-05,0.00774549],[0.00180238,5.15896e-05,0.00850115],[0.00199576,5.71764e-05,0.00941454],[0.002236,6.4e-05,0.01055],[0.00253539,7.23442e-05,0.0119658],[0.0028926,8.22122e-05,0.0136559],[0.00330083,9.35082e-05,0.0155881],[0.00375324,0.000106136,0.0177302],[0.004243,0.00012,0.02005],[0.00476239,0.000134984,0.0225114],[0.00533005,0.000151492,0.0252029],[0.00597871,0.000170208,0.0282797],[0.00674112,0.000191816,0.031897],[0.00765,0.000217,0.03621],[0.00875137,0.000246907,0.0414377],[0.0100289,0.00028124,0.0475037],[0.0114217,0.00031852,0.0541199],[0.012869,0.000357267,0.060998],[0.01431,0.000396,0.06785],[0.0157044,0.000433715,0.0744863],[0.0171474,0.000473024,0.0813616],[0.0187812,0.000517876,0.0891536],[0.020748,0.000572219,0.0985405],[0.02319,0.00064,0.1102],[0.0262074,0.00072456,0.124613],[0.0297825,0.0008255,0.141702],[0.0338809,0.00094116,0.161304],[0.0384682,0.00106988,0.183257],[0.04351,0.00121,0.2074],[0.0489956,0.00136209,0.233692],[0.0550226,0.00153075,0.262611],[0.0617188,0.00172037,0.294775],[0.069212,0.00193532,0.330798],[0.07763,0.00218,0.3713],[0.0869581,0.0024548,0.416209],[0.0971767,0.002764,0.465464],[0.108406,0.0031178,0.519695],[0.120767,0.0035264,0.57953],[0.13438,0.004,0.6456],[0.149358,0.00454624,0.718484],[0.165396,0.00515932,0.796713],[0.181983,0.00582928,0.877846],[0.198611,0.00654616,0.959439],[0.21477,0.0073,1.03905],[0.230187,0.00808651,1.11537],[0.24488,0.00890872,1.1885],[0.258777,0.00976768,1.25812],[0.271808,0.0106644,1.32393],[0.2839,0.0116,1.3856],[0.294944,0.0125732,1.44264],[0.304897,0.0135827,1.4948],[0.313787,0.0146297,1.54219],[0.321645,0.0157151,1.58488],[0.3285,0.01684,1.62296],[0.334351,0.0180074,1.6564],[0.33921,0.0192145,1.6853],[0.343121,0.0204539,1.70987],[0.34613,0.0217182,1.73038],[0.34828,0.023,1.74706],[0.3496,0.0242946,1.76004],[0.350147,0.0256102,1.76962],[0.350013,0.0269586,1.77626],[0.349287,0.0283513,1.78043],[0.34806,0.0298,1.7826],[0.346373,0.0313108,1.78297],[0.344262,0.0328837,1.7817],[0.341809,0.0345211,1.7792],[0.339094,0.0362257,1.77587],[0.3362,0.038,1.77211],[0.333198,0.0398467,1.76826],[0.330041,0.041768,1.76404],[0.326636,0.043766,1.75894],[0.322887,0.0458427,1.75247],[0.3187,0.048,1.7441],[0.314025,0.0502437,1.73356],[0.308884,0.052573,1.72086],[0.30329,0.0549806,1.70594],[0.297258,0.0574587,1.68874],[0.2908,0.06,1.6692],[0.28397,0.062602,1.64753],[0.276721,0.0652775,1.62341],[0.268918,0.0680421,1.59602],[0.260423,0.0709111,1.56453],[0.2511,0.0739,1.5281],[0.240848,0.077016,1.48611],[0.229851,0.0802664,1.43952],[0.218407,0.0836668,1.38988],[0.206811,0.0872328,1.33874],[0.19536,0.09098,1.28764],[0.184214,0.0949175,1.23742],[0.173327,0.0990458,1.18782],[0.162688,0.103367,1.13876],[0.152283,0.107885,1.09015],[0.1421,0.1126,1.0419],[0.132179,0.117532,0.994198],[0.12257,0.122674,0.947347],[0.113275,0.127993,0.901453],[0.104298,0.133453,0.856619],[0.09564,0.13902,0.81295],[0.0872995,0.144676,0.770517],[0.079308,0.150469,0.729445],[0.0717178,0.156462,0.689914],[0.064581,0.162718,0.652105],[0.05795,0.1693,0.6162],[0.0518621,0.176243,0.582329],[0.0462815,0.183558,0.550416],[0.0411509,0.191274,0.520338],[0.0364128,0.199418,0.491967],[0.03201,0.20802,0.46518],[0.0279172,0.21712,0.439925],[0.0241444,0.226735,0.416184],[0.020687,0.236857,0.393882],[0.0175404,0.247481,0.372946],[0.0147,0.2586,0.3533],[0.0121618,0.270185,0.334858],[0.00991996,0.282294,0.317552],[0.00796724,0.295051,0.301338],[0.00629635,0.308578,0.286169],[0.0049,0.323,0.272],[0.00377717,0.338402,0.258817],[0.00294532,0.354686,0.246484],[0.00242488,0.371699,0.234772],[0.00223629,0.389287,0.223453],[0.0024,0.4073,0.2123],[0.00292552,0.42563,0.201169],[0.00383656,0.44431,0.19012],[0.00517484,0.463394,0.179225],[0.00698208,0.48294,0.168561],[0.0093,0.503,0.1582],[0.0121495,0.523569,0.148138],[0.0155359,0.544512,0.138376],[0.0194775,0.56569,0.128994],[0.0239928,0.586965,0.120075],[0.0291,0.6082,0.1117],[0.0348149,0.629346,0.103905],[0.0411202,0.650307,0.0966675],[0.047985,0.670875,0.0899827],[0.0553786,0.690842,0.0838453],[0.06327,0.71,0.07825],[0.071635,0.728185,0.073209],[0.0804622,0.745464,0.0686782],[0.08974,0.761969,0.0645678],[0.0994564,0.777837,0.0607884],[0.1096,0.7932,0.05725],[0.120167,0.80811,0.0539043],[0.131114,0.822496,0.0507466],[0.142368,0.836307,0.0477528],[0.153854,0.849492,0.0448986],[0.1655,0.862,0.04216],[0.177257,0.873811,0.0395073],[0.18914,0.884962,0.0369356],[0.201169,0.895494,0.0344584],[0.213366,0.905443,0.0320887],[0.22575,0.91485,0.02984],[0.238321,0.923735,0.0277118],[0.251067,0.932092,0.0256944],[0.263992,0.939923,0.0237872],[0.277102,0.947225,0.0219892],[0.2904,0.954,0.0203],[0.303891,0.960256,0.0187181],[0.317573,0.966007,0.0172404],[0.331438,0.971261,0.0158636],[0.345483,0.976023,0.0145846],[0.3597,0.9803,0.0134],[0.374084,0.984092,0.0123072],[0.38864,0.987418,0.0113019],[0.403378,0.990313,0.0103779],[0.418311,0.992812,0.00952931],[0.43345,0.99495,0.00875],[0.448795,0.996711,0.0080352],[0.464336,0.998098,0.0073816],[0.480064,0.999112,0.0067854],[0.495971,0.999748,0.0062428],[0.51205,1.0,0.00575],[0.528296,0.999857,0.0053036],[0.544692,0.999305,0.0048998],[0.561209,0.998326,0.0045342],[0.577821,0.996899,0.0042024],[0.5945,0.995,0.0039],[0.611221,0.992601,0.0036232],[0.627976,0.989743,0.0033706],[0.64476,0.986444,0.0031414],[0.66157,0.982724,0.0029348],[0.6784,0.9786,0.00275],[0.695239,0.974084,0.0025852],[0.712059,0.969171,0.0024386],[0.728828,0.963857,0.0023094],[0.745519,0.958135,0.0021968],[0.7621,0.952,0.0021],[0.778543,0.94545,0.00201773],[0.794826,0.938499,0.0019482],[0.810926,0.931163,0.0018898],[0.826825,0.923458,0.00184093],[0.8425,0.9154,0.0018],[0.857932,0.907006,0.00176627],[0.873082,0.898277,0.0017378],[0.887894,0.889205,0.0017112],[0.902318,0.879782,0.00168307],[0.9163,0.87,0.00165],[0.9298,0.859861,0.00161013],[0.942798,0.849392,0.0015644],[0.955278,0.838622,0.0015136],[0.967218,0.827581,0.00145853],[0.9786,0.8163,0.0014],[0.989386,0.804795,0.00133667],[0.999549,0.793082,0.00127],[1.00909,0.781192,0.001205],[1.01801,0.769155,0.00114667],[1.0263,0.757,0.0011],[1.03398,0.744754,0.0010688],[1.04099,0.732422,0.0010494],[1.04719,0.720004,0.0010356],[1.05247,0.707496,0.0010212],[1.0567,0.6949,0.001],[1.05979,0.682219,0.00096864],[1.0618,0.669472,0.00092992],[1.06281,0.656674,0.00088688],[1.06291,0.643845,0.00084256],[1.0622,0.631,0.0008],[1.06074,0.618156,0.00076096],[1.05844,0.605314,0.00072368],[1.05522,0.592476,0.00068592],[1.05098,0.579638,0.00064544],[1.0456,0.5668,0.0006],[1.03904,0.553961,0.000547867],[1.03136,0.541137,0.0004916],[1.02267,0.528353,0.0004354],[1.01305,0.515632,0.000383467],[1.0026,0.503,0.00034],[0.991368,0.490469,0.000307253],[0.979331,0.47803,0.00028316],[0.966492,0.465678,0.00026544],[0.952848,0.453403,0.000251813],[0.9384,0.4412,0.00024],[0.923194,0.42908,0.000229547],[0.907244,0.417036,0.00022064],[0.890502,0.405032,0.00021196],[0.87292,0.393032,0.000202187],[0.85445,0.381,0.00019],[0.835084,0.368918,0.000174213],[0.814946,0.356827,0.00015564],[0.794186,0.344777,0.00013596],[0.772954,0.332818,0.000116853],[0.7514,0.321,0.0001],[0.729584,0.309338,8.61333e-05],[0.707589,0.29785,7.46e-05],[0.685602,0.286594,6.5e-05],[0.66381,0.275624,5.69333e-05],[0.6424,0.265,5e-05],[0.621515,0.254763,4.416e-05],[0.601114,0.24489,3.948e-05],[0.581105,0.235334,3.572e-05],[0.561398,0.226053,3.264e-05],[0.5419,0.217,3e-05],[0.5226,0.208162,2.76533e-05],[0.503546,0.199549,2.556e-05],[0.484744,0.191155,2.364e-05],[0.466194,0.182974,2.18133e-05],[0.4479,0.175,2e-05],[0.429861,0.167223,1.81333e-05],[0.412098,0.159646,1.62e-05],[0.394644,0.152278,1.42e-05],[0.377533,0.145126,1.21333e-05],[0.3608,0.1382,1e-05],[0.344456,0.1315,7.73333e-06],[0.328517,0.125025,5.4e-06],[0.313019,0.118779,3.2e-06],[0.298001,0.112769,1.33333e-06],[0.2835,0.107,-1.90582e-21],[0.269545,0.101476,-3.17637e-22],[0.256118,0.0961886,5.29396e-23],[0.24319,0.091123,0.0],[0.230727,0.0862649,0.0],[0.2187,0.0816,0.0],[0.207097,0.0771206,0.0],[0.195923,0.0728255,0.0],[0.185171,0.0687101,0.0],[0.174832,0.0647698,0.0],[0.1649,0.061,0.0],[0.155367,0.0573962,0.0],[0.14623,0.053955,0.0],[0.13749,0.0506738,0.0],[0.129147,0.0475497,0.0],[0.1212,0.04458,0.0],[0.11364,0.0417587,0.0],[0.106465,0.039085,0.0],[0.0996904,0.0365638,0.0],[0.0933306,0.0342005,0.0],[0.0874,0.032,0.0],[0.081901,0.0299626,0.0],[0.0768043,0.0280766,0.0],[0.0720771,0.0263294,0.0],[0.0676866,0.0247081,0.0],[0.0636,0.0232,0.0],[0.0598068,0.0218008,0.0],[0.0562822,0.0205011,0.0],[0.052971,0.0192811,0.0],[0.0498186,0.0181207,0.0],[0.04677,0.017,0.0],[0.043784,0.0159038,0.0],[0.0408754,0.0148372,0.0],[0.0380726,0.0138107,0.0],[0.0354046,0.0128348,0.0],[0.0329,0.01192,0.0],[0.0305642,0.0110683,0.0],[0.0283806,0.0102734,0.0],[0.0263448,0.00953331,0.0],[0.0244528,0.00884616,0.0],[0.0227,0.00821,0.0],[0.0210843,0.00762378,0.0],[0.0195999,0.00708542,0.0],[0.0182373,0.00659148,0.0],[0.0169872,0.00613849,0.0],[0.01584,0.005723,0.0],[0.0147906,0.00534306,0.0],[0.0138313,0.0049958,0.0],[0.0129487,0.0046764,0.0],[0.0121292,0.00438007,0.0],[0.0113592,0.004102,0.0],[0.0106293,0.00383845,0.0],[0.00993885,0.0035891,0.0],[0.00928842,0.00335422,0.0],[0.00867885,0.00313409,0.0],[0.00811092,0.002929,0.0],[0.00758239,0.00273814,0.0],[0.00708875,0.00255988,0.0],[0.00662731,0.00239324,0.0],[0.00619541,0.00223728,0.0],[0.00579035,0.002091,0.0],[0.00540983,0.00195359,0.0],[0.00505258,0.00182458,0.0],[0.00471751,0.00170358,0.0],[0.00440351,0.00159019,0.0],[0.00410946,0.001484,0.0],[0.00383391,0.0013845,0.0],[0.00357575,0.00129127,0.0],[0.00333434,0.00120409,0.0],[0.00310908,0.00112274,0.0],[0.00289933,0.001047,0.0],[0.00270435,0.00097659,0.0],[0.00252302,0.000911109,0.0],[0.00235417,0.000850133,0.0],[0.00219662,0.000793238,0.0],[0.00204919,0.00074,0.0],[0.00191096,0.000690083,0.0],[0.00178144,0.00064331,0.0],[0.00166011,0.000599496,0.0],[0.00154646,0.000558455,0.0],[0.00143997,0.00052,0.0],[0.00134004,0.000483914,0.0],[0.00124627,0.000450053,0.0],[0.00115847,0.000418345,0.0],[0.00107643,0.000388718,0.0],[0.000999949,0.0003611,0.0],[0.000928736,0.000335383,0.0],[0.000862433,0.00031144,0.0],[0.00080075,0.000289166,0.0],[0.000743396,0.000268454,0.0],[0.000690079,0.0002492,0.0],[0.000640516,0.000231302,0.0],[0.000594502,0.000214686,0.0],[0.000551865,0.000199288,0.0],[0.000512429,0.000185048,0.0],[0.000476021,0.0001719,0.0],[0.000442454,0.000159778,0.0],[0.000411512,0.000148604,0.0],[0.000382981,0.000138302,0.0],[0.000356649,0.000128792,0.0],[0.000332301,0.00012,0.0],[0.000309759,0.000111859,0.0],[0.000288887,0.000104322,0.0],[0.000269539,9.73356e-05,0.0],[0.000251568,9.08459e-05,0.0],[0.000234826,8.48e-05,0.0],[0.000219171,7.91467e-05,0.0],[0.000204526,7.3858e-05,0.0],[0.00019084,6.8916e-05,0.0],[0.000178065,6.43027e-05,0.0],[0.00016615,6e-05,0.0],[0.000155024,5.59819e-05,0.0],[0.000144622,5.22256e-05,0.0],[0.00013491,4.87184e-05,0.0],[0.000125852,4.54475e-05,0.0],[0.000117413,4.24e-05,0.0],[0.000109551,3.9561e-05,0.0],[0.000102224,3.69151e-05,0.0],[9.53944e-05,3.44487e-05,0.0],[8.90239e-05,3.21482e-05,0.0],[8.30753e-05,3e-05,0.0],[7.75127e-05,2.79913e-05,0.0],[7.2313e-05,2.61136e-05,0.0],[6.74578e-05,2.43602e-05,0.0],[6.29284e-05,2.27246e-05,0.0],[5.87065e-05,2.12e-05,0.0],[5.47703e-05,1.97785e-05,0.0],[5.10992e-05,1.84529e-05,0.0],[4.76765e-05,1.72169e-05,0.0],[4.44857e-05,1.60646e-05,0.0],[4.15099e-05,1.499e-05,0.0]]}/* data:end */;
 const F = DATA.flavors, IDS = ["kuromurasaki", "byakuroku"];
 const K = F.kuromurasaki.colors, B = F.byakuroku.colors;
 
-/* ---------- theme ---------- */
-(function () {
-  const root = document.documentElement, btns = document.querySelectorAll(".theme button");
-  function set(t) {
-    if (t === "system") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", t);
-    btns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t === t)));
-    try { localStorage.setItem("ma-no-iro-theme", t); } catch (e) {}
-    if (window.__redraw) window.__redraw();
-  }
-  btns.forEach(b => b.addEventListener("click", () => set(b.dataset.t)));
-  try { const s = localStorage.getItem("ma-no-iro-theme"); if (s) set(s); } catch (e) {}
-})();
-const css = n => getComputedStyle(document.documentElement).getPropertyValue("--c-" + n).trim();
-const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* ---------- colour maths, ported from tools/derive.py ---------- */
 const RGB2XYZ = [[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]];
 const D65 = [0.3127, 0.3290];
@@ -471,122 +80,6 @@ function spectralXY(l) { const X = cmf(l), s = X[0] + X[1] + X[2]; return [X[0] 
 function xyOfLin(c) { const X = mat(RGB2XYZ, c), s = X[0] + X[1] + X[2]; return [X[0] / s, X[1] / s]; }
 function planck(l, T) { const lam = l * 1e-9; return T ? lam ** -5 / (Math.exp(1.438776877e-2 / (lam * T)) - 1) : lam ** -4; }
 function skyXY() { const X = [0, 0, 0]; DATA.cmf.forEach((row, i) => { const B = planck(380 + i, null); for (let k = 0; k < 3; k++) X[k] += B * row[k]; }); const s = X[0] + X[1] + X[2]; return [X[0] / s, X[1] / s]; }
-/* ---------- the mark: the cube seen down its grey axis ---------- */
-function drawMark() {
-  const a = F.kuromurasaki.ansi.normal, W = 460, c = W / 2, r = 170;
-  const order = [["red", 90], ["yellow", 30], ["green", -30], ["cyan", -90], ["blue", -150], ["magenta", 150]];
-  const pts = order.map(([n, deg]) => [n, c + r * Math.cos(deg * Math.PI / 180), c - r * Math.sin(deg * Math.PI / 180)]);
-  let s = `<svg viewBox="0 0 ${W} ${W}" aria-hidden="true">`;
-  s += `<polygon points="${pts.map(p => p[1] + "," + p[2]).join(" ")}" fill="none" stroke="${css("overlay")}" stroke-width="1.5"/>`;
-  for (let i = 0; i < 3; i++) { const p = pts[i], q = pts[i + 3]; s += `<line x1="${p[1]}" y1="${p[2]}" x2="${q[1]}" y2="${q[2]}" stroke="${css("dim")}" stroke-width="1.2" stroke-dasharray="4 5"/>`; }
-  for (const [n, x, y] of pts) s += `<circle cx="${x}" cy="${y}" r="30" fill="${a[n].hex}"/>`;
-  s += `<circle cx="${c}" cy="${c}" r="30" fill="${css("dim")}"/><text x="${c}" y="${c + 9}" text-anchor="middle" font-size="26" fill="${css("base")}" font-family="IBM Plex Sans JP, sans-serif">間</text></svg>`;
-  document.getElementById("hexmark").innerHTML = s;
-}
-
-/* ---------- the negative: each thing in the colour it took, then in the colour it gave back ---------- */
-function initNegative() {
-  const leaf = c => `<g transform="rotate(-30 50 50)"><path d="M50 10 C80 28 82 64 50 86 C18 64 20 28 50 10 Z" style="fill:${c}"/><path d="M50 20 V82" style="fill:none;stroke:var(--c-surface);stroke-width:2;stroke-linecap:round"/><path d="M50 84 V96" style="fill:none;stroke:${c};stroke-width:2.4;stroke-linecap:round"/></g>`;
-  const sun = c => `<circle cx="50" cy="60" r="22" style="fill:${c}"/><rect x="0" y="68" width="100" height="32" style="fill:var(--c-surface)"/><path d="M12 68 H88" style="stroke:var(--c-dim);stroke-width:1.2"/>`;
-  const drop = c => `<path d="M50 14 C58 30 76 46 76 62 A26 26 0 0 1 24 62 C24 46 42 30 50 14 Z" style="fill:${c}"/>`;
-  const enso = (paper, ink) => `<rect width="100" height="100" style="fill:${paper}"/><path d="M63 27.5 A26 26 0 1 0 75 43" style="fill:none;stroke:${ink};stroke-width:7;stroke-linecap:round"/>`;
-  const tiles = [
-    [leaf("var(--c-keyword)"), leaf("var(--c-function)"), "A leaf.", "A leaf takes purple and gives back green."],
-    [sun("var(--c-blue)"), sun("var(--c-yellow)"), "The sun, low in the sky.", "Air takes blue from sunlight and leaves the sun yellow."],
-    [drop("var(--c-red)"), drop("var(--c-cyan)"), "Deep water.", "Water takes red and leaves cyan."],
-    [enso("var(--k-base)", "var(--b-base)"), enso("var(--b-base)", "var(--k-base)"), "Ink on paper.", "Ink takes all the light; paper gives it all back."],
-  ];
-  const svg = (cls, body) => `<svg class="${cls}" viewBox="0 0 100 100" aria-hidden="true">${body}</svg>`;
-  const fig = document.getElementById("neg"), scene = document.getElementById("negative"), btn = document.getElementById("neg-btn");
-  fig.innerHTML = tiles.map(([took, gave, t, g]) => `<figure><div class="tile">${svg("took", took)}${svg("gave", gave)}</div><figcaption><span class="t">${t}</span><span class="g">${g}</span></figcaption></figure>`).join("");
-  let auto;
-  const set = given => {
-    clearTimeout(auto);
-    scene.classList.toggle("given", given);
-    btn.setAttribute("aria-pressed", String(given));
-    btn.textContent = given ? "Show what they took" : "Show what they gave back";
-  };
-  const flip = () => set(!scene.classList.contains("given"));
-  btn.addEventListener("click", flip);
-  fig.addEventListener("click", flip);
-  auto = setTimeout(() => set(true), 2800);
-}
-
-/* ---------- the four exchanges ---------- */
-function drawPairs() {
-  const k = K;
-  const pairs = [["The leaf", "green and purple", k.function.hex, k.keyword.hex], ["The sky", "blue and yellow", k.blue.hex, k.yellow.hex], ["The water", "cyan and red", k.cyan.hex, k.red.hex], ["The ink", "white and black", k.text.hex, k.mantle.hex]];
-  document.getElementById("pairs4").innerHTML = pairs.map(([t, s, a, b]) =>
-    `<figure><div class="bar"><div style="background:${a}"></div><div style="background:${b}"></div></div><figcaption><b>${t}</b>${s}</figcaption></figure>`).join("");
-}
-
-/* ---------- spectra: white light split into two complementary parts ---------- */
-function split(fnTop, topFill, bottomFill, opts = {}) {
-  const W = 560, H = 300, pl = 14, pr = 14, pt = 18, pb = 34, n = 170;
-  const x = i => pl + (W - pl - pr) * i / n, y = v => H - pb - (H - pt - pb) * v;
-  const lam = i => 380 + 340 * i / n;
-  let top = "", bot = "";
-  for (let i = 0; i <= n; i++) { const v = Math.min(Math.max(fnTop(lam(i)), 0), 1); top += ` L ${x(i).toFixed(1)} ${y(1 - v).toFixed(1)}`; }
-  const edge = top.slice(3);
-  const topPath = `M ${x(0)} ${y(1)} L ${x(n)} ${y(1)} L ${edge.split(" L ").reverse().join(" L ")} Z`;
-  const botPath = `M ${x(0)} ${y(0)} L ${edge} L ${x(n)} ${y(0)} Z`;
-  const ticks = [400, 500, 600, 700].map(l => { const X = pl + (W - pl - pr) * (l - 380) / 340; return `<line x1="${X}" y1="${y(0)}" x2="${X}" y2="${y(0) + 5}" stroke="${K.dim.hex}"/><text x="${X}" y="${H - 10}" font-size="12" text-anchor="middle" fill="${K.muted.hex}" font-family="IBM Plex Mono, monospace">${l}</text>`; }).join("");
-  const lbl = (tx, ty, t, c) => `<text x="${tx}" y="${ty}" font-size="15" fill="${c}" font-family="IBM Plex Sans, sans-serif" font-weight="500">${t}</text>`;
-  return `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">
-    <path d="${botPath}" fill="${bottomFill}"/><path d="${topPath}" fill="${topFill}"/>
-    <line x1="${x(0)}" y1="${y(1)}" x2="${x(n)}" y2="${y(1)}" stroke="${K.text.hex}" stroke-width="1" stroke-dasharray="3 4"/>
-    <line x1="${x(0)}" y1="${y(0)}" x2="${x(n)}" y2="${y(0)}" stroke="${K.dim.hex}"/>${ticks}
-    ${opts.labels || ""}</svg>`;
-}
-function drawSpectra() {
-  const bump = l => Math.exp(-0.5 * ((l - 555) / 38) ** 2);
-  document.getElementById("fig-leaf").innerHTML = split(l => 1 - 0.94 * bump(l), K.keyword.hex, K.function.hex,
-    { labels: `<text x="40" y="60" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">taken</text><text x="258" y="230" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">returned</text>` });
-  const s380 = planck(380, null), k = 0.92 / s380;
-  document.getElementById("fig-sky").innerHTML = split(l => k * planck(l, null), K.blue.hex, K.yellow.hex,
-    { labels: `<text x="30" y="60" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">scattered into the sky</text><text x="330" y="230" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">the sun that gets through</text>` });
-  const redAbs = l => 0.9 / (1 + Math.exp(-(l - 640) / 18));
-  document.getElementById("fig-water").innerHTML = split(redAbs, K.red.hex, K.cyan.hex,
-    { labels: `<text x="440" y="60" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">taken</text><text x="120" y="200" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">what the water shows</text>` });
-  const Wd = 560, Hd = 300;
-  document.getElementById("fig-ink").innerHTML = `<svg viewBox="0 0 ${Wd} ${Hd}" aria-hidden="true">
-    <rect x="14" y="18" width="252" height="248" fill="${K.text.hex}"/>
-    <rect x="294" y="258" width="252" height="8" fill="${K.dim.hex}"/>
-    <rect x="294" y="18" width="252" height="248" fill="none" stroke="${K.overlay.hex}" stroke-dasharray="3 4"/>
-    <text x="30" y="46" font-size="15" fill="${K.base.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">paper: gives it all back</text>
-    <text x="310" y="46" font-size="15" fill="${K.muted.hex}" font-weight="500" font-family="IBM Plex Sans, sans-serif">ink: takes almost all</text>
-    ${["mantle", "base", "hl_low", "hl_med", "hl_high", "overlay", "dim", "muted", "subtle", "text"].map((t, i) => `<rect x="${14 + i * 53.2}" y="282" width="49" height="14" rx="3" fill="${K[t].hex}" stroke="${K.overlay.hex}"/>`).join("")}
-  </svg>`;
-}
-const CONES = /* Stockman and Sharpe (2000) 2-degree cone fundamentals, energy, peak 1: [nm, L, M, S] */ [[390, 0.0004, 0.0004, 0.0095], [395, 0.0011, 0.001, 0.0238], [400, 0.0024, 0.0023, 0.0566], [405, 0.0048, 0.0047, 0.1225], [410, 0.0087, 0.0088, 0.233], [415, 0.0134, 0.0145, 0.3814], [420, 0.0184, 0.0217, 0.5436], [425, 0.0229, 0.0296, 0.6745], [430, 0.0282, 0.0395, 0.8026], [435, 0.0341, 0.0518, 0.9036], [440, 0.0403, 0.0648, 0.991], [445, 0.0449, 0.0759, 0.9915], [450, 0.0499, 0.0871, 0.9554], [455, 0.0553, 0.0982, 0.8602], [460, 0.0647, 0.1163, 0.7867], [465, 0.0807, 0.1445, 0.7383], [470, 0.0995, 0.1759, 0.6464], [475, 0.1188, 0.2054, 0.5164], [480, 0.1401, 0.2358, 0.3903], [485, 0.164, 0.2681, 0.2903], [490, 0.1916, 0.3036, 0.2119], [495, 0.2329, 0.3571, 0.1605], [500, 0.289, 0.4278, 0.1228], [505, 0.3597, 0.5156, 0.0889], [510, 0.4437, 0.6155, 0.0608], [515, 0.5365, 0.7192, 0.0428], [520, 0.6286, 0.8166, 0.0292], [525, 0.7047, 0.8855, 0.0194], [530, 0.7706, 0.9357, 0.0126], [535, 0.8257, 0.9689, 0.0081], [540, 0.881, 0.9952, 0.0051], [545, 0.9191, 0.9972, 0.0032], [550, 0.9402, 0.9772, 0.002], [555, 0.9657, 0.9566, 0.0012], [560, 0.9814, 0.9178, 0.0007], [565, 0.9945, 0.8732, 0.0005], [570, 1.0, 0.8135, 0.0003], [575, 0.9923, 0.7403, 0.0002], [580, 0.9694, 0.6533, 0.0001], [585, 0.9556, 0.5726, 0.0001], [590, 0.9277, 0.4926, 0.0], [595, 0.886, 0.4112, 0.0], [600, 0.834, 0.3344, 0.0], [605, 0.7751, 0.2649, 0.0], [610, 0.7057, 0.2053, 0.0], [615, 0.6308, 0.1562, 0.0], [620, 0.5542, 0.1166, 0.0], [625, 0.4799, 0.0856, 0.0], [630, 0.4007, 0.0621, 0.0], [635, 0.3279, 0.0445, 0.0], [640, 0.2658, 0.0314, 0.0], [645, 0.2133, 0.0218, 0.0], [650, 0.1651, 0.0154, 0.0], [655, 0.1247, 0.0107, 0.0], [660, 0.093, 0.0073, 0.0], [665, 0.0685, 0.005, 0.0], [670, 0.0499, 0.0034, 0.0], [675, 0.0358, 0.0024, 0.0], [680, 0.0254, 0.0016, 0.0], [685, 0.0177, 0.0011, 0.0], [690, 0.0122, 0.0008, 0.0], [695, 0.0085, 0.0005, 0.0], [700, 0.0059, 0.0004, 0.0], [705, 0.0041, 0.0003, 0.0], [710, 0.0028, 0.0002, 0.0], [715, 0.0019, 0.0001, 0.0], [720, 0.0013, 0.0001, 0.0]];
-function drawEye() {
-  const W = 560, H = 300, pl = 14, pr = 14, pt = 22, pb = 34;
-  const x = l => pl + (W - pl - pr) * (l - 390) / 330, y = v => H - pb - (H - pt - pb) * v;
-  const path = k => CONES.map((r, i) => (i ? "L" : "M") + x(r[0]).toFixed(1) + " " + y(r[k]).toFixed(1)).join(" ");
-  let v = ""; for (let l = 390; l <= 720; l += 2) v += (v ? " L " : "M ") + x(l).toFixed(1) + " " + y(cmf(l)[1]).toFixed(1);
-  const a = F.kuromurasaki.ansi.normal;
-  const lbl = (l, val, t, c) => `<text x="${x(l)}" y="${y(val) - 8}" text-anchor="middle" font-size="14" font-weight="500" fill="${c}" font-family="IBM Plex Sans, sans-serif">${t}</text>`;
-  const ticks = [400, 500, 600, 700].map(l => `<line x1="${x(l)}" y1="${y(0)}" x2="${x(l)}" y2="${y(0) + 5}" stroke="${K.dim.hex}"/><text x="${x(l)}" y="${H - 10}" font-size="12" text-anchor="middle" fill="${K.muted.hex}" font-family="IBM Plex Mono, monospace">${l}</text>`).join("");
-  document.getElementById("fig-eye").innerHTML = `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">
-    <line x1="${x(390)}" y1="${y(0)}" x2="${x(720)}" y2="${y(0)}" stroke="${K.dim.hex}"/>${ticks}
-    <path d="${path(3)}" fill="none" stroke="${a.blue.hex}" stroke-width="2.5"/>
-    <path d="${path(2)}" fill="none" stroke="${a.green.hex}" stroke-width="2.5"/>
-    <path d="${path(1)}" fill="none" stroke="${a.red.hex}" stroke-width="2.5"/>
-    <path d="${v}" fill="none" stroke="${K.text.hex}" stroke-width="1.5" stroke-dasharray="4 4"/>
-    <line x1="${x(555)}" y1="${y(0)}" x2="${x(555)}" y2="${y(1)}" stroke="${K.function.hex}" stroke-width="1"/>
-    ${lbl(445, 1, "short", a.blue.hex)}${lbl(530, 1.0, "medium", a.green.hex)}${lbl(600, 0.93, "long", a.red.hex)}
-    <text x="${x(555) + 6}" y="${y(0.08)}" font-size="13" fill="${K.function.hex}" font-family="IBM Plex Sans, sans-serif">555 nm</text></svg>`;
-}
-function uses(id, items) {
-  document.getElementById(id).innerHTML = items.map(([c, t]) => `<span><i style="background:${css(c)}"></i>${t}</span>`).join("");
-}
-function drawUses() {
-  uses("uses-leaf", [["keyword", "keywords"], ["function", "functions, added lines"], ["special", "numbers and escapes"]]);
-  uses("uses-sky", [["string", "strings"], ["blue", "links, changed lines"], ["yellow", "warnings, search"]]);
-  uses("uses-water", [["type", "types"], ["cyan", "hints"], ["red", "errors, deleted lines"]]);
-  uses("uses-ink", [["text", "text"], ["subtle", "punctuation"], ["muted", "comments"], ["hl_high", "selection"]]);
-}
-
 /* ---------- the cube ---------- */
 const CORNERS = { black: [0, 0, 0], red: [1, 0, 0], green: [0, 1, 0], blue: [0, 0, 1], yellow: [1, 1, 0], cyan: [0, 1, 1], magenta: [1, 0, 1], white: [1, 1, 1] };
 const COMP = [["black", "white"], ["red", "cyan"], ["green", "magenta"], ["blue", "yellow"]];
@@ -632,20 +125,6 @@ function initCube() {
   drawCube(r.value / 100);
 }
 
-/* ---------- the in-between: each pair mixed as light (SPEC R9) ---------- */
-const enc = x => { const v = x <= 0.0031308 ? 12.92 * x : 1.055 * x ** (1 / 2.4) - 0.055; return Math.round(Math.min(Math.max(v, 0), 1) * 255).toString(16).padStart(2, "0"); };
-const linToHex = c => "#" + c.map(enc).join("");
-function drawMix() {
-  const pairs = [["purple", K.keyword.hex, "green", K.function.hex], ["blue", K.blue.hex, "yellow", K.yellow.hex], ["red", K.red.hex, "cyan", K.cyan.hex]];
-  document.getElementById("fig-mix").innerHTML = pairs.map(([an, a, bn, b]) => {
-    const A = hexToLin(a), B = hexToLin(b), at = t => A.map((v, k) => v + (B[k] - v) * t);
-    const stops = Array.from({ length: 33 }, (_, i) => `${linToHex(at(i / 32))} ${(i / 32 * 100).toFixed(2)}%`).join(", ");
-    let grey = 0, least = Infinity;   // the point where the three lights are most nearly equal
-    for (let i = 0; i <= 1000; i++) { const c = at(i / 1000), m = (c[0] + c[1] + c[2]) / 3, v = c.reduce((s, x) => s + (x - m) ** 2, 0); if (v < least) { least = v; grey = i / 1000; } }
-    return `<div><div class="ends"><span>${an}</span><span>${bn}</span></div><div class="strip" style="background:linear-gradient(90deg, ${stops})"><i class="tick" style="left:${(grey * 100).toFixed(1)}%"></i></div></div>`;
-  }).join("");
-}
-
 /* ---------- three anchors on the chromaticity diagram ---------- */
 // Each anchor is drawn in its palette colour at its own chromaticity; each complement
 // is drawn at the chromaticity of its palette colour, on the far side of white.
@@ -661,13 +140,14 @@ function drawCIE() {
     { a: skyXY(), aCol: K.blue.hex, aLbl: "λ⁻⁴, the sky", ao: [-12, 18, "end"], c: xyOfLin(hexToLin(K.yellow.hex)), cCol: K.yellow.hex, cLbl: "yellow", co: [12, 5, "start"] },
   ];
   let lines = "", dots = "";
-  for (const p of pairs) {
+  for (const [pairIndex, p] of pairs.entries()) {
+    const anchorId = ["leaf", "water", "sky"][pairIndex];
     const ex = D65[0] + (p.c[0] - D65[0]) * 3, ey = D65[1] + (p.c[1] - D65[1]) * 3;
-    lines += `<line x1="${sx(p.a[0])}" y1="${sy(p.a[1])}" x2="${sx(ex)}" y2="${sy(ey)}" stroke="${K.subtle.hex}" stroke-width="1" stroke-dasharray="5 4"/>`;
-    dots += `<circle cx="${sx(p.a[0])}" cy="${sy(p.a[1])}" r="8" fill="${p.aCol}" stroke="${K.text.hex}" stroke-width="1.2"/><text x="${sx(p.a[0]) + p.ao[0]}" y="${sy(p.a[1]) + p.ao[1]}" text-anchor="${p.ao[2]}" font-size="13" fill="${K.text.hex}" font-family="IBM Plex Sans, sans-serif">${p.aLbl}</text>`;
-    dots += `<circle cx="${sx(p.c[0])}" cy="${sy(p.c[1])}" r="7" fill="${p.cCol}" stroke="${K.text.hex}" stroke-width="1.2"/><text x="${sx(p.c[0]) + p.co[0]}" y="${sy(p.c[1]) + p.co[1]}" text-anchor="${p.co[2]}" font-size="13" fill="${K.subtle.hex}" font-family="IBM Plex Sans, sans-serif">${p.cLbl}</text>`;
+    lines += `<g class="anchor-ray" data-anchor-ray="${anchorId}"><line x1="${sx(p.a[0])}" y1="${sy(p.a[1])}" x2="${sx(ex)}" y2="${sy(ey)}" stroke="${K.subtle.hex}" stroke-width="1" stroke-dasharray="5 4"/></g>`;
+    dots += `<g class="anchor-ray" data-anchor-ray="${anchorId}"><circle cx="${sx(p.a[0])}" cy="${sy(p.a[1])}" r="8" fill="${p.aCol}" stroke="${K.text.hex}" stroke-width="1.2"/><text x="${sx(p.a[0]) + p.ao[0]}" y="${sy(p.a[1]) + p.ao[1]}" text-anchor="${p.ao[2]}" font-size="13" fill="${K.text.hex}" font-family="IBM Plex Sans, sans-serif">${p.aLbl}</text>`;
+    dots += `<circle cx="${sx(p.c[0])}" cy="${sy(p.c[1])}" r="7" fill="${p.cCol}" stroke="${K.text.hex}" stroke-width="1.2"/><text x="${sx(p.c[0]) + p.co[0]}" y="${sy(p.c[1]) + p.co[1]}" text-anchor="${p.co[2]}" font-size="13" fill="${K.subtle.hex}" font-family="IBM Plex Sans, sans-serif">${p.cLbl}</text></g>`;
   }
-  document.getElementById("fig-cie").innerHTML = `<svg viewBox="0 0 ${W} ${H}">
+  document.getElementById("fig-cie").innerHTML = `<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">
     <defs><clipPath id="loc"><path d="${locus}"/></clipPath></defs>
     <path d="${locus}" fill="${K.surface.hex}" stroke="${K.subtle.hex}" stroke-width="1.2"/>${labels}
     <g clip-path="url(#loc)">${lines}</g>
@@ -807,7 +287,7 @@ const TERM = [
   [["M ", "green"], [" palette.json"]], [[" M", "red"], [" docs/story.html"]], [["??", "red"], [" notes/"]],
   [...PROMPT, ["ls -F"]],
   [["docs/", "bold blue"], ["  "], ["tools/", "bold blue"], ["  "], ["derive*", "bold green"], ["  "], ["latest@", "cyan"], ["  palette.json"]],
-  [...PROMPT, ["npm test"]],
+  [...PROMPT, ["# illustrative terminal output"]],
   [[" PASS ", "inv green"], [" leaf \u203a purple is the complement of 555 nm"]],
   [[" PASS ", "inv green"], [" water \u203a cyan is the complement of 700 nm"]],
   [[" PASS ", "inv green"], [" sky \u203a yellow is the complement of \u03bb\u207b\u2074"]],
@@ -850,43 +330,10 @@ function palette(id) {
   return el;
 }
 
-/* ---------- scene rail and keys ---------- */
-function initRail() {
-  const scenes = [...document.querySelectorAll(".scene")], rail = document.getElementById("rail");
-  rail.innerHTML = scenes.map(s => `<a href="#${s.id}"><span>${s.dataset.name}</span><i></i></a>`).join("");
-  const links = [...rail.querySelectorAll("a")];
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.setAttribute("aria-current", String(a.getAttribute("href") === "#" + e.target.id))); }), { threshold: 0.5 });
-  scenes.forEach(s => io.observe(s));
-  document.addEventListener("keydown", e => {
-    if (e.target.closest("input, button, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
-    const dir = ["ArrowDown", "PageDown", "j"].includes(e.key) ? 1 : ["ArrowUp", "PageUp", "k"].includes(e.key) ? -1 : 0;
-    if (!dir) return;
-    const y = window.scrollY + 10, idx = scenes.findIndex(s => s.offsetTop + s.offsetHeight > y);
-    const next = scenes[Math.min(Math.max(idx + dir, 0), scenes.length - 1)];
-    if (next) { e.preventDefault(); next.scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); }
-  });
-}
 
-/* ---------- boot ---------- */
-function drawPanes() {
-  const put = (host, make) => document.getElementById(host).replaceChildren(...IDS.map(make));
-  put("glance-pair", id => editor(id, 1, 20));
-  put("editors", id => editor(id));
-  put("diffs", diffView);
-  put("terminals", terminal);
-  put("palettes", palette);
-}
-drawPanes();
-document.getElementById("ver").textContent = DATA.version;
-document.getElementById("ver-foot").textContent = DATA.version;
-document.addEventListener("click", e => {
-  const b = e.target.closest(".copy"); if (!b) return;
-  const hex = b.dataset.hex;
-  try { navigator.clipboard.writeText(hex).then(() => { b.textContent = "copied"; setTimeout(() => { b.textContent = hex; }, 1100); }, () => {}); } catch (err) {}
-});
-window.__redraw = () => { drawMark(); drawPairs(); drawUses(); };
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => window.__redraw());
-initNegative(); drawMark(); drawPairs(); drawSpectra(); drawEye(); drawUses(); initCube(); drawMix(); drawCIE(); initRail();
 </script>
+
+<script src="showcase-fieldguide.js"></script>
+<script src="showcase-app.js"></script>
 </body>
 </html>
